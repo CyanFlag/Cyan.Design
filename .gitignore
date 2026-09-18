@@ -1,0 +1,6 @@
+.codeflicker/.indexignore
+/.nuget/packages
+/.vs
+/.idea/.idea.Cyan.Design/.idea
+/bin/Debug/net8.0
+/docs
