@@ -1,0 +1,33 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:chat="using:Cyan.Design.Core.Controls.Chat"
+             x:Class="Cyan.Design.Demo.Pages.ShadMessagePage"
+             x:CompileBindings="False">
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Spacing="4" Margin="0,0,0,12">
+            <TextBlock Text="ShadMessage 消息" FontSize="22" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}"/>
+            <TextBlock Text="移植自 shadcn/ui 的 Message 组件，输入消息后点击发送或按回车。" Foreground="{DynamicResource ColorTextSecondaryBrush}"/>
+        </StackPanel>
+
+        <Border Grid.Row="1" Background="{DynamicResource ColorBgContainerBrush}" CornerRadius="8" Padding="12">
+            <ScrollViewer x:Name="PART_ChatScroll" VerticalScrollBarVisibility="Auto">
+                <StackPanel x:Name="PART_ChatList" Spacing="12" />
+            </ScrollViewer>
+        </Border>
+
+        <Grid Grid.Row="2" Margin="0,12,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="PART_Input" Grid.Column="0" Watermark="输入消息..." KeyDown="OnInputKeyDown" />
+            <Button x:Name="PART_Send" Grid.Column="1" Content="发送" Margin="8,0,0,0" Click="OnSendClick" />
+        </Grid>
+    </Grid>
+</UserControl>

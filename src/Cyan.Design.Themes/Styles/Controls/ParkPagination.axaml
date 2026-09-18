@@ -1,0 +1,93 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:core="using:Cyan.Design.Core.Controls.Navigation">
+
+    <Style Selector="core|CyanParkPagination">
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextBrush}" />
+        <Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <StackPanel Orientation="Horizontal" Spacing="4">
+                    <Button x:Name="PART_PrevButton" Classes="pagination-prev">
+                        <PathIcon Data="M15 18l-6-6 6-6" Width="16" Height="16" />
+                    </Button>
+                    <StackPanel x:Name="PART_ItemsHost" Orientation="Horizontal" Spacing="4" />
+                    <Button x:Name="PART_NextButton" Classes="pagination-next">
+                        <PathIcon Data="M9 18l6-6-6-6" Width="16" Height="16" />
+                    </Button>
+                </StackPanel>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <Style Selector="Button.pagination-item">
+        <Setter Property="MinWidth" Value="32" />
+        <Setter Property="Height" Value="32" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="CornerRadius" Value="6" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Cursor" Value="Hand" />
+    </Style>
+
+    <Style Selector="Button.pagination-item:pointerover:not(.selected)">
+        <Setter Property="Background" Value="{DynamicResource ColorFillQuaternaryBrush}" />
+    </Style>
+
+    <Style Selector="Button.pagination-item.selected">
+        <Setter Property="Background" Value="{DynamicResource ColorPrimaryBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextOnPrimaryBrush}" />
+        <Setter Property="FontWeight" Value="600" />
+        <Setter Property="Cursor" Value="Arrow" />
+    </Style>
+
+    <Style Selector="Button.pagination-prev, Button.pagination-next">
+        <Setter Property="MinWidth" Value="32" />
+        <Setter Property="Height" Value="32" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="CornerRadius" Value="6" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextBrush}" />
+    </Style>
+
+    <Style Selector="Button.pagination-prev:pointerover, Button.pagination-next:pointerover">
+        <Setter Property="Background" Value="{DynamicResource ColorFillQuaternaryBrush}" />
+    </Style>
+
+    <Style Selector="Button.pagination-prev:disabled, Button.pagination-next:disabled">
+        <Setter Property="Opacity" Value="0.45" />
+        <Setter Property="Cursor" Value="Arrow" />
+    </Style>
+
+    <Style Selector="TextBlock.pagination-ellipsis">
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontWeight" Value="600" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextTertiaryBrush}" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Margin" Value="6,0" />
+    </Style>
+
+    <Style Selector="core|CyanParkPagination:small Button.pagination-item,
+                     core|CyanParkPagination:small Button.pagination-prev,
+                     core|CyanParkPagination:small Button.pagination-next">
+        <Setter Property="MinWidth" Value="28" />
+        <Setter Property="Height" Value="28" />
+        <Setter Property="FontSize" Value="12" />
+    </Style>
+
+    <Style Selector="core|CyanParkPagination:large Button.pagination-item,
+                     core|CyanParkPagination:large Button.pagination-prev,
+                     core|CyanParkPagination:large Button.pagination-next">
+        <Setter Property="MinWidth" Value="40" />
+        <Setter Property="Height" Value="40" />
+        <Setter Property="FontSize" Value="16" />
+    </Style>
+
+</Styles>

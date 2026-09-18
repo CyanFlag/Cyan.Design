@@ -1,0 +1,62 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:core="using:Cyan.Design.Core.Controls.Feedback"
+             xmlns:controls="using:Cyan.Design.Demo.Controls"
+             x:Class="Cyan.Design.Demo.Pages.RatePage">
+    <ScrollViewer Padding="0" Margin="25,25,0,25">
+        <StackPanel Spacing="20" MaxWidth="800">
+            <TextBlock Text="Rate 评分" FontSize="22" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}"/>
+            <TextBlock Text="参考 ant.design 5.x：评分组件，支持半星、清除、禁用、只读、自定义字符等。" Foreground="{DynamicResource ColorTextSecondaryBrush}" TextWrapping="Wrap"/>
+
+            <controls:DemoSection Title="基础用法">
+                <StackPanel Orientation="Horizontal" Spacing="16" VerticalAlignment="Center">
+                    <core:CyanRate x:Name="BasicRate" Value="3" />
+                    <TextBlock x:Name="BasicValue" Text="3" VerticalAlignment="Center" Foreground="{DynamicResource ColorTextSecondaryBrush}" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="半星">
+                <StackPanel Orientation="Horizontal" Spacing="16" VerticalAlignment="Center">
+                    <core:CyanRate x:Name="HalfRate" AllowHalf="True" Value="2.5" />
+                    <TextBlock x:Name="HalfValue" Text="2.5" VerticalAlignment="Center" Foreground="{DynamicResource ColorTextSecondaryBrush}" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="只读">
+                <core:CyanRate Value="3.5" AllowHalf="True" ReadOnly="True" />
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="禁用">
+                <core:CyanRate Value="3" Disabled="True" />
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="不允许清除">
+                <core:CyanRate Value="3" AllowClear="False" />
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="自定义字符">
+                <StackPanel Orientation="Horizontal" Spacing="24" VerticalAlignment="Center">
+                    <core:CyanRate Character="♥" Value="3" />
+                    <core:CyanRate Character="A" Value="4" />
+                    <core:CyanRate Character="好" Value="2" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="自定义星数">
+                <StackPanel Orientation="Horizontal" Spacing="16" VerticalAlignment="Center">
+                    <core:CyanRate Count="10" Value="5" />
+                    <TextBlock x:Name="TenValue" Text="5" VerticalAlignment="Center" Foreground="{DynamicResource ColorTextSecondaryBrush}" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="自定义大小">
+                <StackPanel Orientation="Horizontal" Spacing="24" VerticalAlignment="Center">
+                    <core:CyanRate Value="3" StarFontSize="14" />
+                    <core:CyanRate Value="3" StarFontSize="20" />
+                    <core:CyanRate Value="3" StarFontSize="32" />
+                </StackPanel>
+            </controls:DemoSection>
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

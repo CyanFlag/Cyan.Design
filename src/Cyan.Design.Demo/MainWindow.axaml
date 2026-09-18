@@ -1,0 +1,33 @@
+<wnd:CyanAppWindow xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:nav="using:Cyan.Design.Core.Controls.Navigation"
+        xmlns:icon="using:Cyan.Design.Core.Controls.Icons"
+        xmlns:core="using:Cyan.Design.Core.Controls.Buttons"
+        xmlns:wnd="using:Cyan.Design.Core.Controls.Windowing"
+        x:Class="Cyan.Design.Demo.MainWindow"
+        Title="Cyan.Design Demo"
+        Width="1180" Height="760"
+        WindowStartupLocation="CenterScreen">
+    <Grid RowDefinitions="Auto,*">
+        <Border Grid.Row="0" Padding="16,8" Background="{DynamicResource ColorBgContainerBrush}"
+                BorderBrush="{DynamicResource ColorBorderSecondaryBrush}" BorderThickness="0,0,0,1">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
+                <core:CyanButton Content="Light" Click="OnLightClick" ButtonSize="Small" />
+                <core:CyanButton Content="Dark" Click="OnDarkClick" ButtonSize="Small" ButtonType="Primary" />
+                <core:CyanButton Content="AntDesign" Click="OnAntDesignClick" ButtonSize="Small" ButtonType="Default" />
+                <core:CyanButton Content="Shadcn" Click="OnShadcnClick" ButtonSize="Small" ButtonType="Default" />
+                <core:CyanButton Content="ParkUI" Click="OnParkUIClick" ButtonSize="Small" ButtonType="Default" />
+                <core:CyanButton Content="Mantine" Click="OnMantineClick" ButtonSize="Small" ButtonType="Default" />
+            </StackPanel>
+        </Border>
+        <nav:CyanNavigationView Grid.Row="1" x:Name="NavView" PaneTitle="Cyan.Design" OpenPaneLength="200">
+            <nav:CyanNavigationView.FooterItems>
+                <nav:CyanNavigationViewItem Header="设置">
+                    <nav:CyanNavigationViewItem.Icon>
+                        <icon:CyanIcon IconKey="refresh" FontSize="18" />
+                    </nav:CyanNavigationViewItem.Icon>
+                </nav:CyanNavigationViewItem>
+            </nav:CyanNavigationView.FooterItems>
+        </nav:CyanNavigationView>
+    </Grid>
+</wnd:CyanAppWindow>

@@ -1,0 +1,133 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:core="using:Cyan.Design.Core.Controls.Display"
+             xmlns:controls="using:Cyan.Design.Demo.Controls"
+             x:Class="Cyan.Design.Demo.Pages.CollapsePage">
+    <ScrollViewer Padding="0" Margin="20">
+        <StackPanel Spacing="20" MaxWidth="800">
+            <TextBlock Text="Collapse 折叠面板" FontSize="22" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}"/>
+            <TextBlock Text="参考 ant.design 5.x：可展开/收起的内容区域，支持手风琴、无边框、幽灵、尺寸、额外元素等。" Foreground="{DynamicResource ColorTextSecondaryBrush}" TextWrapping="Wrap"/>
+
+            <controls:DemoSection Title="基本">
+                <core:CyanCollapse>
+                    <core:CyanCollapsePanel Header="This is panel header 1" Key="1" IsExpanded="True">
+                        <TextBlock Text="A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world." TextWrapping="Wrap"/>
+                    </core:CyanCollapsePanel>
+                    <core:CyanCollapsePanel Header="This is panel header 2" Key="2">
+                        <TextBlock Text="Content of panel 2" TextWrapping="Wrap"/>
+                    </core:CyanCollapsePanel>
+                    <core:CyanCollapsePanel Header="This is panel header 3" Key="3">
+                        <TextBlock Text="Content of panel 3" TextWrapping="Wrap"/>
+                    </core:CyanCollapsePanel>
+                </core:CyanCollapse>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="手风琴（Accordion）" Description="一次只展开一个面板">
+                <core:CyanCollapse Accordion="True">
+                    <core:CyanCollapsePanel Header="This is panel header 1" Key="1" IsExpanded="True">
+                        <TextBlock Text="Content of panel 1" TextWrapping="Wrap"/>
+                    </core:CyanCollapsePanel>
+                    <core:CyanCollapsePanel Header="This is panel header 2" Key="2">
+                        <TextBlock Text="Content of panel 2" TextWrapping="Wrap"/>
+                    </core:CyanCollapsePanel>
+                    <core:CyanCollapsePanel Header="This is panel header 3" Key="3">
+                        <TextBlock Text="Content of panel 3" TextWrapping="Wrap"/>
+                    </core:CyanCollapsePanel>
+                </core:CyanCollapse>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="尺寸">
+                <StackPanel Spacing="12">
+                    <TextBlock Text="Small" Foreground="{DynamicResource ColorTextSecondaryBrush}" FontSize="12"/>
+                    <core:CyanCollapse Size="Small">
+                        <core:CyanCollapsePanel Header="This is small panel header" Key="1" IsExpanded="True">
+                            <TextBlock Text="Small content" TextWrapping="Wrap"/>
+                        </core:CyanCollapsePanel>
+                        <core:CyanCollapsePanel Header="This is small panel header" Key="2">
+                            <TextBlock Text="Small content 2" TextWrapping="Wrap"/>
+                        </core:CyanCollapsePanel>
+                    </core:CyanCollapse>
+                    <TextBlock Text="Large" Foreground="{DynamicResource ColorTextSecondaryBrush}" FontSize="12"/>
+                    <core:CyanCollapse Size="Large">
+                        <core:CyanCollapsePanel Header="This is large panel header" Key="1" IsExpanded="True">
+                            <TextBlock Text="Large content" TextWrapping="Wrap"/>
+                        </core:CyanCollapsePanel>
+                        <core:CyanCollapsePanel Header="This is large panel header" Key="2">
+                            <TextBlock Text="Large content 2" TextWrapping="Wrap"/>
+                        </core:CyanCollapsePanel>
+                    </core:CyanCollapse>
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="无边框">
+                <core:CyanCollapse Bordered="False">
+                    <core:CyanCollapsePanel Header="This is panel header 1" Key="1" IsExpanded="True">
+                        <TextBlock Text="Content of panel 1" TextWrapping="Wrap"/>
+                    </core:CyanCollapsePanel>
+                    <core:CyanCollapsePanel Header="This is panel header 2" Key="2">
+                        <TextBlock Text="Content of panel 2" TextWrapping="Wrap"/>
+                    </core:CyanCollapsePanel>
+                    <core:CyanCollapsePanel Header="This is panel header 3" Key="3">
+                        <TextBlock Text="Content of panel 3" TextWrapping="Wrap"/>
+                    </core:CyanCollapsePanel>
+                </core:CyanCollapse>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="幽灵（Ghost）">
+                <Border Background="{DynamicResource ColorFillTertiaryBrush}" Padding="16" CornerRadius="8">
+                    <core:CyanCollapse Ghost="True">
+                        <core:CyanCollapsePanel Header="This is panel header 1" Key="1" IsExpanded="True">
+                            <TextBlock Text="Content of panel 1" TextWrapping="Wrap"/>
+                        </core:CyanCollapsePanel>
+                        <core:CyanCollapsePanel Header="This is panel header 2" Key="2">
+                            <TextBlock Text="Content of panel 2" TextWrapping="Wrap"/>
+                        </core:CyanCollapsePanel>
+                        <core:CyanCollapsePanel Header="This is panel header 3" Key="3">
+                            <TextBlock Text="Content of panel 3" TextWrapping="Wrap"/>
+                        </core:CyanCollapsePanel>
+                    </core:CyanCollapse>
+                </Border>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="额外元素（Extra）">
+                <core:CyanCollapse>
+                    <core:CyanCollapsePanel Header="This is panel header 1" Key="1" IsExpanded="True">
+                        <core:CyanCollapsePanel.Extra>
+                            <TextBlock Text="Extra" Foreground="{DynamicResource ColorPrimaryBrush}" FontSize="12"/>
+                        </core:CyanCollapsePanel.Extra>
+                        <TextBlock Text="Content of panel 1" TextWrapping="Wrap"/>
+                    </core:CyanCollapsePanel>
+                    <core:CyanCollapsePanel Header="This is panel header 2" Key="2">
+                        <core:CyanCollapsePanel.Extra>
+                            <TextBlock Text="Extra" Foreground="{DynamicResource ColorPrimaryBrush}" FontSize="12"/>
+                        </core:CyanCollapsePanel.Extra>
+                        <TextBlock Text="Content of panel 2" TextWrapping="Wrap"/>
+                    </core:CyanCollapsePanel>
+                </core:CyanCollapse>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="无箭头">
+                <core:CyanCollapse>
+                    <core:CyanCollapsePanel Header="This is panel header with no arrow" Key="1" ShowArrow="False" IsExpanded="True">
+                        <TextBlock Text="Content of panel 1" TextWrapping="Wrap"/>
+                    </core:CyanCollapsePanel>
+                    <core:CyanCollapsePanel Header="This is panel header with no arrow" Key="2" ShowArrow="False">
+                        <TextBlock Text="Content of panel 2" TextWrapping="Wrap"/>
+                    </core:CyanCollapsePanel>
+                </core:CyanCollapse>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="禁用">
+                <core:CyanCollapse>
+                    <core:CyanCollapsePanel Header="This panel can be collapsed" Key="1" IsExpanded="True">
+                        <TextBlock Text="Content of panel 1" TextWrapping="Wrap"/>
+                    </core:CyanCollapsePanel>
+                    <core:CyanCollapsePanel Header="This panel can't be collapsed" Key="2" Collapsible="Disabled">
+                        <TextBlock Text="Content of panel 2" TextWrapping="Wrap"/>
+                    </core:CyanCollapsePanel>
+                </core:CyanCollapse>
+            </controls:DemoSection>
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

@@ -1,0 +1,179 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:wnd="using:Cyan.Design.Core.Controls.Windowing">
+
+    <Styles.Resources>
+        <SolidColorBrush x:Key="TitleBarBackground" Color="#FFFFFFFF" />
+        <SolidColorBrush x:Key="TitleBarForeground" Color="#FF1F1F1F" />
+        <SolidColorBrush x:Key="TitleBarBackgroundInactive" Color="#FFF3F3F3" />
+        <SolidColorBrush x:Key="TitleBarForegroundInactive" Color="#FF8C8C8C" />
+        <SolidColorBrush x:Key="CaptionButtonBackground" Color="#00FFFFFF" />
+        <SolidColorBrush x:Key="CaptionButtonForeground" Color="#FF1F1F1F" />
+        <SolidColorBrush x:Key="CaptionButtonBackgroundPointerOver" Color="#FFEAEAEA" />
+        <SolidColorBrush x:Key="CaptionButtonForegroundPointerOver" Color="#FF1F1F1F" />
+        <SolidColorBrush x:Key="CaptionButtonBackgroundPressed" Color="#FFD6D6D6" />
+        <SolidColorBrush x:Key="CaptionButtonForegroundPressed" Color="#FF1F1F1F" />
+        <SolidColorBrush x:Key="CaptionButtonBackgroundInactive" Color="#00FFFFFF" />
+        <SolidColorBrush x:Key="CaptionButtonForegroundInactive" Color="#FF8C8C8C" />
+    </Styles.Resources>
+
+    <Style Selector="wnd|CyanAppWindow">
+        <Setter Property="Background" Value="{DynamicResource ColorBgLayoutBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextBrush}" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border x:Name="RootBorder" Background="{DynamicResource ColorBgLayoutBrush}"
+                        CornerRadius="{TemplateBinding CornerRadius}"
+                        ClipToBounds="True"
+                        Padding="{TemplateBinding Padding}">
+                    <Panel>
+                        <Panel x:Name="DefaultTitleBar"
+                               Height="{Binding TemplateSettings.TitleBarHeight, RelativeSource={RelativeSource TemplatedParent}}"
+                               Background="{DynamicResource TitleBarBackground}"
+                               VerticalAlignment="Top">
+                            <Image Source="{TemplateBinding Icon}"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Left"
+                                   Width="16" Height="16"
+                                   IsVisible="{Binding TemplateSettings.IsTitleBarContentVisible, RelativeSource={RelativeSource TemplatedParent}}"
+                                   Margin="8,0,0,0" />
+                            <TextBlock Text="{TemplateBinding Title}"
+                                       Margin="28,0,0,0"
+                                       FontSize="12"
+                                       IsVisible="{Binding TemplateSettings.IsTitleBarContentVisible, RelativeSource={RelativeSource TemplatedParent}}"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Left"
+                                       Foreground="{DynamicResource TitleBarForeground}" />
+                            <ContentPresenter x:Name="PART_TitleBarContent"
+                                              Content="{TemplateBinding TitleBarContent}"
+                                              IsVisible="False"
+                                              VerticalAlignment="Stretch"
+                                              HorizontalAlignment="Stretch" />
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Stretch" Spacing="2">
+                                <Button x:Name="MinimizeButton"
+                                        Width="45" Height="{Binding TemplateSettings.TitleBarHeight, RelativeSource={RelativeSource TemplatedParent}}"
+                                        Background="Transparent" BorderThickness="0" Padding="0"
+                                        Foreground="{DynamicResource CaptionButtonForeground}">
+                                    <Viewbox Width="11" Margin="2">
+                                        <Path Stretch="UniformToFill"
+                                              Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Button}}"
+                                              Data="M2048 1229v-205h-2048v205h2048z" />
+                                    </Viewbox>
+                                </Button>
+                                <Button x:Name="MaximizeButton"
+                                        Width="45" Height="{Binding TemplateSettings.TitleBarHeight, RelativeSource={RelativeSource TemplatedParent}}"
+                                        Background="Transparent" BorderThickness="0" Padding="0"
+                                        Foreground="{DynamicResource CaptionButtonForeground}">
+                                    <Viewbox Width="11" Margin="2">
+                                        <Viewbox.RenderTransform>
+                                            <RotateTransform Angle="-90" />
+                                        </Viewbox.RenderTransform>
+                                        <Path x:Name="RestoreButtonPath"
+                                              Stretch="UniformToFill"
+                                              Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Button}}"
+                                              Data="M2048 2048v-2048h-2048v2048h2048zM1843 1843h-1638v-1638h1638v1638z" />
+                                    </Viewbox>
+                                </Button>
+                                <Button x:Name="RestoreButton"
+                                        Width="45" Height="{Binding TemplateSettings.TitleBarHeight, RelativeSource={RelativeSource TemplatedParent}}"
+                                        Background="Transparent" BorderThickness="0" Padding="0"
+                                        Foreground="{DynamicResource CaptionButtonForeground}"
+                                        IsVisible="False">
+                                    <Viewbox Width="11" Margin="2">
+                                        <Path Stretch="UniformToFill"
+                                              Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Button}}"
+                                              Data="M2048 410h-410v-410h-1638v1638h410v410h1638v-1638zM1434 1434h-1229v-1229h1229v1229zM1843 1843h-1229v-205h1024v-1024h205v1229z" />
+                                    </Viewbox>
+                                </Button>
+                                <Button x:Name="CloseButton"
+                                        Width="45" Height="{Binding TemplateSettings.TitleBarHeight, RelativeSource={RelativeSource TemplatedParent}}"
+                                        Background="Transparent" BorderThickness="0" Padding="0"
+                                        Foreground="{DynamicResource CaptionButtonForeground}">
+                                    <Viewbox Width="11" Margin="2">
+                                        <Path Stretch="UniformToFill"
+                                              Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Button}}"
+                                              Data="M1169 1024l879 -879l-145 -145l-879 879l-879 -879l-145 145l879 879l-879 879l145 145l879 -879l879 879l145 -145z" />
+                                    </Viewbox>
+                                </Button>
+                            </StackPanel>
+                        </Panel>
+                        <ContentPresenter x:Name="PART_ContentPresenter"
+                                          ClipToBounds="False"
+                                          Margin="{Binding TemplateSettings.ContentMargin, RelativeSource={RelativeSource TemplatedParent}}"
+                                          HorizontalAlignment="Stretch"
+                                          VerticalAlignment="Stretch"
+                                          Content="{TemplateBinding Content}"
+                                          ContentTemplate="{TemplateBinding ContentTemplate}" />
+                    </Panel>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <Style Selector="wnd|CyanAppWindow:icon /template/ Image">
+        <Setter Property="IsVisible" Value="True" />
+    </Style>
+
+    <Style Selector="wnd|CyanAppWindow[WindowState=FullScreen] /template/ Panel#DefaultTitleBar">
+        <Setter Property="IsVisible" Value="False" />
+    </Style>
+
+    <Style Selector="wnd|CyanAppWindow[IsActive=False] /template/ Panel#DefaultTitleBar">
+        <Setter Property="Background" Value="{DynamicResource TitleBarBackgroundInactive}" />
+    </Style>
+
+    <Style Selector="wnd|CyanAppWindow[IsActive=False] /template/ TextBlock">
+        <Setter Property="Foreground" Value="{DynamicResource TitleBarForegroundInactive}" />
+    </Style>
+
+    <Style Selector="wnd|CyanAppWindow /template/ Button#MinimizeButton:pointerover">
+        <Setter Property="Background" Value="{DynamicResource CaptionButtonBackgroundPointerOver}" />
+    </Style>
+    <Style Selector="wnd|CyanAppWindow /template/ Button#MaximizeButton:pointerover">
+        <Setter Property="Background" Value="{DynamicResource CaptionButtonBackgroundPointerOver}" />
+    </Style>
+    <Style Selector="wnd|CyanAppWindow /template/ Button#RestoreButton:pointerover">
+        <Setter Property="Background" Value="{DynamicResource CaptionButtonBackgroundPointerOver}" />
+    </Style>
+    <Style Selector="wnd|CyanAppWindow /template/ Button#CloseButton:pointerover">
+        <Setter Property="Background" Value="{DynamicResource ColorErrorBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextOnPrimaryBrush}" />
+    </Style>
+
+    <Style Selector="wnd|CyanAppWindow /template/ Button#MinimizeButton:pressed">
+        <Setter Property="Background" Value="{DynamicResource CaptionButtonBackgroundPressed}" />
+    </Style>
+    <Style Selector="wnd|CyanAppWindow /template/ Button#MaximizeButton:pressed">
+        <Setter Property="Background" Value="{DynamicResource CaptionButtonBackgroundPressed}" />
+    </Style>
+    <Style Selector="wnd|CyanAppWindow /template/ Button#RestoreButton:pressed">
+        <Setter Property="Background" Value="{DynamicResource CaptionButtonBackgroundPressed}" />
+    </Style>
+    <Style Selector="wnd|CyanAppWindow /template/ Button#CloseButton:pressed">
+        <Setter Property="Background" Value="{DynamicResource ColorErrorHoverBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextOnPrimaryBrush}" />
+    </Style>
+
+    <Style Selector="wnd|CyanAppWindow[WindowState=Maximized] /template/ Button#MaximizeButton">
+        <Setter Property="IsVisible" Value="False" />
+    </Style>
+    <Style Selector="wnd|CyanAppWindow[WindowState=Maximized] /template/ Button#RestoreButton">
+        <Setter Property="IsVisible" Value="True" />
+    </Style>
+
+    <Style Selector="wnd|CyanAppWindow:noFullScreen /template/ Button#MaximizeButton">
+        <Setter Property="IsVisible" Value="False" />
+    </Style>
+    <Style Selector="wnd|CyanAppWindow:noFullScreen /template/ Button#RestoreButton">
+        <Setter Property="IsVisible" Value="False" />
+    </Style>
+
+    <Style Selector="wnd|CyanAppWindow:extendsTitleBar /template/ ContentPresenter#PART_TitleBarContent">
+        <Setter Property="IsVisible" Value="True" />
+    </Style>
+
+    <Style Selector="wnd|CyanAppWindow[WindowState=Maximized] /template/ Border#RootBorder">
+        <Setter Property="CornerRadius" Value="0" />
+    </Style>
+
+</Styles>

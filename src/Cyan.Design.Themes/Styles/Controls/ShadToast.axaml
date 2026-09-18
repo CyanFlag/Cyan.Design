@@ -1,0 +1,95 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:core="using:Cyan.Design.Core.Controls.Feedback">
+
+    <Style Selector="core|CyanShadToaster">
+        <Setter Property="IsHitTestVisible" Value="True" />
+    </Style>
+
+    <Style Selector="core|CyanShadToast">
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border CornerRadius="8"
+                        Padding="16,12"
+                        Background="{DynamicResource ColorBgElevatedBrush}"
+                        BorderBrush="{DynamicResource ColorBorderBrush}"
+                        BorderThickness="1"
+                        MinWidth="320"
+                        MaxWidth="420"
+                        BoxShadow="0 6 16 #1F000000">
+                    <Grid ColumnDefinitions="Auto,*,Auto">
+                        <Grid Grid.Column="0" Margin="0,0,12,0" VerticalAlignment="Top" Width="20">
+                            <TextBlock x:Name="PART_IconSuccess"
+                                       Text="✓" FontSize="18" FontWeight="Bold"
+                                       Foreground="{DynamicResource ColorSuccessBrush}"
+                                       HorizontalAlignment="Center"
+                                       IsVisible="False" />
+                            <TextBlock x:Name="PART_IconInfo"
+                                       Text="ℹ" FontSize="18" FontWeight="Bold"
+                                       Foreground="{DynamicResource ColorPrimaryBrush}"
+                                       HorizontalAlignment="Center"
+                                       IsVisible="False" />
+                            <TextBlock x:Name="PART_IconWarning"
+                                       Text="⚠" FontSize="18"
+                                       Foreground="{DynamicResource ColorWarningBrush}"
+                                       HorizontalAlignment="Center"
+                                       IsVisible="False" />
+                            <TextBlock x:Name="PART_IconError"
+                                       Text="✕" FontSize="18" FontWeight="Bold"
+                                       Foreground="{DynamicResource ColorErrorBrush}"
+                                       HorizontalAlignment="Center"
+                                       IsVisible="False" />
+                            <TextBlock x:Name="PART_IconLoading"
+                                       Text="↻" FontSize="18"
+                                       Foreground="{DynamicResource ColorPrimaryBrush}"
+                                       HorizontalAlignment="Center"
+                                       IsVisible="False" />
+                        </Grid>
+
+                        <StackPanel Grid.Column="1" Spacing="2">
+                            <TextBlock Text="{TemplateBinding Title}"
+                                       FontSize="14" FontWeight="Bold"
+                                       Foreground="{DynamicResource ColorTextBrush}" />
+                            <TextBlock x:Name="PART_Description"
+                                       Text="{TemplateBinding Description}"
+                                       FontSize="13"
+                                       Foreground="{DynamicResource ColorTextSecondaryBrush}"
+                                       TextWrapping="Wrap"
+                                       IsVisible="False" />
+                        </StackPanel>
+
+                        <Button Grid.Column="2" x:Name="PART_CloseButton"
+                                Content="✕" FontSize="14"
+                                Foreground="{DynamicResource ColorTextTertiaryBrush}"
+                                Background="Transparent"
+                                BorderThickness="0"
+                                Padding="4"
+                                Cursor="Arrow"
+                                VerticalAlignment="Top" />
+                    </Grid>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <Style Selector="core|CyanShadToast:type-success /template/ TextBlock#PART_IconSuccess">
+        <Setter Property="IsVisible" Value="True" />
+    </Style>
+    <Style Selector="core|CyanShadToast:type-info /template/ TextBlock#PART_IconInfo">
+        <Setter Property="IsVisible" Value="True" />
+    </Style>
+    <Style Selector="core|CyanShadToast:type-warning /template/ TextBlock#PART_IconWarning">
+        <Setter Property="IsVisible" Value="True" />
+    </Style>
+    <Style Selector="core|CyanShadToast:type-error /template/ TextBlock#PART_IconError">
+        <Setter Property="IsVisible" Value="True" />
+    </Style>
+    <Style Selector="core|CyanShadToast:type-loading /template/ TextBlock#PART_IconLoading">
+        <Setter Property="IsVisible" Value="True" />
+    </Style>
+
+    <Style Selector="core|CyanShadToast:has-description /template/ TextBlock#PART_Description">
+        <Setter Property="IsVisible" Value="True" />
+    </Style>
+
+</Styles>

@@ -1,0 +1,272 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:core="using:Cyan.Design.Core.Controls.Buttons">
+
+    <Style Selector="core|CyanButton">
+        <Setter Property="Background" Value="{DynamicResource ColorBgContainerBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorBorderBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextBrush}" />
+        <Setter Property="CornerRadius" Value="{DynamicResource BorderRadius}" />
+        <Setter Property="Padding" Value="15,4" />
+        <Setter Property="MinHeight" Value="32" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontWeight" Value="400" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid>
+                    <Border x:Name="PART_Border"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="{TemplateBinding CornerRadius}"
+                            Padding="{TemplateBinding Padding}"
+                            BoxShadow="{TemplateBinding BoxShadow}">
+                        <StackPanel Orientation="Horizontal" Spacing="8"
+                                    HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Path x:Name="LoadingIcon"
+                                  IsVisible="{TemplateBinding Loading}"
+                                  Width="14" Height="14"
+                                  HorizontalAlignment="Center" VerticalAlignment="Center"
+                                  Data="M12,7 A5,5 0 1 1 7,2"
+                                  Stroke="{TemplateBinding Foreground}" StrokeThickness="2"
+                                  StrokeLineCap="Round" Fill="Transparent"
+                                  RenderTransformOrigin="50%,50%">
+                                <Path.RenderTransform>
+                                    <RotateTransform />
+                                </Path.RenderTransform>
+                            </Path>
+                            <ContentPresenter x:Name="PART_IconPresenter"
+                                              Content="{TemplateBinding Icon}"
+                                              Foreground="{TemplateBinding Foreground}"
+                                              VerticalAlignment="Center" />
+                            <ContentPresenter x:Name="PART_ContentPresenter"
+                                              Content="{TemplateBinding Content}"
+                                              HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        </StackPanel>
+                    </Border>
+                    <Rectangle x:Name="DashedRect"
+                               IsVisible="False"
+                               Stroke="{TemplateBinding BorderBrush}"
+                               StrokeThickness="1"
+                               StrokeDashArray="4,2"
+                               RadiusX="{Binding CornerRadius.TopLeft, RelativeSource={RelativeSource TemplatedParent}}"
+                               RadiusY="{Binding CornerRadius.TopLeft, RelativeSource={RelativeSource TemplatedParent}}"
+                               HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                               Fill="Transparent" />
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <Style Selector="core|CyanButton:not(:disabled):pointerover">
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorPrimaryHoverBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorPrimaryHoverBrush}" />
+    </Style>
+    <Style Selector="core|CyanButton:not(:disabled):pressed">
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorPrimaryActiveBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorPrimaryActiveBrush}" />
+    </Style>
+
+    <Style Selector="core|CyanButton[ButtonType=Primary]">
+        <Setter Property="Background" Value="{DynamicResource ColorPrimaryBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorPrimaryBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextOnPrimaryBrush}" />
+    </Style>
+    <Style Selector="core|CyanButton[ButtonType=Primary]:not(:disabled):pointerover">
+        <Setter Property="Background" Value="{DynamicResource ColorPrimaryHoverBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorPrimaryHoverBrush}" />
+    </Style>
+    <Style Selector="core|CyanButton[ButtonType=Primary]:not(:disabled):pressed">
+        <Setter Property="Background" Value="{DynamicResource ColorPrimaryActiveBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorPrimaryActiveBrush}" />
+    </Style>
+
+    <Style Selector="core|CyanButton[ButtonType=Dashed]">
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorBorderBrush}" />
+        <Setter Property="Background" Value="{DynamicResource ColorBgContainerBrush}" />
+        <Setter Property="BorderThickness" Value="0" />
+    </Style>
+    <Style Selector="core|CyanButton[ButtonType=Dashed] /template/ Rectangle#DashedRect">
+        <Setter Property="IsVisible" Value="True" />
+    </Style>
+    <Style Selector="core|CyanButton[ButtonType=Dashed]:not(:disabled):pointerover">
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorPrimaryHoverBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorPrimaryHoverBrush}" />
+    </Style>
+    <Style Selector="core|CyanButton[ButtonType=Dashed]:not(:disabled):pressed">
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorPrimaryActiveBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorPrimaryActiveBrush}" />
+    </Style>
+
+    <Style Selector="core|CyanButton[ButtonType=Text]">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+    </Style>
+    <Style Selector="core|CyanButton[ButtonType=Text]:not(:disabled):pointerover">
+        <Setter Property="Background" Value="{DynamicResource ColorFillBrush}" />
+    </Style>
+    <Style Selector="core|CyanButton[ButtonType=Text]:not(:disabled):pressed">
+        <Setter Property="Background" Value="{DynamicResource ColorFillTertiaryBrush}" />
+    </Style>
+
+    <Style Selector="core|CyanButton[ButtonType=Link]">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorLinkBrush}" />
+    </Style>
+    <Style Selector="core|CyanButton[ButtonType=Link]:not(:disabled):pointerover">
+        <Setter Property="Foreground" Value="{DynamicResource ColorLinkHoverBrush}" />
+    </Style>
+    <Style Selector="core|CyanButton[ButtonType=Link]:not(:disabled):pressed">
+        <Setter Property="Foreground" Value="{DynamicResource ColorLinkActiveBrush}" />
+    </Style>
+
+    <Style Selector="core|CyanButton[Danger=True]">
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorErrorBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorErrorBrush}" />
+    </Style>
+    <Style Selector="core|CyanButton[Danger=True]:not(:disabled):pointerover">
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorErrorHoverBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorErrorHoverBrush}" />
+    </Style>
+    <Style Selector="core|CyanButton[Danger=True]:not(:disabled):pressed">
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorErrorActiveBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorErrorActiveBrush}" />
+    </Style>
+
+    <Style Selector="core|CyanButton[ButtonType=Primary][Danger=True]">
+        <Setter Property="Background" Value="{DynamicResource ColorErrorBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorErrorBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextOnDangerBrush}" />
+    </Style>
+    <Style Selector="core|CyanButton[ButtonType=Primary][Danger=True]:not(:disabled):pointerover">
+        <Setter Property="Background" Value="{DynamicResource ColorErrorHoverBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorErrorHoverBrush}" />
+    </Style>
+    <Style Selector="core|CyanButton[ButtonType=Primary][Danger=True]:not(:disabled):pressed">
+        <Setter Property="Background" Value="{DynamicResource ColorErrorActiveBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorErrorActiveBrush}" />
+    </Style>
+
+    <Style Selector="core|CyanButton[ButtonType=Text][Danger=True]">
+        <Setter Property="Foreground" Value="{DynamicResource ColorErrorBrush}" />
+    </Style>
+    <Style Selector="core|CyanButton[ButtonType=Text][Danger=True]:not(:disabled):pointerover">
+        <Setter Property="Background" Value="{DynamicResource ColorErrorBgBrush}" />
+    </Style>
+    <Style Selector="core|CyanButton[ButtonType=Text][Danger=True]:not(:disabled):pressed">
+        <Setter Property="Background" Value="{DynamicResource ColorErrorBgHoverBrush}" />
+    </Style>
+
+    <Style Selector="core|CyanButton[ButtonType=Link][Danger=True]">
+        <Setter Property="Foreground" Value="{DynamicResource ColorErrorBrush}" />
+    </Style>
+    <Style Selector="core|CyanButton[ButtonType=Link][Danger=True]:not(:disabled):pointerover">
+        <Setter Property="Foreground" Value="{DynamicResource ColorErrorHoverBrush}" />
+    </Style>
+    <Style Selector="core|CyanButton[ButtonType=Link][Danger=True]:not(:disabled):pressed">
+        <Setter Property="Foreground" Value="{DynamicResource ColorErrorActiveBrush}" />
+    </Style>
+
+    <Style Selector="core|CyanButton[Ghost=True]">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorBgContainerBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextBrush}" />
+    </Style>
+    <Style Selector="core|CyanButton[Ghost=True]:not(:disabled):pointerover">
+        <Setter Property="Background" Value="{DynamicResource ColorFillBrush}" />
+    </Style>
+    <Style Selector="core|CyanButton[Ghost=True]:not(:disabled):pressed">
+        <Setter Property="Background" Value="{DynamicResource ColorFillTertiaryBrush}" />
+    </Style>
+
+    <Style Selector="core|CyanButton[Ghost=True][ButtonType=Primary]">
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorPrimaryBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorPrimaryBrush}" />
+    </Style>
+    <Style Selector="core|CyanButton[Ghost=True][ButtonType=Primary]:not(:disabled):pointerover">
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorPrimaryHoverBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorPrimaryHoverBrush}" />
+    </Style>
+    <Style Selector="core|CyanButton[Ghost=True][ButtonType=Primary]:not(:disabled):pressed">
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorPrimaryActiveBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorPrimaryActiveBrush}" />
+    </Style>
+
+    <Style Selector="core|CyanButton[Ghost=True][Danger=True]">
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorErrorBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorErrorBrush}" />
+    </Style>
+    <Style Selector="core|CyanButton[Ghost=True][Danger=True]:not(:disabled):pointerover">
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorErrorHoverBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorErrorHoverBrush}" />
+    </Style>
+    <Style Selector="core|CyanButton[Ghost=True][Danger=True]:not(:disabled):pressed">
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorErrorActiveBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorErrorActiveBrush}" />
+    </Style>
+
+    <Style Selector="core|CyanButton[ButtonSize=Large]">
+        <Setter Property="MinHeight" Value="40" />
+        <Setter Property="Padding" Value="15,7" />
+        <Setter Property="FontSize" Value="16" />
+    </Style>
+    <Style Selector="core|CyanButton[ButtonSize=Small]">
+        <Setter Property="MinHeight" Value="24" />
+        <Setter Property="Padding" Value="7,0" />
+    </Style>
+
+    <Style Selector="core|CyanButton[Shape=Round]">
+        <Setter Property="CornerRadius" Value="999" />
+    </Style>
+    <Style Selector="core|CyanButton[Shape=Circle]">
+        <Setter Property="CornerRadius" Value="999" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="MinWidth" Value="32" />
+        <Setter Property="Width" Value="32" />
+        <Setter Property="Height" Value="32" />
+    </Style>
+    <Style Selector="core|CyanButton[Shape=Circle][ButtonSize=Large]">
+        <Setter Property="Width" Value="40" />
+        <Setter Property="Height" Value="40" />
+    </Style>
+    <Style Selector="core|CyanButton[Shape=Circle][ButtonSize=Small]">
+        <Setter Property="Width" Value="24" />
+        <Setter Property="Height" Value="24" />
+    </Style>
+
+    <Style Selector="core|CyanButton[Block=True]">
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+    </Style>
+
+    <Style Selector="core|CyanButton:disabled">
+        <Setter Property="Background" Value="{DynamicResource ColorBgDisabledBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorBorderBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextDisabledBrush}" />
+        <Setter Property="Cursor" Value="Arrow" />
+    </Style>
+    <Style Selector="core|CyanButton[ButtonType=Text]:disabled">
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+    <Style Selector="core|CyanButton[ButtonType=Link]:disabled">
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+    <Style Selector="core|CyanButton[Ghost=True]:disabled">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorBorderBrush}" />
+    </Style>
+
+    <Style Selector="core|CyanButton[Loading=True]">
+        <Setter Property="Cursor" Value="Wait" />
+    </Style>
+
+</Styles>

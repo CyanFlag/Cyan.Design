@@ -1,0 +1,30 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:btn="using:Cyan.Design.Core.Controls.Buttons"
+             x:Class="Cyan.Design.Demo.Pages.FeedbackPage">
+    <Grid>
+        <ScrollViewer Padding="0" Margin="20">
+            <StackPanel Spacing="16" MaxWidth="700">
+                <TextBlock Text="全局反馈" FontSize="22" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}"/>
+                <TextBlock Text="Message 顶部消息 / Notification 通知卡片。" Foreground="{DynamicResource ColorTextSecondaryBrush}"/>
+
+                <TextBlock Text="Message 消息" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}" Margin="0,8,0,0"/>
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <btn:CyanButton Content="Success" Click="OnSuccess" />
+                    <btn:CyanButton Content="Info" Click="OnInfo" />
+                    <btn:CyanButton Content="Warning" Click="OnWarning" />
+                    <btn:CyanButton Content="Error" Click="OnError" />
+                </StackPanel>
+
+                <TextBlock Text="Notification 通知" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}" Margin="0,8,0,0"/>
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <btn:CyanButton Content="Success" Click="OnNotiSuccess" />
+                    <btn:CyanButton Content="Info" Click="OnNotiInfo" />
+                    <btn:CyanButton Content="Warning" Click="OnNotiWarning" />
+                    <btn:CyanButton Content="Error" Click="OnNotiError" />
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+        <Panel x:Name="FeedbackHost" />
+    </Grid>
+</UserControl>

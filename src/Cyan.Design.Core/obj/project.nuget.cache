@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "BAb5/YodGhA=",
+  "success": true,
+  "projectFilePath": "F:\\AI code\\Cyan.Design\\src\\Cyan.Design.Core\\Cyan.Design.Core.csproj",
+  "expectedPackageFiles": [
+    "F:\\AI code\\Cyan.Design\\.nuget\\packages\\avalonia\\12.0.0\\avalonia.12.0.0.nupkg.sha512",
+    "F:\\AI code\\Cyan.Design\\.nuget\\packages\\avalonia.buildservices\\11.3.2\\avalonia.buildservices.11.3.2.nupkg.sha512",
+    "F:\\AI code\\Cyan.Design\\.nuget\\packages\\avalonia.remote.protocol\\12.0.0\\avalonia.remote.protocol.12.0.0.nupkg.sha512",
+    "F:\\AI code\\Cyan.Design\\.nuget\\packages\\microcom.runtime\\0.11.4\\microcom.runtime.0.11.4.nupkg.sha512",
+    "F:\\AI code\\Cyan.Design\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.29\\microsoft.windowsdesktop.app.ref.8.0.29.nupkg.sha512",
+    "F:\\AI code\\Cyan.Design\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.29\\microsoft.netcore.app.ref.8.0.29.nupkg.sha512",
+    "F:\\AI code\\Cyan.Design\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.29\\microsoft.aspnetcore.app.ref.8.0.29.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,86 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:core="using:Cyan.Design.Core.Controls.Navigation">
+
+    <Style Selector="core|CyanNavigationView">
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid ColumnDefinitions="Auto,*">
+                    <Border Grid.Column="0" Width="{TemplateBinding ActualPaneWidth}"
+                            Background="{DynamicResource ColorBgContainerBrush}"
+                            BorderBrush="{DynamicResource ColorBorderSecondaryBrush}" BorderThickness="0,0,1,0">
+                        <Grid RowDefinitions="Auto,*,Auto">
+                            <Grid Grid.Row="0" ColumnDefinitions="Auto,*" Margin="4,8,4,4">
+                                <Button x:Name="PART_PaneToggleButton" Grid.Column="0"
+                                        Width="40" Height="40" Padding="0" CornerRadius="6"
+                                        Background="Transparent" BorderThickness="0"
+                                        HorizontalAlignment="Left" VerticalAlignment="Center"
+                                        Classes="PaneToggle">
+                                    <Path Width="18" Height="18"
+                                          Data="M0,3 H18 M0,9 H18 M0,15 H18"
+                                          Stroke="{DynamicResource ColorTextBrush}" StrokeThickness="1.5"
+                                          StrokeLineCap="Round" Fill="Transparent" />
+                                </Button>
+                                <TextBlock Grid.Column="1" Text="{TemplateBinding PaneTitle}"
+                                           IsVisible="{TemplateBinding IsPaneOpen}"
+                                           Margin="8,0,0,0" VerticalAlignment="Center"
+                                           FontSize="14" FontWeight="SemiBold"
+                                           Foreground="{DynamicResource ColorTextBrush}" />
+                            </Grid>
+                            <ListBox x:Name="PART_Nav" Grid.Row="1"
+                                     ItemsSource="{TemplateBinding Items}"
+                                     Background="Transparent" BorderThickness="0"
+                                     Margin="4,0" Padding="0" />
+                            <ListBox x:Name="PART_FooterNav" Grid.Row="2"
+                                     ItemsSource="{TemplateBinding FooterItems}"
+                                     Background="Transparent" BorderThickness="0"
+                                     Margin="4,0,4,8" Padding="0" />
+                        </Grid>
+                    </Border>
+                    <ContentPresenter Grid.Column="1"
+                                      Content="{Binding SelectedItem.Content, RelativeSource={RelativeSource TemplatedParent}}" />
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <Style Selector="core|CyanNavigationView ListBox">
+        <Setter Property="ItemTemplate">
+            <DataTemplate x:DataType="core:CyanNavigationViewItem">
+                <Grid Margin="12,0" Height="36" ColumnDefinitions="24,*">
+                    <ContentPresenter Grid.Column="0" Content="{Binding Icon}"
+                                      HorizontalAlignment="Center" VerticalAlignment="Center"
+                                      Width="20" Height="20" />
+                    <TextBlock Grid.Column="1" Text="{Binding Header}"
+                               IsVisible="{Binding IsPaneOpen, RelativeSource={RelativeSource AncestorType=core:CyanNavigationView}}"
+                               Margin="12,0,0,0" VerticalAlignment="Center" FontSize="14" />
+                </Grid>
+            </DataTemplate>
+        </Setter>
+    </Style>
+
+    <Style Selector="core|CyanNavigationView ListBoxItem">
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="CornerRadius" Value="6" />
+        <Setter Property="Margin" Value="0,1" />
+        <Setter Property="MinHeight" Value="36" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+    </Style>
+
+    <Style Selector="core|CyanNavigationView ListBoxItem:pointerover /template/ ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource ColorFillTertiaryBrush}" />
+    </Style>
+
+    <Style Selector="core|CyanNavigationView ListBoxItem:selected /template/ ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource ColorPrimaryBgBrush}" />
+    </Style>
+
+    <Style Selector="core|CyanNavigationView ListBoxItem:selected">
+        <Setter Property="Foreground" Value="{DynamicResource ColorPrimaryBrush}" />
+    </Style>
+
+    <Style Selector="Button.PaneToggle:pointerover">
+        <Setter Property="Background" Value="{DynamicResource ColorFillTertiaryBrush}" />
+    </Style>
+
+</Styles>

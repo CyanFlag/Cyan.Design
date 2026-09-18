@@ -1,0 +1,57 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:core="using:Cyan.Design.Core.Controls.Selections"
+             xmlns:icon="using:Cyan.Design.Core.Controls.Icons"
+             xmlns:controls="using:Cyan.Design.Demo.Controls"
+             x:Class="Cyan.Design.Demo.Pages.SwitchPage">
+    <ScrollViewer Padding="0" Margin="25">
+        <StackPanel Spacing="20" MaxWidth="800">
+            <TextBlock Text="Switch 开关" FontSize="22" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}"/>
+            <TextBlock Text="参考 ant.design 5.x：用于在两个状态之间切换。" Foreground="{DynamicResource ColorTextSecondaryBrush}" TextWrapping="Wrap"/>
+
+            <controls:DemoSection Title="基本">
+                <core:CyanSwitch />
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="带文字和图标">
+                <StackPanel Spacing="12">
+                    <core:CyanSwitch CheckedChildren="开" UncheckedChildren="关" />
+                    <core:CyanSwitch CheckedChildren="ON" UncheckedChildren="OFF" />
+                    <core:CyanSwitch IsChecked="True">
+                        <core:CyanSwitch.CheckedChildren>
+                            <icon:CyanIcon IconKey="check" FontSize="12" />
+                        </core:CyanSwitch.CheckedChildren>
+                        <core:CyanSwitch.UncheckedChildren>
+                            <icon:CyanIcon IconKey="close" FontSize="12" />
+                        </core:CyanSwitch.UncheckedChildren>
+                    </core:CyanSwitch>
+                    <core:CyanSwitch CheckedChildren="1" UncheckedChildren="0" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="两种尺寸">
+                <StackPanel Orientation="Horizontal" Spacing="20" VerticalAlignment="Center">
+                    <core:CyanSwitch Size="Middle" CheckedChildren="中" UncheckedChildren="关" />
+                    <core:CyanSwitch Size="Small" CheckedChildren="小" UncheckedChildren="关" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="加载中">
+                <StackPanel Orientation="Horizontal" Spacing="20" VerticalAlignment="Center">
+                    <core:CyanSwitch Loading="True" />
+                    <core:CyanSwitch Loading="True" IsChecked="True" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="禁用">
+                <StackPanel Orientation="Horizontal" Spacing="20" VerticalAlignment="Center">
+                    <core:CyanSwitch IsEnabled="False" />
+                    <core:CyanSwitch IsEnabled="False" IsChecked="True" />
+                    <core:CyanSwitch IsEnabled="False" CheckedChildren="开" UncheckedChildren="关" />
+                    <core:CyanSwitch IsEnabled="False" IsChecked="True" CheckedChildren="开" UncheckedChildren="关" />
+                </StackPanel>
+            </controls:DemoSection>
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

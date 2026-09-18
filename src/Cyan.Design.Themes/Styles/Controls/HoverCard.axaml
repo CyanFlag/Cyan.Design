@@ -1,0 +1,37 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:core="using:Cyan.Design.Core.Controls.Overlays">
+
+    <Style Selector="core|CyanHoverCard">
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid Background="Transparent">
+                    <ContentPresenter x:Name="PART_TriggerPresenter" Content="{TemplateBinding Content}" />
+                    <Popup x:Name="PART_Popup"
+                           IsOpen="{Binding Open, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                           Topmost="True">
+                        <Border x:Name="PART_ContentBorder"
+                                Background="{DynamicResource ColorBgElevatedBrush}"
+                                CornerRadius="{DynamicResource BorderRadiusLG}"
+                                BorderBrush="{DynamicResource ColorBorderSecondaryBrush}"
+                                BorderThickness="1"
+                                Padding="16"
+                                Margin="8"
+                                MaxWidth="{TemplateBinding OverlayMaxWidth}"
+                                BoxShadow="{DynamicResource BoxShadow}">
+                            <ContentPresenter Content="{TemplateBinding Overlay}" />
+                        </Border>
+                    </Popup>
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <Style Selector="core|CyanHoverCard:disabled">
+        <Setter Property="Opacity" Value="0.5" />
+        <Setter Property="Cursor" Value="Arrow" />
+    </Style>
+
+</Styles>

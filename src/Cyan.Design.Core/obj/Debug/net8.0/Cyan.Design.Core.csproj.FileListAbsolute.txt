@@ -1,0 +1,4 @@
+F:\AI code\Cyan.Design\bin\Debug\net8.0\Cyan.Design.Core.deps.json
+F:\AI code\Cyan.Design\bin\Debug\net8.0\Cyan.Design.Core.dll
+F:\AI code\Cyan.Design\bin\Debug\net8.0\Cyan.Design.Core.pdb
+F:\AI code\Cyan.Design\bin\Debug\net8.0\Cyan.Design.Core.xml

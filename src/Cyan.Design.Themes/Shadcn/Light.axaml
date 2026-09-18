@@ -1,0 +1,148 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:media="using:Avalonia.Media">
+
+    <SolidColorBrush x:Key="ColorPrimaryBrush" Color="#FF18181B" />
+    <SolidColorBrush x:Key="ColorPrimaryBgBrush" Color="#FFF4F4F5" />
+    <SolidColorBrush x:Key="ColorPrimaryBgHoverBrush" Color="#FFE4E4E7" />
+    <SolidColorBrush x:Key="ColorPrimaryBorderBrush" Color="#FFD4D4D8" />
+    <SolidColorBrush x:Key="ColorPrimaryBorderHoverBrush" Color="#FFA1A1AA" />
+    <SolidColorBrush x:Key="ColorPrimaryHoverBrush" Color="#FF27272A" />
+    <SolidColorBrush x:Key="ColorPrimaryActiveBrush" Color="#FF3F3F46" />
+    <SolidColorBrush x:Key="ColorPrimaryTextBrush" Color="#FF18181B" />
+    <SolidColorBrush x:Key="ColorPrimaryTextHoverBrush" Color="#FF27272A" />
+    <SolidColorBrush x:Key="ColorTextOnPrimaryBrush" Color="#FFFFFFFF" />
+    <SolidColorBrush x:Key="ColorTextOnDangerBrush" Color="#FFFFFFFF" />
+
+    <SolidColorBrush x:Key="ColorSuccessBrush" Color="#FF22C55E" />
+    <SolidColorBrush x:Key="ColorSuccessBgBrush" Color="#FFF0FDF4" />
+    <SolidColorBrush x:Key="ColorSuccessBgHoverBrush" Color="#FFDCFCE7" />
+    <SolidColorBrush x:Key="ColorSuccessBorderBrush" Color="#FFBBF7D0" />
+    <SolidColorBrush x:Key="ColorSuccessHoverBrush" Color="#FF4ADE80" />
+    <SolidColorBrush x:Key="ColorSuccessActiveBrush" Color="#FF16A34A" />
+
+    <SolidColorBrush x:Key="ColorWarningBrush" Color="#FFF59E0B" />
+    <SolidColorBrush x:Key="ColorWarningBgBrush" Color="#FFFFFBEB" />
+    <SolidColorBrush x:Key="ColorWarningBgHoverBrush" Color="#FFFEF3C7" />
+    <SolidColorBrush x:Key="ColorWarningBorderBrush" Color="#FFFDE68A" />
+    <SolidColorBrush x:Key="ColorWarningHoverBrush" Color="#FFFBBF24" />
+    <SolidColorBrush x:Key="ColorWarningActiveBrush" Color="#FFD97706" />
+
+    <SolidColorBrush x:Key="ColorErrorBrush" Color="#FFEF4444" />
+    <SolidColorBrush x:Key="ColorErrorBgBrush" Color="#FFFEF2F2" />
+    <SolidColorBrush x:Key="ColorErrorBgHoverBrush" Color="#FFFEE2E2" />
+    <SolidColorBrush x:Key="ColorErrorBorderBrush" Color="#FFFECACA" />
+    <SolidColorBrush x:Key="ColorErrorHoverBrush" Color="#FFF87171" />
+    <SolidColorBrush x:Key="ColorErrorActiveBrush" Color="#FFDC2626" />
+
+    <SolidColorBrush x:Key="ColorInfoBrush" Color="#FF3B82F6" />
+    <SolidColorBrush x:Key="ColorInfoBgBrush" Color="#FFEFF6FF" />
+    <SolidColorBrush x:Key="ColorInfoBorderBrush" Color="#FF93C5FD" />
+
+    <SolidColorBrush x:Key="ColorLinkBrush" Color="#FF18181B" />
+    <SolidColorBrush x:Key="ColorLinkHoverBrush" Color="#FF3F3F46" />
+    <SolidColorBrush x:Key="ColorLinkActiveBrush" Color="#FF52525B" />
+
+    <SolidColorBrush x:Key="ColorTextBrush" Color="#FF09090B" />
+    <SolidColorBrush x:Key="ColorTextSecondaryBrush" Color="#FF3F3F46" />
+    <SolidColorBrush x:Key="ColorTextTertiaryBrush" Color="#FF71717A" />
+    <SolidColorBrush x:Key="ColorTextQuaternaryBrush" Color="#FFA1A1AA" />
+    <SolidColorBrush x:Key="ColorTextDisabledBrush" Color="#FFA1A1AA" />
+
+    <Color x:Key="ColorBorder">#FFE4E4E7</Color>
+    <SolidColorBrush x:Key="ColorBorderBrush" Color="#FFE4E4E7" />
+    <SolidColorBrush x:Key="ColorBorderHoverBrush" Color="#FFA1A1AA" />
+    <SolidColorBrush x:Key="ColorBorderSecondaryBrush" Color="#FFF4F4F5" />
+    <SolidColorBrush x:Key="ColorBorderBgBrush" Color="#FFFFFFFF" />
+    <SolidColorBrush x:Key="ColorSplitBrush" Color="#FFE4E4E7" />
+
+    <SolidColorBrush x:Key="ColorFillBrush" Color="#FFF4F4F5" />
+    <SolidColorBrush x:Key="ColorFillSecondaryBrush" Color="#FFFAFAFA" />
+    <SolidColorBrush x:Key="ColorFillTertiaryBrush" Color="#FFF4F4F5" />
+    <SolidColorBrush x:Key="ColorFillQuaternaryBrush" Color="#FFFAFAFA" />
+
+    <SolidColorBrush x:Key="ColorBgContainerBrush" Color="#FFFFFFFF" />
+    <SolidColorBrush x:Key="ColorBgElevatedBrush" Color="#FFFFFFFF" />
+    <SolidColorBrush x:Key="ColorBgLayoutBrush" Color="#FFFAFAFA" />
+    <SolidColorBrush x:Key="ColorBgSpotlightBrush" Color="#FFFFFFFF" />
+    <SolidColorBrush x:Key="ColorBgBlurBrush" Color="#FFFFFFFF" />
+    <SolidColorBrush x:Key="ColorBgHoverBrush" Color="#FFF4F4F5" />
+    <SolidColorBrush x:Key="ColorBgActiveBrush" Color="#FFE4E4E7" />
+    <SolidColorBrush x:Key="ColorBgDisabledBrush" Color="#FFF4F4F5" />
+    <SolidColorBrush x:Key="ColorMaskBgBrush" Color="#80000000" />
+    <SolidColorBrush x:Key="ColorHighlightBrush" Color="#FFF4F4F5" />
+
+    <CornerRadius x:Key="BorderRadius">6</CornerRadius>
+    <CornerRadius x:Key="BorderRadiusXS">2</CornerRadius>
+    <CornerRadius x:Key="BorderRadiusSM">4</CornerRadius>
+    <CornerRadius x:Key="BorderRadiusLG">8</CornerRadius>
+    <CornerRadius x:Key="BorderRadiusOuter">4</CornerRadius>
+
+    <x:Double x:Key="FontSize">14</x:Double>
+    <x:Double x:Key="FontSizeSM">12</x:Double>
+    <x:Double x:Key="FontSizeLG">16</x:Double>
+    <x:Double x:Key="FontSizeXL">20</x:Double>
+    <x:Double x:Key="FontSizeXXL">24</x:Double>
+    <x:Double x:Key="FontSizeH1">38</x:Double>
+    <x:Double x:Key="FontSizeH2">30</x:Double>
+    <x:Double x:Key="FontSizeH3">24</x:Double>
+    <x:Double x:Key="FontSizeH4">20</x:Double>
+    <x:Double x:Key="FontSizeH5">16</x:Double>
+    <x:Double x:Key="FontSizeH6">14</x:Double>
+
+    <x:Double x:Key="FontWeight">400</x:Double>
+    <x:Double x:Key="FontWeightStrong">600</x:Double>
+
+    <x:Double x:Key="LineHeight">1.5</x:Double>
+
+    <x:Double x:Key="ControlHeight">36</x:Double>
+    <x:Double x:Key="ControlHeightSM">28</x:Double>
+    <x:Double x:Key="ControlHeightLG">40</x:Double>
+    <x:Double x:Key="ControlHeightXS">20</x:Double>
+
+    <x:Double x:Key="SpacingXXS">4</x:Double>
+    <x:Double x:Key="SpacingXS">8</x:Double>
+    <x:Double x:Key="SpacingSM">12</x:Double>
+    <x:Double x:Key="Spacing">16</x:Double>
+    <x:Double x:Key="SpacingMD">20</x:Double>
+    <x:Double x:Key="SpacingLG">24</x:Double>
+    <x:Double x:Key="SpacingXL">32</x:Double>
+    <x:Double x:Key="SpacingXXL">48</x:Double>
+
+    <Thickness x:Key="PaddingSM">8,4</Thickness>
+    <Thickness x:Key="Padding">12,6</Thickness>
+    <Thickness x:Key="PaddingLG">16,8</Thickness>
+    <Thickness x:Key="MarginSM">12,8</Thickness>
+    <Thickness x:Key="Margin">16,8</Thickness>
+
+    <media:BoxShadows x:Key="BoxShadow">0 4 6 -1 #0A000000, 0 2 4 -2 #0A000000</media:BoxShadows>
+    <media:BoxShadows x:Key="BoxShadowSecondary">0 4 6 -1 #0A000000, 0 2 4 -2 #0A000000</media:BoxShadows>
+    <media:BoxShadows x:Key="BoxShadowTertiary">0 1 2 0 #0A000000</media:BoxShadows>
+
+    <x:Double x:Key="OpacityActive">1</x:Double>
+    <x:Double x:Key="OpacityLoading">0.65</x:Double>
+    <x:Double x:Key="OpacityDisabled">1</x:Double>
+
+    <SolidColorBrush x:Key="InputActiveBorderColorBrush" Color="#FF18181B" />
+    <SolidColorBrush x:Key="InputHoverBorderColorBrush" Color="#FFA1A1AA" />
+    <SolidColorBrush x:Key="InputActiveBgBrush" Color="#FFFFFFFF" />
+    <SolidColorBrush x:Key="InputHoverBgBrush" Color="#FFFFFFFF" />
+    <SolidColorBrush x:Key="InputAddonBgBrush" Color="#FFF4F4F5" />
+    <media:BoxShadows x:Key="InputActiveShadow">0 0 0 3 #1A18181B</media:BoxShadows>
+    <media:BoxShadows x:Key="InputErrorActiveShadow">0 0 0 3 #1AEF4444</media:BoxShadows>
+    <media:BoxShadows x:Key="InputWarningActiveShadow">0 0 0 3 #1AF59E0B</media:BoxShadows>
+
+    <x:Double x:Key="InputPaddingBlock">6</x:Double>
+    <x:Double x:Key="InputPaddingBlockLG">8</x:Double>
+    <x:Double x:Key="InputPaddingBlockSM">4</x:Double>
+    <x:Double x:Key="InputPaddingInline">12</x:Double>
+    <x:Double x:Key="InputPaddingInlineLG">12</x:Double>
+    <x:Double x:Key="InputPaddingInlineSM">8</x:Double>
+    <x:Double x:Key="InputFontSize">14</x:Double>
+    <x:Double x:Key="InputFontSizeLG">16</x:Double>
+    <x:Double x:Key="InputFontSizeSM">14</x:Double>
+
+    <SolidColorBrush x:Key="TabItemSelectedBrush" Color="#FFFFFFFF" />
+    <SolidColorBrush x:Key="TabItemsBackgroundBrush" Color="#FFF4F4F5" />
+
+</ResourceDictionary>

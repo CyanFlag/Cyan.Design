@@ -1,0 +1,17 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="Cyan.Design.Demo.Controls.DemoSection">
+    <StackPanel Spacing="8" >
+        <TextBlock x:Name="TitleText"
+                   FontSize="16" FontWeight="Bold"
+                   Foreground="{DynamicResource ColorTextBrush}"
+                   Margin="0,8,0,0"
+                   IsVisible="False" />
+        <TextBlock x:Name="DescText"
+                   Foreground="{DynamicResource ColorTextSecondaryBrush}"
+                   FontSize="12"
+                   TextWrapping="Wrap"
+                   IsVisible="False" />
+        <ContentPresenter x:Name="ContentArea" />
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,122 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:core="using:Cyan.Design.Core.Controls.Display">
+
+    <Style Selector="core|CyanAvatar">
+        <Setter Property="Width" Value="32" />
+        <Setter Property="Height" Value="32" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextOnPrimaryBrush}" />
+        <Setter Property="Background" Value="{DynamicResource ColorBorderBrush}" />
+        <Setter Property="BadgeColor" Value="{DynamicResource ColorErrorBrush}" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid>
+                    <Border x:Name="PART_Border"
+                            CornerRadius="999"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            ClipToBounds="True">
+                        <Grid>
+                            <Image x:Name="PART_Image"
+                                   Source="{TemplateBinding Source}"
+                                   Stretch="UniformToFill" />
+                            <ContentPresenter x:Name="PART_IconPresenter"
+                                              Content="{TemplateBinding Icon}"
+                                              HorizontalContentAlignment="Center"
+                                              VerticalContentAlignment="Center" />
+                            <TextBlock x:Name="PART_Text"
+                                       Text="{TemplateBinding Text}"
+                                       FontSize="{TemplateBinding FontSize}"
+                                       Foreground="{TemplateBinding Foreground}"
+                                       FontWeight="600"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center" />
+                        </Grid>
+                    </Border>
+                    <Border x:Name="PART_BadgeDot"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                            Width="8" Height="8"
+                            CornerRadius="4"
+                            Background="{TemplateBinding BadgeColor}"
+                            BorderBrush="{DynamicResource ColorBorderBgBrush}"
+                            BorderThickness="1.5"
+                            IsVisible="False"
+                            ZIndex="10" />
+                    <Border x:Name="PART_BadgeText"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                            CornerRadius="10"
+                            Background="{TemplateBinding BadgeColor}"
+                            BorderBrush="{DynamicResource ColorBorderBgBrush}"
+                            BorderThickness="1.5"
+                            Padding="5,1"
+                            Margin="0,-2,-2,0"
+                            IsVisible="False"
+                            ZIndex="10">
+                        <TextBlock Text="{TemplateBinding BadgeText}"
+                                   Foreground="{DynamicResource ColorTextOnPrimaryBrush}"
+                                   FontSize="11"
+                                   FontWeight="Bold"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center" />
+                    </Border>
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <Style Selector="core|CyanAvatar:image">
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+
+    <Style Selector="core|CyanAvatar:large">
+        <Setter Property="Width" Value="40" />
+        <Setter Property="Height" Value="40" />
+    </Style>
+    <Style Selector="core|CyanAvatar:small">
+        <Setter Property="Width" Value="24" />
+        <Setter Property="Height" Value="24" />
+    </Style>
+
+    <Style Selector="core|CyanAvatar:square /template/ Border#PART_Border">
+        <Setter Property="CornerRadius" Value="6" />
+    </Style>
+    <Style Selector="core|CyanAvatar:square:large /template/ Border#PART_Border">
+        <Setter Property="CornerRadius" Value="8" />
+    </Style>
+    <Style Selector="core|CyanAvatar:square:small /template/ Border#PART_Border">
+        <Setter Property="CornerRadius" Value="4" />
+    </Style>
+
+    <Style Selector="core|CyanAvatar:not(:image) /template/ Image#PART_Image">
+        <Setter Property="IsVisible" Value="False" />
+    </Style>
+    <Style Selector="core|CyanAvatar:not(:icon) /template/ ContentPresenter#PART_IconPresenter">
+        <Setter Property="IsVisible" Value="False" />
+    </Style>
+    <Style Selector="core|CyanAvatar:not(:text) /template/ TextBlock#PART_Text">
+        <Setter Property="IsVisible" Value="False" />
+    </Style>
+
+    <Style Selector="core|CyanAvatar:badgedot /template/ Border#PART_BadgeDot">
+        <Setter Property="IsVisible" Value="True" />
+    </Style>
+    <Style Selector="core|CyanAvatar:badgetext /template/ Border#PART_BadgeText">
+        <Setter Property="IsVisible" Value="True" />
+    </Style>
+
+    <Style Selector="core|CyanAvatarGroup">
+        <Setter Property="Spacing" Value="-8" />
+    </Style>
+
+    <Style Selector="core|CyanAvatarGroup > core|CyanAvatar">
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorBorderBgBrush}" />
+        <Setter Property="BorderThickness" Value="2" />
+    </Style>
+
+</Styles>

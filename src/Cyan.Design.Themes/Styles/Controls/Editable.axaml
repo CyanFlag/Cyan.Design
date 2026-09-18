@@ -1,0 +1,115 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:core="using:Cyan.Design.Core.Controls.Inputs"
+        xmlns:btn="using:Cyan.Design.Core.Controls.Buttons"
+        xmlns:icon="using:Cyan.Design.Core.Controls.Icons">
+
+    <Style Selector="core|CyanEditable">
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextBrush}" />
+        <Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid x:Name="PART_Root"
+                      HorizontalAlignment="Stretch"
+                      ColumnDefinitions="*,Auto">
+                    <Border x:Name="PART_Preview"
+                            Grid.Column="0"
+                            Background="Transparent"
+                            CornerRadius="{DynamicResource BorderRadiusSM}"
+                            Padding="12,8"
+                            MinHeight="32"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch">
+                        <TextBlock Text="{TemplateBinding Value}"
+                                   Foreground="{TemplateBinding Foreground}"
+                                   FontSize="{TemplateBinding FontSize}"
+                                   VerticalAlignment="Center"
+                                   TextWrapping="NoWrap" />
+                    </Border>
+                    <TextBox x:Name="PART_Input"
+                             Grid.Column="0"
+                             Margin="0"
+                             Padding="12,8"
+                             MinHeight="32"
+                             CornerRadius="{DynamicResource BorderRadiusSM}"
+                             BorderBrush="{DynamicResource ColorPrimaryBrush}"
+                             BorderThickness="1"
+                             Background="{DynamicResource ColorBgContainerBrush}"
+                             Foreground="{TemplateBinding Foreground}"
+                             FontSize="{TemplateBinding FontSize}"
+                             Watermark="{TemplateBinding Placeholder}"
+                             MaxLength="{TemplateBinding MaxLength}"
+
+                             HorizontalAlignment="Stretch"
+                             VerticalAlignment="Stretch" />
+                    <StackPanel x:Name="PART_Controls"
+                                Grid.Column="1"
+                                Orientation="Horizontal"
+                                Spacing="4"
+                                Margin="8,0,0,0"
+                                VerticalAlignment="Center"
+                                IsVisible="{TemplateBinding ShowControls}">
+                        <btn:CyanButton x:Name="PART_EditButton"
+                                        ButtonSize="Small"
+                                        ButtonType="Primary"
+                                        Content="Edit" />
+                        <btn:CyanButton x:Name="PART_SubmitButton"
+                                        ButtonSize="Small"
+                                        ButtonType="Primary"
+                                        Content="Save" />
+                        <btn:CyanButton x:Name="PART_CancelButton"
+                                        ButtonSize="Small"
+                                        Content="Cancel" />
+                    </StackPanel>
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <Style Selector="core|CyanEditable[IsEditing=True] /template/ Border#PART_Preview">
+        <Setter Property="IsVisible" Value="False" />
+    </Style>
+    <Style Selector="core|CyanEditable[IsEditing=True] /template/ TextBox#PART_Input">
+        <Setter Property="IsVisible" Value="True" />
+    </Style>
+    <Style Selector="core|CyanEditable[IsEditing=False] /template/ TextBox#PART_Input">
+        <Setter Property="IsVisible" Value="False" />
+    </Style>
+    <Style Selector="core|CyanEditable[IsEditing=True] /template/ btn|CyanButton#PART_EditButton">
+        <Setter Property="IsVisible" Value="False" />
+    </Style>
+    <Style Selector="core|CyanEditable[IsEditing=False] /template/ btn|CyanButton#PART_SubmitButton">
+        <Setter Property="IsVisible" Value="False" />
+    </Style>
+    <Style Selector="core|CyanEditable[IsEditing=False] /template/ btn|CyanButton#PART_CancelButton">
+        <Setter Property="IsVisible" Value="False" />
+    </Style>
+
+    <Style Selector="core|CyanEditable:not(:disabled):pointerover /template/ Border#PART_Preview">
+        <Setter Property="Background" Value="{DynamicResource ColorBgHoverBrush}" />
+    </Style>
+
+    <Style Selector="core|CyanEditable[IsDisabled=True] /template/ Border#PART_Preview">
+        <Setter Property="Opacity" Value="0.5" />
+    </Style>
+
+    <Style Selector="core|CyanEditable[EditableSize=Small] /template/ Border#PART_Preview">
+        <Setter Property="Padding" Value="8,4" />
+        <Setter Property="MinHeight" Value="24" />
+    </Style>
+    <Style Selector="core|CyanEditable[EditableSize=Small] /template/ TextBox#PART_Input">
+        <Setter Property="Padding" Value="8,4" />
+        <Setter Property="MinHeight" Value="24" />
+    </Style>
+
+    <Style Selector="core|CyanEditable[EditableSize=Large] /template/ Border#PART_Preview">
+        <Setter Property="Padding" Value="16,10" />
+        <Setter Property="MinHeight" Value="40" />
+    </Style>
+    <Style Selector="core|CyanEditable[EditableSize=Large] /template/ TextBox#PART_Input">
+        <Setter Property="Padding" Value="16,10" />
+        <Setter Property="MinHeight" Value="40" />
+    </Style>
+
+</Styles>

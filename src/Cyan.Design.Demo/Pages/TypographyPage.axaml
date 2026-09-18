@@ -1,0 +1,51 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:core="using:Cyan.Design.Core.Controls.Typography"
+             xmlns:controls="using:Cyan.Design.Demo.Controls"
+             x:Class="Cyan.Design.Demo.Pages.TypographyPage">
+    <ScrollViewer Padding="0" Margin="20">
+        <StackPanel Spacing="16" MaxWidth="900">
+            <TextBlock Text="Typography 文字排版" FontSize="22" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}"/>
+            <TextBlock Text="标题、文本、段落与修饰样式。" Foreground="{DynamicResource ColorTextSecondaryBrush}"/>
+
+            <controls:DemoSection Title="标题 Title">
+                <StackPanel Spacing="8">
+                    <core:CyanTitle Level="H1" Text="h1. Cyan Design" />
+                    <core:CyanTitle Level="H2" Text="h2. Cyan Design" />
+                    <core:CyanTitle Level="H3" Text="h3. Cyan Design" />
+                    <core:CyanTitle Level="H4" Text="h4. Cyan Design" />
+                    <core:CyanTitle Level="H5" Text="h5. Cyan Design" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="文本类型 Text Type">
+                <StackPanel Spacing="6">
+                    <core:CyanText Text="Default 默认" />
+                    <core:CyanText Text="Secondary 次要" Type="Secondary" />
+                    <core:CyanText Text="Success 成功" Type="Success" />
+                    <core:CyanText Text="Warning 警告" Type="Warning" />
+                    <core:CyanText Text="Danger 危险" Type="Danger" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="修饰 Strong / Mark / Code / Italic / Delete / Underline">
+                <StackPanel Spacing="6">
+                    <core:CyanText Text="Strong 加粗" Strong="True" />
+                    <core:CyanText Text="Mark 标记" Mark="True" />
+                    <core:CyanText Text="Code 代码" Code="True" />
+                    <core:CyanText Text="Italic 斜体" Italic="True" />
+                    <core:CyanText Text="Delete 删除线" Delete="True" />
+                    <core:CyanText Text="Underline 下划线" Underline="True" />
+                    <core:CyanText Strong="True" Mark="True" Text="Strong + Mark 组合" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="段落 Paragraph">
+                <StackPanel Spacing="8">
+                    <core:CyanParagraph Text="Cyan.Design 是一个参考 ant.design 设计语言的 Avalonia 控件库，致力于提升桌面端用户与开发者的体验。本段落展示自动换行的正文样式。" />
+                    <core:CyanParagraph Type="Secondary" Text="次要段落：用于辅助说明、提示等场景。" />
+                </StackPanel>
+            </controls:DemoSection>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

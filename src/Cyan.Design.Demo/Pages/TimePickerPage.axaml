@@ -1,0 +1,59 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:core="using:Cyan.Design.Core.Controls.Inputs"
+             xmlns:assists="using:Cyan.Design.Core.Assists"
+             xmlns:controls="using:Cyan.Design.Demo.Controls"
+             xmlns:system="clr-namespace:System;assembly=netstandard"
+             x:Class="Cyan.Design.Demo.Pages.TimePickerPage">
+    <ScrollViewer Padding="0" Margin="25">
+        <StackPanel Spacing="0" Margin="24">
+            <TextBlock Text="TimePicker 时间选择" FontSize="22" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}"/>
+            <TextBlock Text="参考 shad-ui：12/24 小时制切换、秒列显示、Label/Hint 标注、禁用状态、数据校验。" Foreground="{DynamicResource ColorTextSecondaryBrush}" TextWrapping="Wrap"/>
+
+            <controls:DemoSection Title="TimePicker 基础">
+                <StackPanel Spacing="8">
+                    <TimePicker />
+                    <TimePicker UseSeconds="True" />
+                    <TimePicker ClockIdentifier="24HourClock" />
+                    <TimePicker ClockIdentifier="24HourClock" UseSeconds="True" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="TimePicker 禁用 / 标注 / 校验">
+                <StackPanel Spacing="8">
+                    <TimePicker IsEnabled="False" />
+                    <TimePicker assists:ControlAssist.Label="开始时间" assists:ControlAssist.Hint="请选择开始时间" />
+                    <TimePicker ClockIdentifier="24HourClock" assists:ControlAssist.Label="24小时制" assists:ControlAssist.Hint="不显示 AM/PM" />
+                    <TimePicker MaxWidth="255">
+                        <DataValidationErrors.Error>
+                            <system:Exception />
+                        </DataValidationErrors.Error>
+                    </TimePicker>
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="CyanTimeInput 基础">
+                <StackPanel Spacing="8">
+                    <core:CyanTimeInput ClockIdentifier="12HourClock" />
+                    <core:CyanTimeInput ClockIdentifier="12HourClock" UseSeconds="True" />
+                    <core:CyanTimeInput ClockIdentifier="24HourClock" />
+                    <core:CyanTimeInput ClockIdentifier="24HourClock" UseSeconds="True" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="CyanTimeInput 禁用 / 标注 / 校验">
+                <StackPanel Spacing="8">
+                    <core:CyanTimeInput IsEnabled="False" assists:ControlAssist.Label="禁用" />
+                    <core:CyanTimeInput assists:ControlAssist.Label="开始时间" assists:ControlAssist.Hint="请输入开始时间" />
+                    <core:CyanTimeInput ClockIdentifier="24HourClock" assists:ControlAssist.Label="24小时制" assists:ControlAssist.Hint="不显示 AM/PM" />
+                    <core:CyanTimeInput>
+                        <DataValidationErrors.Error>
+                            <system:Exception />
+                        </DataValidationErrors.Error>
+                    </core:CyanTimeInput>
+                </StackPanel>
+            </controls:DemoSection>
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

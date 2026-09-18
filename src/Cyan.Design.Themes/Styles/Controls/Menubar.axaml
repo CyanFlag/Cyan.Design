@@ -1,0 +1,251 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:core="using:Cyan.Design.Core.Controls.Overlays">
+
+    <Style Selector="core|CyanMenubar">
+        <Setter Property="Background" Value="{DynamicResource ColorBgContainerBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorBorderBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="{DynamicResource BorderRadiusSM}" />
+        <Setter Property="Padding" Value="4" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+    </Style>
+
+    <Style Selector="core|CyanMenubarMenu">
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextBrush}" />
+        <Setter Property="FontSize" Value="{DynamicResource FontSizeSM}" />
+        <Setter Property="Padding" Value="8,5" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="CornerRadius" Value="{DynamicResource BorderRadiusXS}" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid Background="Transparent">
+                    <Border x:Name="PART_Trigger"
+                            Background="Transparent"
+                            CornerRadius="{TemplateBinding CornerRadius}"
+                            Padding="{TemplateBinding Padding}">
+                        <ContentPresenter Content="{TemplateBinding Header}" VerticalAlignment="Center" />
+                    </Border>
+                    <Popup x:Name="PART_Popup"
+                           IsOpen="{Binding IsOpen, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                           Topmost="True">
+                        <Border Background="{DynamicResource ColorBgElevatedBrush}"
+                                CornerRadius="{DynamicResource BorderRadiusSM}"
+                                BorderBrush="{DynamicResource ColorBorderBrush}"
+                                BorderThickness="1"
+                                Padding="4"
+                                Margin="4"
+                                MinWidth="180"
+                                BoxShadow="{DynamicResource BoxShadow}">
+                            <ContentPresenter Content="{TemplateBinding Content}" />
+                        </Border>
+                    </Popup>
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <Style Selector="core|CyanMenubarMenu:pointerover /template/ Border#PART_Trigger">
+        <Setter Property="Background" Value="{DynamicResource ColorBgHoverBrush}" />
+    </Style>
+    <Style Selector="core|CyanMenubarMenu:open /template/ Border#PART_Trigger">
+        <Setter Property="Background" Value="{DynamicResource ColorBgHoverBrush}" />
+    </Style>
+
+    <Style Selector="core|CyanMenubarItem">
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextBrush}" />
+        <Setter Property="FontSize" Value="{DynamicResource FontSizeSM}" />
+        <Setter Property="Padding" Value="12,6" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="CornerRadius" Value="{DynamicResource BorderRadiusXS}" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid ColumnDefinitions="16,16,*,Auto" Margin="{TemplateBinding Padding}">
+                    <ContentPresenter Grid.Column="0"
+                                      Content="{TemplateBinding Icon}"
+                                      VerticalAlignment="Center"
+                                      HorizontalAlignment="Center"
+                                      IsVisible="{TemplateBinding Icon, Converter={x:Static ObjectConverters.IsNotNull}}" />
+                    <ContentPresenter Grid.Column="2"
+                                      Content="{TemplateBinding Header}"
+                                      VerticalAlignment="Center"
+                                      HorizontalAlignment="Stretch" />
+                    <TextBlock Grid.Column="3"
+                               Text="{TemplateBinding Shortcut}"
+                               Foreground="{DynamicResource ColorTextTertiaryBrush}"
+                               FontSize="12"
+                               Margin="16,0,0,0"
+                               VerticalAlignment="Center"
+                               IsVisible="{TemplateBinding Shortcut, Converter={x:Static ObjectConverters.IsNotNull}}" />
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <Style Selector="core|CyanMenubarItem:pointerover">
+        <Setter Property="Background" Value="{DynamicResource ColorBgHoverBrush}" />
+    </Style>
+    <Style Selector="core|CyanMenubarItem:disabled">
+        <Setter Property="Opacity" Value="0.5" />
+        <Setter Property="Cursor" Value="Arrow" />
+    </Style>
+
+    <Style Selector="core|CyanMenubarCheckboxItem">
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextBrush}" />
+        <Setter Property="FontSize" Value="{DynamicResource FontSizeSM}" />
+        <Setter Property="Padding" Value="12,6" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="CornerRadius" Value="{DynamicResource BorderRadiusXS}" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid ColumnDefinitions="16,16,*,Auto" Margin="{TemplateBinding Padding}">
+                    <Path x:Name="PART_Check"
+                          Grid.Column="0"
+                          Width="12" Height="12"
+                          Stretch="Uniform"
+                          Data="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
+                          Fill="{DynamicResource ColorPrimaryBrush}"
+                          VerticalAlignment="Center"
+                          HorizontalAlignment="Center"
+                          IsVisible="{TemplateBinding IsChecked}" />
+                    <ContentPresenter Grid.Column="1"
+                                      Content="{TemplateBinding Icon}"
+                                      VerticalAlignment="Center"
+                                      HorizontalAlignment="Center"
+                                      IsVisible="{TemplateBinding Icon, Converter={x:Static ObjectConverters.IsNotNull}}" />
+                    <ContentPresenter Grid.Column="2"
+                                      Content="{TemplateBinding Header}"
+                                      VerticalAlignment="Center"
+                                      HorizontalAlignment="Stretch" />
+                    <TextBlock Grid.Column="3"
+                               Text="{TemplateBinding Shortcut}"
+                               Foreground="{DynamicResource ColorTextTertiaryBrush}"
+                               FontSize="12"
+                               Margin="16,0,0,0"
+                               VerticalAlignment="Center"
+                               IsVisible="{TemplateBinding Shortcut, Converter={x:Static ObjectConverters.IsNotNull}}" />
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <Style Selector="core|CyanMenubarCheckboxItem:pointerover">
+        <Setter Property="Background" Value="{DynamicResource ColorBgHoverBrush}" />
+    </Style>
+    <Style Selector="core|CyanMenubarCheckboxItem:disabled">
+        <Setter Property="Opacity" Value="0.5" />
+        <Setter Property="Cursor" Value="Arrow" />
+    </Style>
+
+    <Style Selector="core|CyanMenubarRadioItem">
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextBrush}" />
+        <Setter Property="FontSize" Value="{DynamicResource FontSizeSM}" />
+        <Setter Property="Padding" Value="12,6" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="CornerRadius" Value="{DynamicResource BorderRadiusXS}" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid ColumnDefinitions="16,16,*,Auto" Margin="{TemplateBinding Padding}">
+                    <Ellipse x:Name="PART_Dot"
+                             Grid.Column="0"
+                             Width="8" Height="8"
+                             Fill="{DynamicResource ColorPrimaryBrush}"
+                             VerticalAlignment="Center"
+                             HorizontalAlignment="Center"
+                             IsVisible="{TemplateBinding IsSelected}" />
+                    <ContentPresenter Grid.Column="1"
+                                      Content="{TemplateBinding Icon}"
+                                      VerticalAlignment="Center"
+                                      HorizontalAlignment="Center"
+                                      IsVisible="{TemplateBinding Icon, Converter={x:Static ObjectConverters.IsNotNull}}" />
+                    <ContentPresenter Grid.Column="2"
+                                      Content="{TemplateBinding Header}"
+                                      VerticalAlignment="Center"
+                                      HorizontalAlignment="Stretch" />
+                    <TextBlock Grid.Column="3"
+                               Text="{TemplateBinding Shortcut}"
+                               Foreground="{DynamicResource ColorTextTertiaryBrush}"
+                               FontSize="12"
+                               Margin="16,0,0,0"
+                               VerticalAlignment="Center"
+                               IsVisible="{TemplateBinding Shortcut, Converter={x:Static ObjectConverters.IsNotNull}}" />
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <Style Selector="core|CyanMenubarRadioItem:pointerover">
+        <Setter Property="Background" Value="{DynamicResource ColorBgHoverBrush}" />
+    </Style>
+    <Style Selector="core|CyanMenubarRadioItem:disabled">
+        <Setter Property="Opacity" Value="0.5" />
+        <Setter Property="Cursor" Value="Arrow" />
+    </Style>
+
+    <Style Selector="core|CyanMenubarSub">
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextBrush}" />
+        <Setter Property="FontSize" Value="{DynamicResource FontSizeSM}" />
+        <Setter Property="Padding" Value="12,6" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="CornerRadius" Value="{DynamicResource BorderRadiusXS}" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid Background="Transparent" HorizontalAlignment="Stretch">
+                    <Border x:Name="PART_SubTrigger"
+                            Background="Transparent"
+                            CornerRadius="{TemplateBinding CornerRadius}"
+                            Padding="{TemplateBinding Padding}"
+                            HorizontalAlignment="Stretch">
+                        <Grid ColumnDefinitions="*,Auto">
+                            <ContentPresenter Grid.Column="0" Content="{TemplateBinding Header}" VerticalAlignment="Center" />
+                            <Path Grid.Column="1"
+                                  Width="10" Height="10"
+                                  Margin="8,0,0,0"
+                                  Stretch="Uniform"
+                                  Data="M0 0L4 4L0 8Z"
+                                  Fill="{DynamicResource ColorTextTertiaryBrush}"
+                                  VerticalAlignment="Center" />
+                        </Grid>
+                    </Border>
+                    <Popup x:Name="PART_SubPopup"
+                           IsOpen="{Binding IsOpen, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                           Topmost="True"
+                           Placement="RightEdgeAlignedTop">
+                        <Border Background="{DynamicResource ColorBgElevatedBrush}"
+                                CornerRadius="{DynamicResource BorderRadiusSM}"
+                                BorderBrush="{DynamicResource ColorBorderBrush}"
+                                BorderThickness="1"
+                                Padding="4"
+                                Margin="4"
+                                MinWidth="180"
+                                BoxShadow="{DynamicResource BoxShadow}">
+                            <ContentPresenter Content="{TemplateBinding Content}" />
+                        </Border>
+                    </Popup>
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <Style Selector="core|CyanMenubarSub:pointerover /template/ Border#PART_SubTrigger">
+        <Setter Property="Background" Value="{DynamicResource ColorBgHoverBrush}" />
+    </Style>
+    <Style Selector="core|CyanMenubarSub:open /template/ Border#PART_SubTrigger">
+        <Setter Property="Background" Value="{DynamicResource ColorBgHoverBrush}" />
+    </Style>
+
+    <Style Selector="core|CyanMenubarSeparator">
+        <Setter Property="Margin" Value="0,4" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border Height="1" Background="{DynamicResource ColorSplitBrush}" HorizontalAlignment="Stretch" />
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+</Styles>

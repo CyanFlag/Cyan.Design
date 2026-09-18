@@ -1,0 +1,128 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:core="using:Cyan.Design.Core.Controls.Selections"
+             xmlns:controls="using:Cyan.Design.Demo.Controls"
+             x:Class="Cyan.Design.Demo.Pages.SelectionPage">
+    <ScrollViewer Padding="0" Margin="25,25,0,25">
+        <StackPanel Spacing="34" MaxWidth="700">
+            <TextBlock Text="选择控件" FontSize="22" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}"/>
+            <TextBlock Text="Checkbox / Radio / Switch，ant.design 风格。" Foreground="{DynamicResource ColorTextSecondaryBrush}"/>
+
+            <controls:DemoSection Title="Checkbox">
+                <StackPanel Spacing="8">
+                    <core:CyanCheckbox Content="Apple" IsChecked="True" />
+                    <core:CyanCheckbox Content="Pear" />
+                    <core:CyanCheckbox Content="Orange" />
+                    <core:CyanCheckbox Content="Disabled" IsEnabled="False" />
+                    <core:CyanCheckbox Content="Disabled Checked" IsEnabled="False" IsChecked="True" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="Radio">
+                <StackPanel Spacing="8">
+                    <core:CyanRadio Content="A" GroupName="g1" IsChecked="True" />
+                    <core:CyanRadio Content="B" GroupName="g1" />
+                    <core:CyanRadio Content="C" GroupName="g1" />
+                    <core:CyanRadio Content="Disabled" GroupName="g1" IsEnabled="False" />
+                    <core:CyanRadio Content="Disabled Checked" GroupName="g1" IsEnabled="False" IsChecked="True" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="Radio.Group 横向排列">
+                <core:CyanRadioGroup Value="A" Orientation="Horizontal">
+                    <core:CyanRadio Value="A" Content="A" />
+                    <core:CyanRadio Value="B" Content="B" />
+                    <core:CyanRadio Value="C" Content="C" />
+                    <core:CyanRadio Value="D" Content="D" />
+                </core:CyanRadioGroup>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="Radio.Group 禁用">
+                <core:CyanRadioGroup Value="A" Disabled="True">
+                    <core:CyanRadio Value="A" Content="A" />
+                    <core:CyanRadio Value="B" Content="B" />
+                    <core:CyanRadio Value="C" Content="C" />
+                </core:CyanRadioGroup>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="Radio.Group 垂直排列">
+                <core:CyanRadioGroup Value="A" Orientation="Vertical">
+                    <core:CyanRadio Value="A" Content="A" />
+                    <core:CyanRadio Value="B" Content="B" />
+                    <core:CyanRadio Value="C" Content="C" />
+                    <core:CyanRadio Value="D" Content="D" />
+                </core:CyanRadioGroup>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="Radio.Group 按钮样式 Outline 横向排列">
+                <core:CyanRadioGroup Value="A" OptionType="Button" Orientation="Horizontal">
+                    <core:CyanRadio Value="A" Content="A" />
+                    <core:CyanRadio Value="B" Content="B" />
+                    <core:CyanRadio Value="C" Content="C" />
+                    <core:CyanRadio Value="D" Content="D" />
+                </core:CyanRadioGroup>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="Radio.Group 按钮样式 Solid 横向排列">
+                <core:CyanRadioGroup Value="A" OptionType="Button" ButtonStyle="Solid" Orientation="Horizontal">
+                    <core:CyanRadio Value="A" Content="A" />
+                    <core:CyanRadio Value="B" Content="B" />
+                    <core:CyanRadio Value="C" Content="C" />
+                    <core:CyanRadio Value="D" Content="D" />
+                </core:CyanRadioGroup>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="Radio.Group 按钮尺寸">
+                <StackPanel Spacing="8">
+                    <core:CyanRadioGroup Value="A" OptionType="Button" Size="Large">
+                        <core:CyanRadio Value="A" Content="Large" />
+                        <core:CyanRadio Value="B" Content="B" />
+                        <core:CyanRadio Value="C" Content="C" />
+                    </core:CyanRadioGroup>
+                    <core:CyanRadioGroup Value="A" OptionType="Button" Size="Middle">
+                        <core:CyanRadio Value="A" Content="Middle" />
+                        <core:CyanRadio Value="B" Content="B" />
+                        <core:CyanRadio Value="C" Content="C" />
+                    </core:CyanRadioGroup>
+                    <core:CyanRadioGroup Value="A" OptionType="Button" Size="Small">
+                        <core:CyanRadio Value="A" Content="Small" />
+                        <core:CyanRadio Value="B" Content="B" />
+                        <core:CyanRadio Value="C" Content="C" />
+                    </core:CyanRadioGroup>
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="Radio.Group 按钮样式 垂直排列">
+                <core:CyanRadioGroup Value="A" OptionType="Button" Orientation="Vertical">
+                    <core:CyanRadio Value="A" Content="A" />
+                    <core:CyanRadio Value="B" Content="B" />
+                    <core:CyanRadio Value="C" Content="C" />
+                </core:CyanRadioGroup>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="Radio.Group Block">
+                <core:CyanRadioGroup Value="A" OptionType="Button" Block="True">
+                    <core:CyanRadio Value="A" Content="A" />
+                    <core:CyanRadio Value="B" Content="B" />
+                    <core:CyanRadio Value="C" Content="C" />
+                </core:CyanRadioGroup>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="Radio.Group Solid + 禁用">
+                <core:CyanRadioGroup Value="A" OptionType="Button" ButtonStyle="Solid" Disabled="True">
+                    <core:CyanRadio Value="A" Content="A" Margin="5"/>
+                    <core:CyanRadio Value="B" Content="B" Margin="5"/>
+                    <core:CyanRadio Value="C" Content="C" Margin="5"/>
+                </core:CyanRadioGroup>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="Switch">
+                <StackPanel Spacing="12">
+                    <core:CyanSwitch IsChecked="True" />
+                    <core:CyanSwitch />
+                    <core:CyanSwitch IsChecked="True" IsEnabled="False" />
+                </StackPanel>
+            </controls:DemoSection>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

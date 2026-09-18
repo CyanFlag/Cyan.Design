@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>Cyan.Design.Themes</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" />
+    <PackageReference Include="Avalonia.Controls.DataGrid" />
+
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Cyan.Design.Core\Cyan.Design.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AvaloniaResource Include="Assets\iconfont.ttf" />
+  </ItemGroup>
+
+</Project>

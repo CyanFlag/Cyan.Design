@@ -1,0 +1,235 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:core="using:Cyan.Design.Core.Controls.Buttons"
+             xmlns:dd="using:Cyan.Design.Core.Controls.Dropdowns"
+             xmlns:controls="using:Cyan.Design.Demo.Controls"
+             x:Class="Cyan.Design.Demo.Pages.DropdownPage">
+    <ScrollViewer Padding="0" Margin="20">
+        <StackPanel Spacing="16" MaxWidth="700">
+            <TextBlock Text="Dropdown 下拉菜单" FontSize="22" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}"/>
+            <TextBlock Text="参考 ant.design 5.x：触发方式、placement、菜单项、分割线、危险项、禁用。" Foreground="{DynamicResource ColorTextSecondaryBrush}"/>
+
+            <controls:DemoSection Title="基础 Hover 触发">
+                <dd:CyanDropdown>
+                    <core:CyanButton Content="Hover me" />
+                    <dd:CyanDropdown.Overlay>
+                        <dd:CyanDropdownMenu>
+                            <dd:CyanDropdownItem Content="1st menu item" />
+                            <dd:CyanDropdownItem Content="2nd menu item" />
+                            <dd:CyanDropdownItem Content="3rd menu item" />
+                        </dd:CyanDropdownMenu>
+                    </dd:CyanDropdown.Overlay>
+                </dd:CyanDropdown>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="Click 触发">
+                <dd:CyanDropdown Trigger="Click">
+                    <core:CyanButton Content="Click me" />
+                    <dd:CyanDropdown.Overlay>
+                        <dd:CyanDropdownMenu>
+                            <dd:CyanDropdownItem Content="1st menu item" />
+                            <dd:CyanDropdownItem Content="2nd menu item" />
+                            <dd:CyanDropdownItem Content="3rd menu item" />
+                        </dd:CyanDropdownMenu>
+                    </dd:CyanDropdown.Overlay>
+                </dd:CyanDropdown>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="带分割线和禁用项">
+                <dd:CyanDropdown>
+                    <core:CyanButton Content="Hover me" />
+                    <dd:CyanDropdown.Overlay>
+                        <dd:CyanDropdownMenu>
+                            <dd:CyanDropdownItem Content="Action 1" />
+                            <dd:CyanDropdownItem Divider="True" />
+                            <dd:CyanDropdownItem Content="Action 2" />
+                            <dd:CyanDropdownItem Content="Disabled" IsEnabled="False" />
+                            <dd:CyanDropdownItem Divider="True" />
+                            <dd:CyanDropdownItem Content="Action 3" />
+                        </dd:CyanDropdownMenu>
+                    </dd:CyanDropdown.Overlay>
+                </dd:CyanDropdown>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="危险项 Danger">
+                <dd:CyanDropdown>
+                    <core:CyanButton Content="Hover me" />
+                    <dd:CyanDropdown.Overlay>
+                        <dd:CyanDropdownMenu>
+                            <dd:CyanDropdownItem Content="Edit" />
+                            <dd:CyanDropdownItem Content="Copy" />
+                            <dd:CyanDropdownItem Divider="True" />
+                            <dd:CyanDropdownItem Content="Delete" Danger="True" />
+                        </dd:CyanDropdownMenu>
+                    </dd:CyanDropdown.Overlay>
+                </dd:CyanDropdown>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="不同 Placement">
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <dd:CyanDropdown Placement="BottomLeft">
+                        <core:CyanButton Content="BottomLeft" />
+                        <dd:CyanDropdown.Overlay>
+                            <dd:CyanDropdownMenu>
+                                <dd:CyanDropdownItem Content="Item 1" />
+                                <dd:CyanDropdownItem Content="Item 2" />
+                            </dd:CyanDropdownMenu>
+                        </dd:CyanDropdown.Overlay>
+                    </dd:CyanDropdown>
+                    <dd:CyanDropdown Placement="TopLeft">
+                        <core:CyanButton Content="TopLeft" />
+                        <dd:CyanDropdown.Overlay>
+                            <dd:CyanDropdownMenu>
+                                <dd:CyanDropdownItem Content="Item 1" />
+                                <dd:CyanDropdownItem Content="Item 2" />
+                            </dd:CyanDropdownMenu>
+                        </dd:CyanDropdown.Overlay>
+                    </dd:CyanDropdown>
+                    <dd:CyanDropdown Placement="Right">
+                        <core:CyanButton Content="Right" />
+                        <dd:CyanDropdown.Overlay>
+                            <dd:CyanDropdownMenu>
+                                <dd:CyanDropdownItem Content="Item 1" />
+                                <dd:CyanDropdownItem Content="Item 2" />
+                            </dd:CyanDropdownMenu>
+                        </dd:CyanDropdown.Overlay>
+                    </dd:CyanDropdown>
+                    <dd:CyanDropdown Placement="Left">
+                        <core:CyanButton Content="Left" />
+                        <dd:CyanDropdown.Overlay>
+                            <dd:CyanDropdownMenu>
+                                <dd:CyanDropdownItem Content="Item 1" />
+                                <dd:CyanDropdownItem Content="Item 2" />
+                            </dd:CyanDropdownMenu>
+                        </dd:CyanDropdown.Overlay>
+                    </dd:CyanDropdown>
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="禁用 Dropdown">
+                <dd:CyanDropdown Disabled="True">
+                    <core:CyanButton Content="Disabled Dropdown" />
+                    <dd:CyanDropdown.Overlay>
+                        <dd:CyanDropdownMenu>
+                            <dd:CyanDropdownItem Content="Item 1" />
+                            <dd:CyanDropdownItem Content="Item 2" />
+                        </dd:CyanDropdownMenu>
+                    </dd:CyanDropdown.Overlay>
+                </dd:CyanDropdown>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="带下拉框的按钮 DropdownButton" Description="左按钮执行点击，右箭头打开菜单。参考 ant.design Dropdown.Button。">
+                <StackPanel Orientation="Horizontal" Spacing="12">
+                    <dd:CyanDropdownButton Content="Default">
+                        <dd:CyanDropdownButton.Overlay>
+                            <dd:CyanDropdownMenu>
+                                <dd:CyanDropdownItem Content="1st menu item" />
+                                <dd:CyanDropdownItem Content="2nd menu item" />
+                                <dd:CyanDropdownItem Content="3rd menu item" />
+                            </dd:CyanDropdownMenu>
+                        </dd:CyanDropdownButton.Overlay>
+                    </dd:CyanDropdownButton>
+
+                    <dd:CyanDropdownButton ButtonType="Primary" Content="Primary">
+                        <dd:CyanDropdownButton.Overlay>
+                            <dd:CyanDropdownMenu>
+                                <dd:CyanDropdownItem Content="Action 1" />
+                                <dd:CyanDropdownItem Content="Action 2" />
+                                <dd:CyanDropdownItem Divider="True" />
+                                <dd:CyanDropdownItem Content="Delete" Danger="True" />
+                            </dd:CyanDropdownMenu>
+                        </dd:CyanDropdownButton.Overlay>
+                    </dd:CyanDropdownButton>
+
+                    <dd:CyanDropdownButton ButtonType="Primary" Danger="True" Content="Danger">
+                        <dd:CyanDropdownButton.Overlay>
+                            <dd:CyanDropdownMenu>
+                                <dd:CyanDropdownItem Content="Item 1" />
+                                <dd:CyanDropdownItem Content="Item 2" />
+                            </dd:CyanDropdownMenu>
+                        </dd:CyanDropdownButton.Overlay>
+                    </dd:CyanDropdownButton>
+
+                    <dd:CyanDropdownButton ButtonType="Dashed" Content="Dashed">
+                        <dd:CyanDropdownButton.Overlay>
+                            <dd:CyanDropdownMenu>
+                                <dd:CyanDropdownItem Content="Item 1" />
+                                <dd:CyanDropdownItem Content="Item 2" />
+                            </dd:CyanDropdownMenu>
+                        </dd:CyanDropdownButton.Overlay>
+                    </dd:CyanDropdownButton>
+
+                    <dd:CyanDropdownButton Disabled="True" Content="Disabled">
+                        <dd:CyanDropdownButton.Overlay>
+                            <dd:CyanDropdownMenu>
+                                <dd:CyanDropdownItem Content="Item 1" />
+                            </dd:CyanDropdownMenu>
+                        </dd:CyanDropdownButton.Overlay>
+                    </dd:CyanDropdownButton>
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="自定义右侧 Icon" Description="通过 Icon 属性修改右下拉按钮的图标（默认为下箭头）。">
+                <StackPanel Orientation="Horizontal" Spacing="12">
+                    <dd:CyanDropdownButton ButtonType="Primary" Content="Default Icon">
+                        <dd:CyanDropdownButton.Overlay>
+                            <dd:CyanDropdownMenu>
+                                <dd:CyanDropdownItem Content="Item 1" />
+                                <dd:CyanDropdownItem Content="Item 2" />
+                            </dd:CyanDropdownMenu>
+                        </dd:CyanDropdownButton.Overlay>
+                    </dd:CyanDropdownButton>
+
+                    <dd:CyanDropdownButton ButtonType="Primary" Content="Ellipsis Icon">
+                        <dd:CyanDropdownButton.Icon>
+                            <TextBlock Text="&#x22EF;" FontSize="16" />
+                        </dd:CyanDropdownButton.Icon>
+                        <dd:CyanDropdownButton.Overlay>
+                            <dd:CyanDropdownMenu>
+                                <dd:CyanDropdownItem Content="Item 1" />
+                                <dd:CyanDropdownItem Content="Item 2" />
+                            </dd:CyanDropdownMenu>
+                        </dd:CyanDropdownButton.Overlay>
+                    </dd:CyanDropdownButton>
+
+                    <dd:CyanDropdownButton Content="Custom Path">
+                        <dd:CyanDropdownButton.Icon>
+                            <Path Width="12" Height="6"
+                                  Data="M0 0 L6 6 L12 0"
+                                  Stroke="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Button}}"
+                                  StrokeThickness="2" />
+                        </dd:CyanDropdownButton.Icon>
+                        <dd:CyanDropdownButton.Overlay>
+                            <dd:CyanDropdownMenu>
+                                <dd:CyanDropdownItem Content="Item 1" />
+                                <dd:CyanDropdownItem Content="Item 2" />
+                            </dd:CyanDropdownMenu>
+                        </dd:CyanDropdownButton.Overlay>
+                    </dd:CyanDropdownButton>
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="DropdownButton 不同 Placement">
+                <StackPanel Orientation="Horizontal" Spacing="12">
+                    <dd:CyanDropdownButton ButtonType="Primary" Content="BottomRight" Placement="BottomRight">
+                        <dd:CyanDropdownButton.Overlay>
+                            <dd:CyanDropdownMenu>
+                                <dd:CyanDropdownItem Content="Item 1" />
+                                <dd:CyanDropdownItem Content="Item 2" />
+                            </dd:CyanDropdownMenu>
+                        </dd:CyanDropdownButton.Overlay>
+                    </dd:CyanDropdownButton>
+                    <dd:CyanDropdownButton ButtonType="Primary" Content="TopRight" Placement="TopRight">
+                        <dd:CyanDropdownButton.Overlay>
+                            <dd:CyanDropdownMenu>
+                                <dd:CyanDropdownItem Content="Item 1" />
+                                <dd:CyanDropdownItem Content="Item 2" />
+                            </dd:CyanDropdownMenu>
+                        </dd:CyanDropdownButton.Overlay>
+                    </dd:CyanDropdownButton>
+                </StackPanel>
+            </controls:DemoSection>
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

@@ -1,0 +1,150 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:core="using:Cyan.Design.Core.Controls.Display">
+
+    <!-- CyanCollapse 容器 -->
+    <Style Selector="core|CyanCollapse">
+        <Setter Property="Background" Value="{DynamicResource ColorBgContainerBrush}" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border x:Name="PART_Root"
+                        BorderBrush="{DynamicResource ColorBorderSecondaryBrush}"
+                        BorderThickness="1"
+                        CornerRadius="8"
+                        Background="{TemplateBinding Background}"
+                        ClipToBounds="True">
+                    <ItemsPresenter />
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <Style Selector="core|CyanCollapse:not(:bordered) /template/ Border#PART_Root">
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="CornerRadius" Value="0" />
+    </Style>
+
+    <Style Selector="core|CyanCollapse:ghost /template/ Border#PART_Root">
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="CornerRadius" Value="0" />
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+
+    <!-- CyanCollapsePanel 面板 -->
+    <Style Selector="core|CyanCollapsePanel">
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorBorderSecondaryBrush}" />
+        <Setter Property="BorderThickness" Value="0,0,0,1" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                    <StackPanel Orientation="Vertical">
+                        <Border x:Name="PART_Header"
+                                Background="{DynamicResource ColorFillTertiaryBrush}"
+                                Padding="12,16">
+                            <Grid ColumnDefinitions="Auto,*,Auto" VerticalAlignment="Center">
+                                <Grid x:Name="PART_Arrow"
+                                      Grid.Column="0"
+                                      Width="12" Height="12"
+                                      Margin="4,0,8,0"
+                                      VerticalAlignment="Center"
+                                      HorizontalAlignment="Center"
+                                      IsVisible="{TemplateBinding ShowArrow}">
+                                    <Path x:Name="PART_ArrowRight"
+                                          Data="M3 0 L9 6 L3 12"
+                                          Fill="{DynamicResource ColorTextBrush}"
+                                          Stretch="None" />
+                                    <Path x:Name="PART_ArrowDown"
+                                          Data="M0 3 L6 9 L12 3"
+                                          Fill="{DynamicResource ColorTextBrush}"
+                                          Stretch="None"
+                                          IsVisible="False" />
+                                </Grid>
+                                <ContentPresenter Grid.Column="1"
+                                                  Content="{TemplateBinding Header}"
+                                                  Foreground="{DynamicResource ColorTextBrush}"
+                                                  FontSize="14"
+                                                  VerticalAlignment="Center" />
+                                <ContentPresenter Grid.Column="2"
+                                                  Content="{TemplateBinding Extra}"
+                                                  HorizontalAlignment="Right"
+                                                  VerticalAlignment="Center"
+                                                  Margin="8,0,0,0" />
+                            </Grid>
+                        </Border>
+                        <Border x:Name="PART_Content"
+                                Background="{DynamicResource ColorBgContainerBrush}"
+                                Padding="16"
+                                IsVisible="{TemplateBinding IsExpanded}">
+                            <ContentPresenter Content="{TemplateBinding Content}" />
+                        </Border>
+                    </StackPanel>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <!-- 展开时切换箭头方向 -->
+    <Style Selector="core|CyanCollapsePanel:expanded /template/ Path#PART_ArrowRight">
+        <Setter Property="IsVisible" Value="False" />
+    </Style>
+    <Style Selector="core|CyanCollapsePanel:expanded /template/ Path#PART_ArrowDown">
+        <Setter Property="IsVisible" Value="True" />
+    </Style>
+
+    <!-- 尺寸：Large -->
+    <Style Selector="core|CyanCollapsePanel:large /template/ Border#PART_Header">
+        <Setter Property="Padding" Value="16,24,16,16" />
+    </Style>
+    <Style Selector="core|CyanCollapsePanel:large /template/ Border#PART_Content">
+        <Setter Property="Padding" Value="24" />
+    </Style>
+
+    <!-- 尺寸：Small -->
+    <Style Selector="core|CyanCollapsePanel:small /template/ Border#PART_Header">
+        <Setter Property="Padding" Value="8,12,8,8" />
+    </Style>
+    <Style Selector="core|CyanCollapsePanel:small /template/ Border#PART_Content">
+        <Setter Property="Padding" Value="12" />
+    </Style>
+
+    <!-- 图标位置：End（箭头在标题后） -->
+    <Style Selector="core|CyanCollapsePanel:iconend /template/ Grid#PART_Arrow">
+        <Setter Property="Grid.Column" Value="1" />
+        <Setter Property="Margin" Value="8,0,0,0" />
+    </Style>
+    <Style Selector="core|CyanCollapsePanel:iconend /template/ ContentPresenter">
+        <Setter Property="Grid.Column" Value="0" />
+    </Style>
+
+    <!-- 禁用状态 -->
+    <Style Selector="core|CyanCollapsePanel:disabled /template/ Border#PART_Header">
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+    <Style Selector="core|CyanCollapsePanel:disabled /template/ Path#PART_ArrowRight">
+        <Setter Property="Fill" Value="{DynamicResource ColorTextDisabledBrush}" />
+    </Style>
+    <Style Selector="core|CyanCollapsePanel:disabled /template/ Path#PART_ArrowDown">
+        <Setter Property="Fill" Value="{DynamicResource ColorTextDisabledBrush}" />
+    </Style>
+    <Style Selector="core|CyanCollapsePanel:disabled /template/ ContentPresenter">
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextDisabledBrush}" />
+    </Style>
+
+    <!-- 幽灵模式：透明背景 -->
+    <Style Selector="core|CyanCollapse:ghost core|CyanCollapsePanel /template/ Border#PART_Header">
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+    <Style Selector="core|CyanCollapse:ghost core|CyanCollapsePanel /template/ Border#PART_Content">
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+    <Style Selector="core|CyanCollapse:ghost core|CyanCollapsePanel">
+        <Setter Property="BorderThickness" Value="0" />
+    </Style>
+
+    <!-- 无边框模式：面板无分隔线 -->
+    <Style Selector="core|CyanCollapse:not(:bordered) core|CyanCollapsePanel">
+        <Setter Property="BorderThickness" Value="0" />
+    </Style>
+
+</Styles>

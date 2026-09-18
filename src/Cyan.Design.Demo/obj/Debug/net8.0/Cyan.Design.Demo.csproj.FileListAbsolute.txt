@@ -1,0 +1,5 @@
+F:\AI code\Cyan.Design\bin\Debug\net8.0\Cyan.Design.Demo.exe
+F:\AI code\Cyan.Design\bin\Debug\net8.0\Cyan.Design.Demo.deps.json
+F:\AI code\Cyan.Design\bin\Debug\net8.0\Cyan.Design.Demo.runtimeconfig.json
+F:\AI code\Cyan.Design\bin\Debug\net8.0\Cyan.Design.Demo.dll
+F:\AI code\Cyan.Design\bin\Debug\net8.0\Cyan.Design.Demo.pdb

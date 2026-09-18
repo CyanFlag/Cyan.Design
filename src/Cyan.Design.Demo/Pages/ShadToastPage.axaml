@@ -1,0 +1,29 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:btn="using:Cyan.Design.Core.Controls.Buttons"
+             xmlns:fb="using:Cyan.Design.Core.Controls.Feedback"
+             x:Class="Cyan.Design.Demo.Pages.ShadToastPage"
+             x:CompileBindings="False">
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Spacing="4" Margin="0,0,0,12">
+            <TextBlock Text="ShadToast 提示" FontSize="22" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}"/>
+            <TextBlock Text="移植自 shadcn/ui 的 Toast 组件，点击按钮触发不同类型的提示。" Foreground="{DynamicResource ColorTextSecondaryBrush}"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Spacing="12" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Button Content="Default" Click="OnDefaultClick" />
+            <Button Content="Success" Click="OnSuccessClick" />
+            <Button Content="Info" Click="OnInfoClick" />
+            <Button Content="Warning" Click="OnWarningClick" />
+            <Button Content="Error" Click="OnErrorClick" />
+            <Button Content="Loading" Click="OnLoadingClick" />
+        </StackPanel>
+
+        <fb:CyanShadToaster x:Name="PART_Toaster" Grid.RowSpan="2" />
+    </Grid>
+</UserControl>

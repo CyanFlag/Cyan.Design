@@ -1,0 +1,103 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:core="using:Cyan.Design.Core.Controls.Feedback">
+
+    <Style Selector="core|CyanDrawer">
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="ZIndex" Value="1000" />
+        <Setter Property="IsVisible" Value="False" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Panel>
+                    <Border x:Name="PART_Mask" Background="{DynamicResource ColorMaskBgBrush}" />
+
+                    <Border x:Name="PART_Section"
+                            Background="{DynamicResource ColorBgElevatedBrush}"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Stretch"
+                            Width="378"
+                            BoxShadow="-6 0 16 0 #0D000000">
+                        <Grid RowDefinitions="Auto,*,Auto">
+                            <Border Grid.Row="0"
+                                    Padding="24,16"
+                                    BorderBrush="{DynamicResource ColorSplitBrush}"
+                                    BorderThickness="0,0,0,1">
+                                <Grid ColumnDefinitions="*,Auto,Auto">
+                                    <ContentPresenter Grid.Column="0"
+                                                      Content="{TemplateBinding Title}"
+                                                      FontSize="16" FontWeight="600"
+                                                      Foreground="{DynamicResource ColorTextBrush}"
+                                                      VerticalAlignment="Center" />
+                                    <ContentPresenter Grid.Column="1"
+                                                      Content="{TemplateBinding Extra}"
+                                                      VerticalAlignment="Center"
+                                                      Margin="12,0,0,0" />
+                                    <Border Grid.Column="2" x:Name="PART_Close"
+                                            Cursor="Hand" Padding="4"
+                                            VerticalAlignment="Center"
+                                            Margin="12,0,-4,0">
+                                        <TextBlock Text="×" FontSize="18"
+                                                   Foreground="{DynamicResource ColorTextTertiaryBrush}" />
+                                    </Border>
+                                </Grid>
+                            </Border>
+
+                            <ScrollViewer Grid.Row="1" Padding="24">
+                                <ContentPresenter Content="{TemplateBinding Content}" />
+                            </ScrollViewer>
+
+                            <Border Grid.Row="2" x:Name="PART_Footer"
+                                    Padding="16,8"
+                                    BorderBrush="{DynamicResource ColorSplitBrush}"
+                                    BorderThickness="0,1,0,0">
+                                <ContentPresenter Content="{TemplateBinding Footer}" />
+                            </Border>
+                        </Grid>
+                    </Border>
+                </Panel>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <Style Selector="core|CyanDrawer:open">
+        <Setter Property="IsVisible" Value="True" />
+    </Style>
+
+    <Style Selector="core|CyanDrawer:right /template/ Border#PART_Section">
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="BoxShadow" Value="-6 0 16 0 #0D000000" />
+    </Style>
+
+    <Style Selector="core|CyanDrawer:left /template/ Border#PART_Section">
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="BoxShadow" Value="6 0 16 0 #0D000000" />
+    </Style>
+
+    <Style Selector="core|CyanDrawer:top /template/ Border#PART_Section">
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="BoxShadow" Value="0 6 16 0 #0D000000" />
+    </Style>
+
+    <Style Selector="core|CyanDrawer:bottom /template/ Border#PART_Section">
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Bottom" />
+        <Setter Property="BoxShadow" Value="0 -6 16 0 #0D000000" />
+    </Style>
+
+    <Style Selector="core|CyanDrawer:no-mask /template/ Border#PART_Mask">
+        <Setter Property="IsVisible" Value="False" />
+    </Style>
+
+    <Style Selector="core|CyanDrawer:no-closable /template/ Border#PART_Close">
+        <Setter Property="IsVisible" Value="False" />
+    </Style>
+
+    <Style Selector="core|CyanDrawer:not(:has-footer) /template/ Border#PART_Footer">
+        <Setter Property="IsVisible" Value="False" />
+    </Style>
+
+</Styles>

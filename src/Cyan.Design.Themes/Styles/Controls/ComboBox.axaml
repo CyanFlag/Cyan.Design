@@ -1,0 +1,227 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style Selector="ComboBox">
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="{DynamicResource BorderRadiusLG}" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorBorderBrush}" />
+        <Setter Property="PlaceholderForeground" Value="{DynamicResource ColorTextTertiaryBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextBrush}" />
+        <Setter Property="Background" Value="{DynamicResource ColorBgContainerBrush}" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontWeight" Value="Medium" />
+        <Setter Property="MinHeight" Value="36" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel Margin="3" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Panel>
+                        <Border
+                            Background="{DynamicResource ColorBgHoverBrush}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="{TemplateBinding CornerRadius}"
+                            Name="Background"
+                            Opacity="0">
+                            <Border.Transitions>
+                                <Transitions>
+                                    <DoubleTransition Duration="0:0:0.20" Easing="QuadraticEaseOut" Property="Opacity" />
+                                </Transitions>
+                            </Border.Transitions>
+                        </Border>
+                        <Border
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="{TemplateBinding CornerRadius}"
+                            MinHeight="{TemplateBinding MinHeight}"
+                            Name="Border"
+                            Padding="{TemplateBinding Padding}">
+                            <Grid Background="Transparent" ColumnDefinitions="*,Auto">
+                                <TextBlock
+                                    Foreground="{TemplateBinding PlaceholderForeground}"
+                                    Grid.Column="0"
+                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                    IsVisible="{TemplateBinding SelectionBoxItem, Converter={x:Static ObjectConverters.IsNull}}"
+                                    Margin="12,0,0,0"
+                                    Name="PlaceholderTextBlock"
+                                    Text="{TemplateBinding PlaceholderText}"
+                                    VerticalAlignment="Center" />
+                                <ContentControl
+                                    Content="{TemplateBinding SelectionBoxItem}"
+                                    ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                                    Foreground="{TemplateBinding Foreground}"
+                                    Grid.Column="0"
+                                    HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                    Margin="12,0,0,0"
+                                    TextBlock.FontSize="{TemplateBinding FontSize}"
+                                    TextBlock.FontWeight="{TemplateBinding FontWeight}"
+                                    TextBlock.Foreground="{TemplateBinding Foreground}"
+                                    VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                <Path
+                                    Data="M 0 2 L 4 6 L 8 2"
+                                    Stroke="{DynamicResource ColorTextTertiaryBrush}"
+                                    StrokeThickness="2"
+                                    StrokeLineCap="Round"
+                                    StrokeJoin="Round"
+                                    Grid.Column="1"
+                                    HorizontalAlignment="Center"
+                                    Margin="5,0,16,0"
+                                    Name="Icon"
+                                    Stretch="Uniform"
+                                    VerticalAlignment="Center"
+                                    Width="8">
+                                    <Path.Transitions>
+                                        <Transitions>
+                                            <BrushTransition Duration="0:0:0.20" Easing="QuadraticEaseOut" Property="Stroke" />
+                                        </Transitions>
+                                    </Path.Transitions>
+                                </Path>
+                                <Popup
+                                    Grid.Column="0"
+                                    IsLightDismissEnabled="True"
+                                    IsOpen="{TemplateBinding IsDropDownOpen, Mode=TwoWay}"
+                                    MaxHeight="{TemplateBinding MaxDropDownHeight}"
+                                    MinWidth="{CompiledBinding #Border.Bounds.Width}"
+                                    Name="PART_Popup"
+                                    PlacementTarget="{CompiledBinding #Border}"
+                                    VerticalOffset="5">
+                                    <Border
+                                        Background="{DynamicResource ColorBgElevatedBrush}"
+                                        BorderBrush="{DynamicResource ColorBorderBrush}"
+                                        BorderThickness="1"
+                                        BoxShadow="0 2 8 0 #20000000"
+                                        CornerRadius="{TemplateBinding CornerRadius}"
+                                        Margin="2,0,2,4"
+                                        MinWidth="{CompiledBinding #Border.Bounds.Width}">
+                                        <ScrollViewer HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}" VerticalScrollBarVisibility="{TemplateBinding ScrollViewer.VerticalScrollBarVisibility}">
+                                            <ItemsPresenter
+                                                ItemsPanel="{TemplateBinding ItemsPanel}"
+                                                Name="PART_ItemsPresenter"
+                                                TextBlock.FontSize="{TemplateBinding FontSize}"
+                                                TextBlock.FontWeight="{TemplateBinding FontWeight}"
+                                                TextBlock.Foreground="{TemplateBinding Foreground}" />
+                                        </ScrollViewer>
+                                    </Border>
+                                </Popup>
+                            </Grid>
+                        </Border>
+                    </Panel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style Selector="^:focus /template/ Border#Border">
+            <Setter Property="BorderBrush" Value="{DynamicResource ColorPrimaryBrush}" />
+        </Style>
+        <Style Selector="^:pointerover /template/ Border#Border">
+            <Setter Property="Transitions">
+                <Setter.Value>
+                    <Transitions>
+                        <BrushTransition Duration="0:0:0.20" Easing="QuadraticEaseOut" Property="Background" />
+                        <BrushTransition Duration="0:0:0.20" Easing="QuadraticEaseOut" Property="BorderBrush" />
+                    </Transitions>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="BorderBrush" Value="{DynamicResource ColorPrimaryBorderHoverBrush}" />
+            <Setter Property="Cursor" Value="Hand" />
+        </Style>
+        <Style Selector="^:pointerover /template/ Border#Background">
+            <Setter Property="Opacity" Value="1" />
+        </Style>
+        <Style Selector="^:disabled">
+            <Setter Property="Opacity" Value="0.50" />
+        </Style>
+    </Style>
+
+    <Style Selector="ComboBoxItem">
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextBrush}" />
+        <Setter Property="Padding" Value="10,8" />
+        <Setter Property="Margin" Value="1" />
+        <Setter Property="CornerRadius" Value="{DynamicResource BorderRadius}" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontWeight" Value="Medium" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Panel Margin="{TemplateBinding Margin}" MinHeight="{TemplateBinding MinHeight}">
+                        <Border
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="{TemplateBinding CornerRadius}"
+                            Name="BaseBackground"
+                            Opacity="1" />
+                        <Border
+                            Background="{DynamicResource ColorBgHoverBrush}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="{TemplateBinding CornerRadius}"
+                            Name="HoverBackground"
+                            Opacity="0" />
+                        <Border
+                            Background="{DynamicResource ColorPrimaryBgBrush}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="{TemplateBinding CornerRadius}"
+                            Name="SelectionBackground"
+                            Opacity="0" />
+                        <DockPanel LastChildFill="True" Margin="{TemplateBinding Padding}">
+                            <Path
+                                Data="M 0 5 L 4 9 L 10 1"
+                                DockPanel.Dock="Right"
+                                Stroke="{DynamicResource ColorPrimaryBrush}"
+                                StrokeThickness="2"
+                                StrokeLineCap="Round"
+                                StrokeJoin="Round"
+                                Height="12"
+                                Margin="4,0,0,0"
+                                Name="CheckSelected"
+                                Stretch="Uniform"
+                                Width="12" />
+                            <ContentPresenter
+                                Content="{TemplateBinding Content}"
+                                ContentTemplate="{TemplateBinding ContentTemplate}"
+                                CornerRadius="{TemplateBinding CornerRadius}"
+                                HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                Name="PART_ContentPresenter"
+                                VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        </DockPanel>
+                    </Panel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style Selector="^ /template/ Border">
+            <Setter Property="Transitions">
+                <Transitions>
+                    <DoubleTransition Duration="0:0:0.20" Easing="QuadraticEaseOut" Property="Opacity" />
+                </Transitions>
+            </Setter>
+        </Style>
+        <Style Selector="^ /template/ Path#CheckSelected">
+            <Setter Property="IsVisible" Value="False" />
+        </Style>
+        <Style Selector="^:selected /template/ Path#CheckSelected">
+            <Setter Property="IsVisible" Value="True" />
+        </Style>
+        <Style Selector="^:selected:not(:pointerover) /template/ Border#SelectionBackground">
+            <Setter Property="Opacity" Value="1" />
+        </Style>
+        <Style Selector="^:pointerover /template/ Border#HoverBackground">
+            <Setter Property="Opacity" Value="1" />
+        </Style>
+    </Style>
+
+</Styles>

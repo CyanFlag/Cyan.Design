@@ -1,0 +1,14 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- 共享过渡动画样式 -->
+    <!-- Opacity 淡入淡出过渡（0.20s QuadraticEaseOut）应用于弹出层 Border -->
+    <Style Selector="Border.FadeTransition">
+        <Setter Property="Transitions">
+            <Transitions>
+                <DoubleTransition Duration="0:0:0.20" Easing="QuadraticEaseOut" Property="Opacity" />
+            </Transitions>
+        </Setter>
+    </Style>
+
+</Styles>

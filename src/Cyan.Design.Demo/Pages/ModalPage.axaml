@@ -1,0 +1,78 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:core="using:Cyan.Design.Core.Controls.Feedback"
+             xmlns:btn="using:Cyan.Design.Core.Controls.Buttons"
+             x:Class="Cyan.Design.Demo.Pages.ModalPage">
+    <Grid>
+        <ScrollViewer Padding="0" Margin="25">
+            <StackPanel Spacing="20" MaxWidth="800">
+                <TextBlock Text="Modal 对话框" FontSize="22" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}"/>
+                <TextBlock Text="参考 ant.design 5.x：模态对话框，用于交互式操作或信息展示。" Foreground="{DynamicResource ColorTextSecondaryBrush}" TextWrapping="Wrap"/>
+
+                <TextBlock Text="基本" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}" Margin="0,8,0,0"/>
+                <btn:CyanButton Content="打开对话框" ButtonType="Primary" Click="OnOpenBasic"/>
+
+                <TextBlock Text="自定义底部" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}" Margin="0,8,0,0"/>
+                <btn:CyanButton Content="自定义底部" Click="OnOpenCustomFooter"/>
+
+                <TextBlock Text="居中" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}" Margin="0,8,0,0"/>
+                <btn:CyanButton Content="垂直居中" Click="OnOpenCentered"/>
+
+                <TextBlock Text="自定义宽度" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}" Margin="0,8,0,0"/>
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <btn:CyanButton Content="窄 (400px)" Click="OnOpenNarrow"/>
+                    <btn:CyanButton Content="宽 (800px)" Click="OnOpenWide"/>
+                </StackPanel>
+
+                <TextBlock Text="无遮罩" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}" Margin="0,8,0,0"/>
+                <btn:CyanButton Content="无遮罩" Click="OnOpenNoMask"/>
+
+                <TextBlock Text="不可关闭" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}" Margin="0,8,0,0"/>
+                <btn:CyanButton Content="隐藏关闭按钮" Click="OnOpenNoClosable"/>
+
+                <TextBlock Text="确认加载" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}" Margin="0,8,0,0"/>
+                <btn:CyanButton Content="异步确认" ButtonType="Primary" Click="OnOpenConfirmLoading"/>
+
+            </StackPanel>
+        </ScrollViewer>
+
+        <core:CyanModal x:Name="BasicModal" Title="基本对话框">
+            <TextBlock Text="这是一个基本的对话框示例，包含默认的确定和取消按钮。" Foreground="{DynamicResource ColorTextSecondaryBrush}" TextWrapping="Wrap"/>
+        </core:CyanModal>
+
+        <core:CyanModal x:Name="CustomFooterModal" Title="自定义底部">
+            <TextBlock Text="可以通过 Footer 属性自定义底部内容。" Foreground="{DynamicResource ColorTextSecondaryBrush}" TextWrapping="Wrap"/>
+            <core:CyanModal.Footer>
+                <StackPanel Orientation="Horizontal" Spacing="8" HorizontalAlignment="Right">
+                    <btn:CyanButton Content="返回" Click="OnCloseCustomFooter"/>
+                    <btn:CyanButton Content="下一步" ButtonType="Primary" Click="OnCloseCustomFooter"/>
+                </StackPanel>
+            </core:CyanModal.Footer>
+        </core:CyanModal>
+
+        <core:CyanModal x:Name="CenteredModal" Title="居中对话框" Centered="True">
+            <TextBlock Text="居中显示的对话框，垂直居中于屏幕。" Foreground="{DynamicResource ColorTextSecondaryBrush}" TextWrapping="Wrap"/>
+        </core:CyanModal>
+
+        <core:CyanModal x:Name="NarrowModal" Title="窄对话框" ModalWidth="400">
+            <TextBlock Text="宽度为 400px 的对话框。" Foreground="{DynamicResource ColorTextSecondaryBrush}" TextWrapping="Wrap"/>
+        </core:CyanModal>
+
+        <core:CyanModal x:Name="WideModal" Title="宽对话框" ModalWidth="800">
+            <TextBlock Text="宽度为 800px 的对话框。" Foreground="{DynamicResource ColorTextSecondaryBrush}" TextWrapping="Wrap"/>
+        </core:CyanModal>
+
+        <core:CyanModal x:Name="NoMaskModal" Title="无遮罩" Mask="False">
+            <TextBlock Text="没有遮罩的对话框，背景内容不会被覆盖。" Foreground="{DynamicResource ColorTextSecondaryBrush}" TextWrapping="Wrap"/>
+        </core:CyanModal>
+
+        <core:CyanModal x:Name="NoClosableModal" Title="不可关闭" Closable="False">
+            <TextBlock Text="隐藏了右上角关闭按钮，只能通过底部按钮关闭。" Foreground="{DynamicResource ColorTextSecondaryBrush}" TextWrapping="Wrap"/>
+        </core:CyanModal>
+
+        <core:CyanModal x:Name="ConfirmLoadingModal" Title="异步确认" OkText="提交">
+            <TextBlock Text="点击确定按钮后，按钮会显示加载状态，模拟异步操作。" Foreground="{DynamicResource ColorTextSecondaryBrush}" TextWrapping="Wrap"/>
+        </core:CyanModal>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,84 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="using:Cyan.Design.Demo.Controls"
+             x:Class="Cyan.Design.Demo.Pages.ComboBoxPage">
+    <ScrollViewer Padding="0" Margin="25,25,0,25">
+        <StackPanel Spacing="20" MaxWidth="800">
+            <TextBlock Text="ComboBox 下拉选择框" FontSize="22" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}"/>
+            <TextBlock Text="参考 ShadUI ComboBox：圆角边框、下拉弹出面板、选中项打勾指示。" Foreground="{DynamicResource ColorTextSecondaryBrush}" TextWrapping="Wrap"/>
+
+            <controls:DemoSection Title="基础用法">
+                <ComboBox SelectedIndex="0" Width="200">
+                    <ComboBoxItem>Next.js</ComboBoxItem>
+                    <ComboBoxItem>SvelteKit</ComboBoxItem>
+                    <ComboBoxItem>Nuxt.js</ComboBoxItem>
+                    <ComboBoxItem>Remix</ComboBoxItem>
+                    <ComboBoxItem>Astro</ComboBoxItem>
+                </ComboBox>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="带占位文本">
+                <ComboBox PlaceholderText="请选择框架" Width="200">
+                    <ComboBoxItem>Next.js</ComboBoxItem>
+                    <ComboBoxItem>SvelteKit</ComboBoxItem>
+                    <ComboBoxItem>Nuxt.js</ComboBoxItem>
+                    <ComboBoxItem>Remix</ComboBoxItem>
+                    <ComboBoxItem>Astro</ComboBoxItem>
+                </ComboBox>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="禁用状态">
+                <ComboBox SelectedIndex="0" Width="200" IsEnabled="False">
+                    <ComboBoxItem>Next.js</ComboBoxItem>
+                    <ComboBoxItem>SvelteKit</ComboBoxItem>
+                    <ComboBoxItem>Nuxt.js</ComboBoxItem>
+                </ComboBox>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="禁用选项">
+                <ComboBox SelectedIndex="0" Width="200">
+                    <ComboBoxItem>Next.js</ComboBoxItem>
+                    <ComboBoxItem IsEnabled="False">SvelteKit (Disabled)</ComboBoxItem>
+                    <ComboBoxItem>Nuxt.js</ComboBoxItem>
+                    <ComboBoxItem>Remix</ComboBoxItem>
+                    <ComboBoxItem>Astro</ComboBoxItem>
+                </ComboBox>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="长列表（可滚动）">
+                <ComboBox PlaceholderText="选择一个数字" Width="200" MaxDropDownHeight="150">
+                    <ComboBoxItem>1</ComboBoxItem>
+                    <ComboBoxItem>2</ComboBoxItem>
+                    <ComboBoxItem>3</ComboBoxItem>
+                    <ComboBoxItem>4</ComboBoxItem>
+                    <ComboBoxItem>5</ComboBoxItem>
+                    <ComboBoxItem>6</ComboBoxItem>
+                    <ComboBoxItem>7</ComboBoxItem>
+                    <ComboBoxItem>8</ComboBoxItem>
+                    <ComboBoxItem>9</ComboBoxItem>
+                    <ComboBoxItem>10</ComboBoxItem>
+                    <ComboBoxItem>11</ComboBoxItem>
+                    <ComboBoxItem>12</ComboBoxItem>
+                    <ComboBoxItem>13</ComboBoxItem>
+                    <ComboBoxItem>14</ComboBoxItem>
+                    <ComboBoxItem>15</ComboBoxItem>
+                </ComboBox>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="不同宽度">
+                <StackPanel Orientation="Horizontal" Spacing="16">
+                    <ComboBox SelectedIndex="0" Width="120">
+                        <ComboBoxItem>Short</ComboBoxItem>
+                        <ComboBoxItem>Medium</ComboBoxItem>
+                        <ComboBoxItem>Long</ComboBoxItem>
+                    </ComboBox>
+                    <ComboBox SelectedIndex="0" Width="240">
+                        <ComboBoxItem>Short option</ComboBoxItem>
+                        <ComboBoxItem>Medium length option</ComboBoxItem>
+                        <ComboBoxItem>Very long option text here</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+            </controls:DemoSection>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

@@ -1,0 +1,122 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:core="using:Cyan.Design.Core.Controls.Feedback"
+             xmlns:btn="using:Cyan.Design.Core.Controls.Buttons"
+             xmlns:controls="using:Cyan.Design.Demo.Controls"
+             x:Class="Cyan.Design.Demo.Pages.ProgressPage">
+    <ScrollViewer Padding="0" Margin="25,25,0,25">
+        <StackPanel Spacing="20" MaxWidth="800">
+            <TextBlock Text="Progress 进度条" FontSize="22" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}"/>
+            <TextBlock Text="参考 ant.design 5.x：展示操作进度，支持线形、圆形和仪表盘三种类型。" Foreground="{DynamicResource ColorTextSecondaryBrush}" TextWrapping="Wrap"/>
+
+            <controls:DemoSection Title="线形进度条">
+                <StackPanel Spacing="8">
+                    <core:CyanProgress Percent="30" />
+                    <core:CyanProgress Percent="50" />
+                    <core:CyanProgress Percent="70" />
+                    <core:CyanProgress Percent="100" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="小尺寸">
+                <StackPanel Spacing="8">
+                    <core:CyanProgress Percent="30" Size="Small" />
+                    <core:CyanProgress Percent="70" Size="Small" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="状态">
+                <StackPanel Spacing="8">
+                    <core:CyanProgress Percent="50" Status="Active" />
+                    <core:CyanProgress Percent="100" Status="Success" />
+                    <core:CyanProgress Percent="70" Status="Exception" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="自定义颜色">
+                <core:CyanProgress Percent="60" StrokeColor="#FF7A45" />
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="自定义格式">
+                <core:CyanProgress Percent="75" Format="75 Days" />
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="隐藏信息">
+                <core:CyanProgress Percent="80" ShowInfo="False" />
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="自定义数值位置" Description="支持将百分比数值显示在右侧、上方、下方或进度条内部。">
+                <StackPanel Spacing="8">
+                    <StackPanel Orientation="Horizontal" Spacing="12" Margin="0,0,0,8">
+                        <RadioButton x:Name="PosRight" Content="Right" IsChecked="True" />
+                        <RadioButton x:Name="PosTop" Content="Top" />
+                        <RadioButton x:Name="PosBottom" Content="Bottom" />
+                        <RadioButton x:Name="PosInside" Content="Inside" />
+                        <RadioButton x:Name="PosCenter" Content="Center" />
+                        <RadioButton x:Name="PosFollow" Content="Follow" />
+                    </StackPanel>
+                    <Slider x:Name="PosPercentSlider" Minimum="0" Maximum="100" Value="60"
+                            TickFrequency="1" IsSnapToTickEnabled="True" Margin="0,0,0,8" />
+                    <core:CyanProgress x:Name="InteractivePosProgress" Percent="60" InfoPosition="Right" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="圆形进度条">
+                <StackPanel Orientation="Horizontal" Spacing="24">
+                    <core:CyanProgress Type="Circle" Percent="75" />
+                    <core:CyanProgress Type="Circle" Percent="100" />
+                    <core:CyanProgress Type="Circle" Percent="70" Status="Exception" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="小尺寸圆形">
+                <StackPanel Orientation="Horizontal" Spacing="24">
+                    <core:CyanProgress Type="Circle" Percent="75" Size="Small" />
+                    <core:CyanProgress Type="Circle" Percent="100" Size="Small" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="仪表盘">
+                <StackPanel Orientation="Horizontal" Spacing="24">
+                    <core:CyanProgress Type="Dashboard" Percent="75" />
+                    <core:CyanProgress Type="Dashboard" Percent="100" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="分段进度条" Description="步骤进度条，支持颜色分段展示，默认间隔为 2px。">
+                <core:CyanProgress Steps="5" Percent="60" />
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="自定义分段数和间隔">
+                <StackPanel Spacing="8">
+                    <StackPanel Orientation="Horizontal" Spacing="16" Margin="0,0,0,8">
+                        <TextBlock Text="Custom count:" VerticalAlignment="Center" Foreground="{DynamicResource ColorTextBrush}"/>
+                        <Slider x:Name="StepCountSlider" Minimum="2" Maximum="10" Value="6"
+                                Width="150" SmallChange="1" LargeChange="1" TickFrequency="1" IsSnapToTickEnabled="True"
+                                VerticalAlignment="Center" />
+                        <TextBlock Text="Custom gap:" VerticalAlignment="Center" Foreground="{DynamicResource ColorTextBrush}"/>
+                        <Slider x:Name="StepGapSlider" Minimum="0" Maximum="20" Value="2"
+                                Width="150" SmallChange="1" LargeChange="1" TickFrequency="1" IsSnapToTickEnabled="True"
+                                VerticalAlignment="Center" />
+                    </StackPanel>
+                    <core:CyanProgress x:Name="CustomStepsProgress" Steps="6" Gap="2" Percent="50" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="圆形分段进度条">
+                <StackPanel Orientation="Horizontal" Spacing="24">
+                    <core:CyanProgress x:Name="CircleSteps1" Type="Circle" Steps="6" Gap="2" Percent="50" />
+                    <core:CyanProgress x:Name="CircleSteps2" Type="Circle" Steps="6" Gap="2" Percent="100" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="动态进度">
+                <StackPanel Spacing="8">
+                    <core:CyanProgress x:Name="DynamicProgress" Percent="0" />
+                    <btn:CyanButton Content="开始/停止" ButtonType="Primary" Click="OnToggleDynamic" />
+                </StackPanel>
+            </controls:DemoSection>
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

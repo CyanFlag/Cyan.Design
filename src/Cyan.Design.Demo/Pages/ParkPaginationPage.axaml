@@ -1,0 +1,38 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="using:Cyan.Design.Demo.Controls"
+             xmlns:core="using:Cyan.Design.Core.Controls.Navigation"
+             x:Class="Cyan.Design.Demo.Pages.ParkPaginationPage"
+             x:CompileBindings="False">
+    <ScrollViewer Padding="0" Margin="15">
+        <StackPanel Spacing="0" MaxWidth="800">
+            <TextBlock Text="ParkPagination 分页" FontSize="22" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}"/>
+            <TextBlock Text="移植自 ParkUI 的 Pagination 控件，支持页码导航、省略号、尺寸变体。" Foreground="{DynamicResource ColorTextSecondaryBrush}" TextWrapping="Wrap"/>
+
+            <controls:DemoSection Title="基本用法" Description="Count=100, PageSize=10">
+                <core:CyanParkPagination Count="100" Page="1" PageSize="10" Margin="0,8,0,0" />
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="中间页码" Description="Page=5，显示省略号">
+                <core:CyanParkPagination Count="100" Page="5" PageSize="10" Margin="0,8,0,0" />
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="少量数据" Description="Count=25, PageSize=10，仅3页">
+                <core:CyanParkPagination Count="25" Page="2" PageSize="10" Margin="0,8,0,0" />
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="小尺寸" Description="PaginationSize=Small">
+                <core:CyanParkPagination Count="200" Page="6" PageSize="10" PaginationSize="Small" Margin="0,8,0,0" />
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="大尺寸" Description="PaginationSize=Large">
+                <core:CyanParkPagination Count="200" Page="6" PageSize="10" PaginationSize="Large" Margin="0,8,0,0" />
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="大兄弟数" Description="SiblingCount=2，当前页两侧各显示2页">
+                <core:CyanParkPagination Count="500" Page="10" PageSize="10" SiblingCount="2" Margin="0,8,0,0" />
+            </controls:DemoSection>
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

@@ -1,0 +1,82 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="using:Cyan.Design.Demo.Controls"
+             xmlns:core="using:Cyan.Design.Core.Controls.Overlays"
+             xmlns:btn="using:Cyan.Design.Core.Controls.Buttons"
+             x:Class="Cyan.Design.Demo.Pages.HoverCardPage"
+             x:CompileBindings="False">
+    <ScrollViewer Padding="0" Margin="15">
+        <StackPanel Spacing="0" MaxWidth="800">
+            <TextBlock Text="Hover Card 悬停卡片" FontSize="22" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}"/>
+            <TextBlock Text="移植自 ParkUI 的 Hover Card 控件，鼠标悬停时显示卡片内容，支持延迟和定位。" Foreground="{DynamicResource ColorTextSecondaryBrush}" TextWrapping="Wrap"/>
+
+            <controls:DemoSection Title="基本用法" Description="鼠标悬停在链接上显示卡片">
+                <core:CyanHoverCard Margin="0,8,0,0" OpenDelay="200" CloseDelay="200">
+                    <TextBlock Text="@grizzly_codes" Foreground="{DynamicResource ColorPrimaryBrush}" FontSize="14" />
+                    <core:CyanHoverCard.Overlay>
+                        <StackPanel Spacing="8" MaxWidth="280">
+                            <StackPanel Orientation="Horizontal" Spacing="12">
+                                <Border Width="40" Height="40" CornerRadius="20" Background="{DynamicResource ColorPrimaryBrush}">
+                                    <TextBlock Text="CB" Foreground="White" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <StackPanel Spacing="2">
+                                    <TextBlock Text="@grizzly_codes" FontWeight="Bold" FontSize="14" />
+                                    <TextBlock Text="Principal Software Engineer" Foreground="{DynamicResource ColorTextSecondaryBrush}" FontSize="12" />
+                                </StackPanel>
+                            </StackPanel>
+                            <TextBlock Text="Joined Oktober 2025" Foreground="{DynamicResource ColorTextTertiaryBrush}" FontSize="12" />
+                        </StackPanel>
+                    </core:CyanHoverCard.Overlay>
+                </core:CyanHoverCard>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="不同定位" Description="Placement = Top / Bottom / Left / Right">
+                <StackPanel Orientation="Horizontal" Spacing="24" Margin="0,8,0,0">
+                    <core:CyanHoverCard Placement="Top" OpenDelay="200" CloseDelay="200">
+                        <btn:CyanButton Content="Top" ButtonSize="Small" />
+                        <core:CyanHoverCard.Overlay>
+                            <TextBlock Text="Hover card on top" FontSize="13" />
+                        </core:CyanHoverCard.Overlay>
+                    </core:CyanHoverCard>
+                    <core:CyanHoverCard Placement="Bottom" OpenDelay="200" CloseDelay="200">
+                        <btn:CyanButton Content="Bottom" ButtonSize="Small" />
+                        <core:CyanHoverCard.Overlay>
+                            <TextBlock Text="Hover card on bottom" FontSize="13" />
+                        </core:CyanHoverCard.Overlay>
+                    </core:CyanHoverCard>
+                    <core:CyanHoverCard Placement="Left" OpenDelay="200" CloseDelay="200">
+                        <btn:CyanButton Content="Left" ButtonSize="Small" />
+                        <core:CyanHoverCard.Overlay>
+                            <TextBlock Text="Hover card on left" FontSize="13" />
+                        </core:CyanHoverCard.Overlay>
+                    </core:CyanHoverCard>
+                    <core:CyanHoverCard Placement="Right" OpenDelay="200" CloseDelay="200">
+                        <btn:CyanButton Content="Right" ButtonSize="Small" />
+                        <core:CyanHoverCard.Overlay>
+                            <TextBlock Text="Hover card on right" FontSize="13" />
+                        </core:CyanHoverCard.Overlay>
+                    </core:CyanHoverCard>
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="延迟控制" Description="OpenDelay=1000, CloseDelay=500">
+                <core:CyanHoverCard OpenDelay="1000" CloseDelay="500" Margin="0,8,0,0">
+                    <btn:CyanButton Content="Hover me (1s delay)" ButtonSize="Small" ButtonType="Primary" />
+                    <core:CyanHoverCard.Overlay>
+                        <TextBlock Text="This card opens after 1 second and closes after 500ms" FontSize="13" TextWrapping="Wrap" MaxWidth="240" />
+                    </core:CyanHoverCard.Overlay>
+                </core:CyanHoverCard>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="禁用" Description="Disabled=True">
+                <core:CyanHoverCard Disabled="True" Margin="0,8,0,0">
+                    <btn:CyanButton Content="Disabled hover card" ButtonSize="Small" />
+                    <core:CyanHoverCard.Overlay>
+                        <TextBlock Text="This should not appear" FontSize="13" />
+                    </core:CyanHoverCard.Overlay>
+                </core:CyanHoverCard>
+            </controls:DemoSection>
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

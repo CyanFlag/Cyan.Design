@@ -1,0 +1,40 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:core="using:Cyan.Design.Core.Controls.Feedback">
+
+    <Style Selector="core|CyanSpin">
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Panel>
+                    <ContentPresenter x:Name="PART_Content" Content="{TemplateBinding Content}" />
+                    <Border x:Name="PART_Mask" IsVisible="False"
+                            Background="{DynamicResource ColorMaskBgBrush}"
+                            HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                    <StackPanel x:Name="PART_SpinOverlay" IsVisible="True"
+                                HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Panel x:Name="PART_DotContainer" Width="22" Height="22">
+                            <Border x:Name="PART_Dot1" Width="4" Height="4" CornerRadius="100"
+                                    Background="{DynamicResource ColorPrimaryBrush}"
+                                    HorizontalAlignment="Left" VerticalAlignment="Top" />
+                            <Border x:Name="PART_Dot2" Width="4" Height="4" CornerRadius="100"
+                                    Background="{DynamicResource ColorPrimaryBrush}"
+                                    HorizontalAlignment="Left" VerticalAlignment="Top" />
+                            <Border x:Name="PART_Dot3" Width="4" Height="4" CornerRadius="100"
+                                    Background="{DynamicResource ColorPrimaryBrush}"
+                                    HorizontalAlignment="Left" VerticalAlignment="Top" />
+                            <Border x:Name="PART_Dot4" Width="4" Height="4" CornerRadius="100"
+                                    Background="{DynamicResource ColorPrimaryBrush}"
+                                    HorizontalAlignment="Left" VerticalAlignment="Top" />
+                        </Panel>
+                        <TextBlock x:Name="PART_TipText" IsVisible="False"
+                                   HorizontalAlignment="Center" Margin="0,8,0,0"
+                                   Foreground="{DynamicResource ColorTextBrush}" />
+                    </StackPanel>
+                </Panel>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+</Styles>

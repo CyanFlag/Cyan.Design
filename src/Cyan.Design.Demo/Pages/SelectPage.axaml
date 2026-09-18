@@ -1,0 +1,52 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:core="using:Cyan.Design.Core.Controls.Dropdowns"
+             xmlns:controls="using:Cyan.Design.Demo.Controls"
+             x:Class="Cyan.Design.Demo.Pages.SelectPage">
+    <ScrollViewer Padding="0" Margin="20">
+        <StackPanel Spacing="16" MaxWidth="600">
+            <TextBlock Text="选择控件" FontSize="22" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}"/>
+            <TextBlock Text="Select 下拉选择 / DatePicker 日期选择。" Foreground="{DynamicResource ColorTextSecondaryBrush}"/>
+
+            <controls:DemoSection Title="Select 基础">
+                <core:CyanSelect>
+                    <core:CyanSelect.Items>
+                        <x:String>选项一</x:String>
+                        <x:String>选项二</x:String>
+                        <x:String>选项三</x:String>
+                    </core:CyanSelect.Items>
+                </core:CyanSelect>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="Select 尺寸">
+                <StackPanel Spacing="8">
+                    <core:CyanSelect InputSize="Large" SelectedIndex="0">
+                        <x:String>Large A</x:String><x:String>Large B</x:String>
+                    </core:CyanSelect>
+                    <core:CyanSelect InputSize="Small" SelectedIndex="0">
+                        <x:String>Small A</x:String><x:String>Small B</x:String>
+                    </core:CyanSelect>
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="Select 状态">
+                <StackPanel Spacing="8">
+                    <core:CyanSelect InputStatus="Error" SelectedIndex="0">
+                        <x:String>Error</x:String><x:String>B</x:String>
+                    </core:CyanSelect>
+                    <core:CyanSelect InputStatus="Warning" SelectedIndex="0">
+                        <x:String>Warning</x:String><x:String>B</x:String>
+                    </core:CyanSelect>
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="DatePicker 日期选择">
+                <StackPanel Spacing="8">
+                    <core:CyanDatePicker />
+                    <core:CyanDatePicker InputStatus="Error" />
+                    <core:CyanDatePicker InputSize="Large" />
+                </StackPanel>
+            </controls:DemoSection>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

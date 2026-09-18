@@ -1,0 +1,180 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:core="using:Cyan.Design.Core.Controls.Feedback">
+
+    <Style Selector="core|CyanProgress">
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid>
+                    <Grid x:Name="PART_LineContainer" IsVisible="False"
+                          RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="*,Auto"
+                          VerticalAlignment="Center">
+                        <Grid Grid.Row="1" Grid.Column="0" x:Name="PART_LineBar"
+                              Height="8" ClipToBounds="True"
+                              HorizontalAlignment="Stretch">
+                            <Border x:Name="PART_LineRail" CornerRadius="100" />
+                            <Grid x:Name="PART_LineTrackGrid" ColumnDefinitions="0,*">
+                                <Border Grid.Column="0" x:Name="PART_LineTrack"
+                                        CornerRadius="100" HorizontalAlignment="Stretch" />
+                            </Grid>
+                        </Grid>
+                        <Panel Grid.Row="1" Grid.Column="0" x:Name="PART_StepsPanel"
+                               IsVisible="False" Height="8"
+                               VerticalAlignment="Center" HorizontalAlignment="Stretch" />
+                        <TextBlock x:Name="PART_InfoText" FontSize="14" IsVisible="False" />
+                    </Grid>
+
+                    <Panel x:Name="PART_CirclePanel" IsVisible="False"
+                           HorizontalAlignment="Left" VerticalAlignment="Top"
+                           Width="120" Height="120">
+                        <Panel x:Name="PART_CircleStepsPanel" IsVisible="False" />
+                        <Path x:Name="PART_CircleRail" StrokeLineCap="Round" />
+                        <Path x:Name="PART_CircleTrack" StrokeLineCap="Round" />
+                        <TextBlock x:Name="PART_CircleText"
+                                   HorizontalAlignment="Center" VerticalAlignment="Center"
+                                   FontWeight="600" FontSize="16"
+                                   Foreground="{DynamicResource ColorTextBrush}" />
+                        <Panel x:Name="PART_StatusIcon"
+                               HorizontalAlignment="Center" VerticalAlignment="Center"
+                               IsVisible="False">
+                            <Path x:Name="PART_SuccessIcon" Width="28" Height="28"
+                                  Fill="{DynamicResource ColorSuccessBrush}" Stretch="Uniform"
+                                  Data="M426 726L166 466l60-60 200 200 372-372 60 60z"
+                                  IsVisible="False" />
+                            <Path x:Name="PART_ExceptionIcon" Width="28" Height="28"
+                                  Fill="{DynamicResource ColorErrorBrush}" Stretch="Uniform"
+                                  Data="M810 290l-56-56-242 242-242-242-56 56 242 242-242 242 56 56 242-242 242 242 56-56-242-242z"
+                                  IsVisible="False" />
+                        </Panel>
+                    </Panel>
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <Style Selector="core|CyanProgress:line /template/ Grid#PART_LineContainer">
+        <Setter Property="IsVisible" Value="True" />
+    </Style>
+
+    <Style Selector="core|CyanProgress:circle /template/ Panel#PART_CirclePanel">
+        <Setter Property="IsVisible" Value="True" />
+    </Style>
+
+    <Style Selector="core|CyanProgress:dashboard /template/ Panel#PART_CirclePanel">
+        <Setter Property="IsVisible" Value="True" />
+    </Style>
+
+    <Style Selector="core|CyanProgress:small:line /template/ Grid#PART_LineBar">
+        <Setter Property="Height" Value="6" />
+    </Style>
+
+    <Style Selector="core|CyanProgress:large:line /template/ Grid#PART_LineBar">
+        <Setter Property="Height" Value="10" />
+    </Style>
+
+    <Style Selector="core|CyanProgress:has-info:line /template/ TextBlock#PART_InfoText">
+        <Setter Property="IsVisible" Value="True" />
+    </Style>
+
+    <!-- Info position: Right (default) -->
+    <Style Selector="core|CyanProgress:info-right /template/ TextBlock#PART_InfoText">
+        <Setter Property="(Grid.Row)" Value="1" />
+        <Setter Property="(Grid.Column)" Value="1" />
+        <Setter Property="Margin" Value="8,0,0,0" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextBrush}" />
+    </Style>
+
+    <!-- Info position: Top -->
+    <Style Selector="core|CyanProgress:info-top /template/ TextBlock#PART_InfoText">
+        <Setter Property="(Grid.Row)" Value="0" />
+        <Setter Property="(Grid.Column)" Value="0" />
+        <Setter Property="Margin" Value="0,0,0,4" />
+        <Setter Property="VerticalAlignment" Value="Bottom" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextBrush}" />
+    </Style>
+
+    <!-- Info position: Bottom -->
+    <Style Selector="core|CyanProgress:info-bottom /template/ TextBlock#PART_InfoText">
+        <Setter Property="(Grid.Row)" Value="2" />
+        <Setter Property="(Grid.Column)" Value="0" />
+        <Setter Property="Margin" Value="0,4,0,0" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextBrush}" />
+    </Style>
+
+    <!-- Status color overrides for non-inside positions -->
+    <Style Selector="core|CyanProgress:success:line:info-right /template/ TextBlock#PART_InfoText">
+        <Setter Property="Foreground" Value="{DynamicResource ColorSuccessBrush}" />
+    </Style>
+    <Style Selector="core|CyanProgress:exception:line:info-right /template/ TextBlock#PART_InfoText">
+        <Setter Property="Foreground" Value="{DynamicResource ColorErrorBrush}" />
+    </Style>
+    <Style Selector="core|CyanProgress:success:line:info-top /template/ TextBlock#PART_InfoText">
+        <Setter Property="Foreground" Value="{DynamicResource ColorSuccessBrush}" />
+    </Style>
+    <Style Selector="core|CyanProgress:exception:line:info-top /template/ TextBlock#PART_InfoText">
+        <Setter Property="Foreground" Value="{DynamicResource ColorErrorBrush}" />
+    </Style>
+    <Style Selector="core|CyanProgress:success:line:info-bottom /template/ TextBlock#PART_InfoText">
+        <Setter Property="Foreground" Value="{DynamicResource ColorSuccessBrush}" />
+    </Style>
+    <Style Selector="core|CyanProgress:exception:line:info-bottom /template/ TextBlock#PART_InfoText">
+        <Setter Property="Foreground" Value="{DynamicResource ColorErrorBrush}" />
+    </Style>
+
+    <!-- Info position: Inside (white text, always wins) -->
+    <Style Selector="core|CyanProgress:info-inside /template/ TextBlock#PART_InfoText">
+        <Setter Property="(Grid.Row)" Value="1" />
+        <Setter Property="(Grid.Column)" Value="0" />
+        <Setter Property="Margin" Value="0,0,8,0" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="Foreground" Value="White" />
+    </Style>
+
+    <!-- Info position: Center (text centered in the bar) -->
+    <Style Selector="core|CyanProgress:info-center /template/ TextBlock#PART_InfoText">
+        <Setter Property="(Grid.Row)" Value="1" />
+        <Setter Property="(Grid.Column)" Value="0" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="Foreground" Value="White" />
+    </Style>
+
+    <!-- Info position: Follow (fixed at left edge of bar) -->
+    <Style Selector="core|CyanProgress:info-follow /template/ TextBlock#PART_InfoText">
+        <Setter Property="(Grid.Row)" Value="1" />
+        <Setter Property="(Grid.Column)" Value="0" />
+        <Setter Property="Margin" Value="4,0,0,0" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="Foreground" Value="White" />
+    </Style>
+
+    <!-- Increase bar height for inside/center/follow positions -->
+    <Style Selector="core|CyanProgress:info-inside:line /template/ Grid#PART_LineBar">
+        <Setter Property="Height" Value="20" />
+    </Style>
+    <Style Selector="core|CyanProgress:info-center:line /template/ Grid#PART_LineBar">
+        <Setter Property="Height" Value="20" />
+    </Style>
+    <Style Selector="core|CyanProgress:info-follow:line /template/ Grid#PART_LineBar">
+        <Setter Property="Height" Value="20" />
+    </Style>
+
+    <Style Selector="core|CyanProgress:success /template/ Path#PART_SuccessIcon">
+        <Setter Property="IsVisible" Value="True" />
+    </Style>
+
+    <Style Selector="core|CyanProgress:exception /template/ Path#PART_ExceptionIcon">
+        <Setter Property="IsVisible" Value="True" />
+    </Style>
+
+</Styles>

@@ -1,0 +1,36 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:icon="using:Cyan.Design.Core.Controls.Icons"
+             xmlns:sys="clr-namespace:System;assembly=System.Runtime"
+             x:Class="Cyan.Design.Demo.Pages.IconPage">
+    <Grid RowDefinitions="Auto,*">
+        <StackPanel Grid.Row="0" Spacing="10" Margin="24,16,24,8">
+            <TextBlock Text="Icon 图标" FontSize="22" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}"/>
+            <TextBlock Text="iconfont 字体图标集，共 1121 个图标，支持 key 搜索。" Foreground="{DynamicResource ColorTextSecondaryBrush}"/>
+            <TextBox x:Name="SearchBox" Watermark="搜索图标 key..." MaxWidth="320" TextChanged="OnSearch"/>
+        </StackPanel>
+        <ScrollViewer Grid.Row="1" Padding="24,0,24,24">
+            <ItemsControl x:Name="IconGrid">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Columns="12" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate x:DataType="sys:String">
+                        <Border Width="72" Height="72" Margin="2" CornerRadius="6"
+                                Background="{DynamicResource ColorBgContainerBrush}"
+                                BorderBrush="{DynamicResource ColorBorderSecondaryBrush}" BorderThickness="1">
+                            <StackPanel Spacing="4" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <icon:CyanIcon IconKey="{Binding}" FontSize="24" HorizontalAlignment="Center" />
+                                <TextBlock Text="{Binding}" FontSize="9"
+                                           Foreground="{DynamicResource ColorTextSecondaryBrush}"
+                                           HorizontalAlignment="Center" />
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

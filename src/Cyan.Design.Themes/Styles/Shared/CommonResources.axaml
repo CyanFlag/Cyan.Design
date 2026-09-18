@@ -1,0 +1,23 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- 共享圆角 -->
+    <CornerRadius x:Key="RadiusNone">0</CornerRadius>
+    <CornerRadius x:Key="RadiusSM">4</CornerRadius>
+    <CornerRadius x:Key="RadiusMD">6</CornerRadius>
+    <CornerRadius x:Key="RadiusLG">8</CornerRadius>
+    <CornerRadius x:Key="RadiusPill">100</CornerRadius>
+
+
+    <!-- 共享厚度 -->
+    <Thickness x:Key="ThicknessNone">0</Thickness>
+    <Thickness x:Key="ThicknessXS">4</Thickness>
+    <Thickness x:Key="ThicknessSM">8</Thickness>
+    <Thickness x:Key="ThicknessMD">12</Thickness>
+    <Thickness x:Key="ThicknessLG">16</Thickness>
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceInclude Source="avares://Cyan.Design.Themes/Styles/Controls/DataGrid.axaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>

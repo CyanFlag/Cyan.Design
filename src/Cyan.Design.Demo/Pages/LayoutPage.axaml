@@ -1,0 +1,72 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:core="using:Cyan.Design.Core.Controls.Layout"
+             xmlns:btn="using:Cyan.Design.Core.Controls.Buttons"
+             xmlns:controls="using:Cyan.Design.Demo.Controls"
+             x:Class="Cyan.Design.Demo.Pages.LayoutPage">
+    <ScrollViewer Padding="0" Margin="30">
+        <StackPanel Spacing="16" MaxWidth="900">
+            <TextBlock Text="布局容器" FontSize="22" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}"/>
+            <TextBlock Text="Card / Divider / Space。" Foreground="{DynamicResource ColorTextSecondaryBrush}"/>
+
+            <controls:DemoSection Title="Card 卡片">
+                <StackPanel Spacing="8">
+                    <core:CyanCard Header="默认卡片" Extra="Extra">
+                        <TextBlock Text="卡片内容区域。Card 可包含 Header、Extra 与 Content。" Foreground="{DynamicResource ColorTextBrush}"/>
+                    </core:CyanCard>
+                    <core:CyanCard Header="无边界" Bordered="False">
+                        <TextBlock Text="Bordered=False 的卡片。" Foreground="{DynamicResource ColorTextBrush}"/>
+                    </core:CyanCard>
+                    <core:CyanCard Header="可悬停" Hoverable="True">
+                        <TextBlock Text="Hoverable=True，鼠标悬停时阴影加深。" Foreground="{DynamicResource ColorTextBrush}"/>
+                    </core:CyanCard>
+                    <core:CyanCard>
+                        <TextBlock Text="无 Header 的纯内容卡片。" Foreground="{DynamicResource ColorTextBrush}"/>
+                    </core:CyanCard>
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="Divider 分割线">
+                <StackPanel Spacing="8">
+                    <TextBlock Text="上方文本" Foreground="{DynamicResource ColorTextBrush}"/>
+                    <core:CyanDivider />
+                    <TextBlock Text="中间文本" Foreground="{DynamicResource ColorTextBrush}"/>
+                    <core:CyanDivider Content="带文字分割线" />
+                    <TextBlock Text="下方文本" Foreground="{DynamicResource ColorTextBrush}"/>
+
+                    <TextBlock Text="垂直分割线" Foreground="{DynamicResource ColorTextBrush}"/>
+                    <core:CyanSpace>
+                        <TextBlock Text="Text 1" Foreground="{DynamicResource ColorTextBrush}"/>
+                        <core:CyanDivider Orientation="Vertical" Height="20" />
+                        <TextBlock Text="Text 2" Foreground="{DynamicResource ColorTextBrush}"/>
+                        <core:CyanDivider Orientation="Vertical" Height="20" />
+                        <TextBlock Text="Text 3" Foreground="{DynamicResource ColorTextBrush}"/>
+                    </core:CyanSpace>
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="Space 间距">
+                <StackPanel Spacing="8">
+                    <core:CyanSpace SpaceSize="Small">
+                        <btn:CyanButton Content="Small A" />
+                        <btn:CyanButton Content="Small B" />
+                        <btn:CyanButton Content="Small C" />
+                    </core:CyanSpace>
+                    <core:CyanSpace SpaceSize="Middle">
+                        <btn:CyanButton Content="Middle A" />
+                        <btn:CyanButton Content="Middle B" />
+                    </core:CyanSpace>
+                    <core:CyanSpace SpaceSize="Large">
+                        <btn:CyanButton Content="Large A" />
+                        <btn:CyanButton Content="Large B" />
+                    </core:CyanSpace>
+                    <core:CyanSpace Direction="Vertical">
+                        <btn:CyanButton Content="Vertical A" />
+                        <btn:CyanButton Content="Vertical B" />
+                        <btn:CyanButton Content="Vertical C" />
+                    </core:CyanSpace>
+                </StackPanel>
+            </controls:DemoSection>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

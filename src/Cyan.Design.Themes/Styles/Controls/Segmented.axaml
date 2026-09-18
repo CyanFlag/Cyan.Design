@@ -1,0 +1,131 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:core="using:Cyan.Design.Core.Controls.Selections">
+
+    <!-- CyanSegmented 容器（ItemsPanel 由代码管理） -->
+    <Style Selector="core|CyanSegmented">
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border x:Name="PART_Root"
+                        Background="{DynamicResource ColorFillTertiaryBrush}"
+                        CornerRadius="6"
+                        Padding="2"
+                        ClipToBounds="True">
+                    <ItemsPresenter />
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <!-- Block 模式：填满父容器宽度 -->
+    <Style Selector="core|CyanSegmented:block">
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+    </Style>
+    <Style Selector="core|CyanSegmented:block /template/ Border#PART_Root">
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+    </Style>
+
+    <!-- Round 形状：容器胶囊圆角 -->
+    <Style Selector="core|CyanSegmented:round /template/ Border#PART_Root">
+        <Setter Property="CornerRadius" Value="9999" />
+    </Style>
+
+    <!-- CyanSegmentedItem 选项项 -->
+    <Style Selector="core|CyanSegmentedItem">
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextSecondaryBrush}" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Padding" Value="12,0" />
+        <Setter Property="MinHeight" Value="28" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border x:Name="PART_ItemBorder"
+                        Background="Transparent"
+                        CornerRadius="4"
+                        Padding="{TemplateBinding Padding}"
+                        MinHeight="{TemplateBinding MinHeight}"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        BoxShadow="0 0 0 0 transparent">
+                    <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Spacing="4">
+                        <ContentPresenter Content="{TemplateBinding Icon}"
+                                          VerticalAlignment="Center" />
+                        <ContentPresenter Content="{TemplateBinding Label}"
+                                          Foreground="{TemplateBinding Foreground}"
+                                          FontSize="{TemplateBinding FontSize}"
+                                          VerticalAlignment="Center" />
+                    </StackPanel>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <!-- 选中状态 -->
+    <Style Selector="core|CyanSegmentedItem:selected /template/ Border#PART_ItemBorder">
+        <Setter Property="Background" Value="{DynamicResource ColorBgContainerBrush}" />
+        <Setter Property="BoxShadow" Value="0 1 2 0 #0D000000, 0 1 6 -1 #08000000, 0 2 4 0 #08000000" />
+    </Style>
+    <Style Selector="core|CyanSegmentedItem:selected">
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextBrush}" />
+    </Style>
+
+    <!-- Round 形状：仅选中项胶囊圆角（匹配 ant.design: .ant-segmented-round .ant-segmented-item-selected） -->
+    <Style Selector="core|CyanSegmentedItem:round:selected /template/ Border#PART_ItemBorder">
+        <Setter Property="CornerRadius" Value="9999" />
+    </Style>
+
+    <!-- 悬停状态（非选中） -->
+    <Style Selector="core|CyanSegmentedItem:not(:selected):pointerover /template/ Border#PART_ItemBorder">
+        <Setter Property="Background" Value="#0F000000" />
+    </Style>
+    <Style Selector="core|CyanSegmentedItem:not(:selected):pointerover">
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextBrush}" />
+    </Style>
+
+    <!-- 按下状态（非选中）：itemActiveBg = rgba(0,0,0,0.15) = #26000000 -->
+    <Style Selector="core|CyanSegmentedItem:not(:selected):pressed /template/ Border#PART_ItemBorder">
+        <Setter Property="Background" Value="#26000000" />
+    </Style>
+
+    <!-- 尺寸：Small -->
+    <Style Selector="core|CyanSegmented:small core|CyanSegmentedItem">
+        <Setter Property="Padding" Value="8,0" />
+        <Setter Property="MinHeight" Value="20" />
+    </Style>
+
+    <!-- 尺寸：Large -->
+    <Style Selector="core|CyanSegmented:large core|CyanSegmentedItem">
+        <Setter Property="Padding" Value="16,0" />
+        <Setter Property="MinHeight" Value="36" />
+        <Setter Property="FontSize" Value="16" />
+    </Style>
+
+    <!-- Block 模式：每项等宽拉伸 -->
+    <Style Selector="core|CyanSegmented:block core|CyanSegmentedItem">
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+    </Style>
+    <Style Selector="core|CyanSegmented:block core|CyanSegmentedItem /template/ Border#PART_ItemBorder">
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+    </Style>
+    <Style Selector="core|CyanSegmented:block core|CyanSegmentedItem /template/ StackPanel">
+        <Setter Property="HorizontalAlignment" Value="Center" />
+    </Style>
+
+    <!-- 禁用状态 -->
+    <Style Selector="core|CyanSegmentedItem:disabled">
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextDisabledBrush}" />
+        <Setter Property="Cursor" Value="Arrow" />
+    </Style>
+    <Style Selector="core|CyanSegmented:disabled core|CyanSegmentedItem">
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextDisabledBrush}" />
+        <Setter Property="Cursor" Value="Arrow" />
+    </Style>
+
+</Styles>

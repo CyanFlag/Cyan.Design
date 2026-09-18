@@ -1,0 +1,111 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="using:Cyan.Design.Demo.Controls"
+             xmlns:cmd="using:Cyan.Design.Core.Controls.Overlays"
+             x:Class="Cyan.Design.Demo.Pages.ShadCommandPage"
+             x:CompileBindings="False">
+    <ScrollViewer Padding="0" Margin="15">
+        <StackPanel Spacing="0" MaxWidth="800">
+            <TextBlock Text="ShadCommand 命令面板" FontSize="22" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}"/>
+            <TextBlock Text="移植自 shadcn/ui 的 Command 组件，支持搜索过滤、键盘导航（↑↓选择，Enter执行）。" Foreground="{DynamicResource ColorTextSecondaryBrush}" TextWrapping="Wrap"/>
+
+            <controls:DemoSection Title="命令面板对话框" Description="点击按钮打开命令面板，或按 Ctrl+K 打开有遮罩模式">
+                <StackPanel Margin="0,8,0,0" Spacing="12" Orientation="Horizontal">
+                    <Button Content="有遮罩" Click="OnOpenWithOverlayClick" HorizontalAlignment="Left" Padding="16,8" />
+                    <Button Content="无遮罩" Click="OnOpenWithoutOverlayClick" HorizontalAlignment="Left" Padding="16,8" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <TextBlock x:Name="ResultText" Foreground="#71717A" FontSize="14" Margin="0,12,0,0" />
+
+            <cmd:CyanShadCommandDialog x:Name="DialogWithOverlay" IsOpen="False" ShowOverlay="True">
+                <cmd:CyanShadCommandDialog.Content>
+                    <cmd:CyanShadCommand Width="500">
+                        <StackPanel>
+                            <TextBox Classes="ShadCommandInput" />
+                            <ScrollViewer Classes="ShadCommandList">
+                                <StackPanel>
+                                    <cmd:CyanShadCommandEmpty>No results found.</cmd:CyanShadCommandEmpty>
+                                    <cmd:CyanShadCommandGroup Heading="File">
+                                        <StackPanel>
+                                            <cmd:CyanShadCommandItem Content="New File" Value="New File" Shortcut="Ctrl+N" Click="OnItemClick">
+                                                <cmd:CyanShadCommandItem.Icon>
+                                                    <TextBlock Text="&#x1F4C4;" FontSize="14" />
+                                                </cmd:CyanShadCommandItem.Icon>
+                                            </cmd:CyanShadCommandItem>
+                                            <cmd:CyanShadCommandItem Content="Open File" Value="Open File" Shortcut="Ctrl+O" Click="OnItemClick">
+                                                <cmd:CyanShadCommandItem.Icon>
+                                                    <TextBlock Text="&#x1F4C2;" FontSize="14" />
+                                                </cmd:CyanShadCommandItem.Icon>
+                                            </cmd:CyanShadCommandItem>
+                                        </StackPanel>
+                                    </cmd:CyanShadCommandGroup>
+                                    <cmd:CyanShadCommandSeparator />
+                                    <cmd:CyanShadCommandGroup Heading="Edit">
+                                        <StackPanel>
+                                            <cmd:CyanShadCommandItem Content="Undo" Value="Undo" Shortcut="Ctrl+Z" Click="OnItemClick">
+                                                <cmd:CyanShadCommandItem.Icon>
+                                                    <TextBlock Text="&#x21A9;" FontSize="14" />
+                                                </cmd:CyanShadCommandItem.Icon>
+                                            </cmd:CyanShadCommandItem>
+                                            <cmd:CyanShadCommandItem Content="Redo" Value="Redo" Shortcut="Ctrl+Y" Click="OnItemClick">
+                                                <cmd:CyanShadCommandItem.Icon>
+                                                    <TextBlock Text="&#x21AA;" FontSize="14" />
+                                                </cmd:CyanShadCommandItem.Icon>
+                                            </cmd:CyanShadCommandItem>
+                                        </StackPanel>
+                                    </cmd:CyanShadCommandGroup>
+                                </StackPanel>
+                            </ScrollViewer>
+                        </StackPanel>
+                    </cmd:CyanShadCommand>
+                </cmd:CyanShadCommandDialog.Content>
+            </cmd:CyanShadCommandDialog>
+
+            <cmd:CyanShadCommandDialog x:Name="DialogNoOverlay" IsOpen="False" ShowOverlay="False">
+                <cmd:CyanShadCommandDialog.Content>
+                    <cmd:CyanShadCommand Width="500">
+                        <StackPanel>
+                            <TextBox Classes="ShadCommandInput" />
+                            <ScrollViewer Classes="ShadCommandList">
+                                <StackPanel>
+                                    <cmd:CyanShadCommandEmpty>No results found.</cmd:CyanShadCommandEmpty>
+                                    <cmd:CyanShadCommandGroup Heading="File">
+                                        <StackPanel>
+                                            <cmd:CyanShadCommandItem Content="New File" Value="New File" Shortcut="Ctrl+N" Click="OnItemClick">
+                                                <cmd:CyanShadCommandItem.Icon>
+                                                    <TextBlock Text="&#x1F4C4;" FontSize="14" />
+                                                </cmd:CyanShadCommandItem.Icon>
+                                            </cmd:CyanShadCommandItem>
+                                            <cmd:CyanShadCommandItem Content="Open File" Value="Open File" Shortcut="Ctrl+O" Click="OnItemClick">
+                                                <cmd:CyanShadCommandItem.Icon>
+                                                    <TextBlock Text="&#x1F4C2;" FontSize="14" />
+                                                </cmd:CyanShadCommandItem.Icon>
+                                            </cmd:CyanShadCommandItem>
+                                        </StackPanel>
+                                    </cmd:CyanShadCommandGroup>
+                                    <cmd:CyanShadCommandSeparator />
+                                    <cmd:CyanShadCommandGroup Heading="Edit">
+                                        <StackPanel>
+                                            <cmd:CyanShadCommandItem Content="Undo" Value="Undo" Shortcut="Ctrl+Z" Click="OnItemClick">
+                                                <cmd:CyanShadCommandItem.Icon>
+                                                    <TextBlock Text="&#x21A9;" FontSize="14" />
+                                                </cmd:CyanShadCommandItem.Icon>
+                                            </cmd:CyanShadCommandItem>
+                                            <cmd:CyanShadCommandItem Content="Redo" Value="Redo" Shortcut="Ctrl+Y" Click="OnItemClick">
+                                                <cmd:CyanShadCommandItem.Icon>
+                                                    <TextBlock Text="&#x21AA;" FontSize="14" />
+                                                </cmd:CyanShadCommandItem.Icon>
+                                            </cmd:CyanShadCommandItem>
+                                        </StackPanel>
+                                    </cmd:CyanShadCommandGroup>
+                                </StackPanel>
+                            </ScrollViewer>
+                        </StackPanel>
+                    </cmd:CyanShadCommand>
+                </cmd:CyanShadCommandDialog.Content>
+            </cmd:CyanShadCommandDialog>
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

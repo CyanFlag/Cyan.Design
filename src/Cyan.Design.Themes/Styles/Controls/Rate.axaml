@@ -1,0 +1,23 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:core="using:Cyan.Design.Core.Controls.Feedback">
+
+    <Style Selector="core|CyanRate">
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <StackPanel x:Name="PART_Container" Orientation="Horizontal" />
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <Style Selector="core|CyanRate:disabled">
+        <Setter Property="Opacity" Value="0.6" />
+    </Style>
+
+    <Style Selector="core|CyanRate:readonly">
+        <Setter Property="Opacity" Value="0.8" />
+    </Style>
+
+</Styles>

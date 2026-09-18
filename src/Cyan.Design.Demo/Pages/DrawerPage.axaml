@@ -1,0 +1,79 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:core="using:Cyan.Design.Core.Controls.Feedback"
+             xmlns:btn="using:Cyan.Design.Core.Controls.Buttons"
+             x:Class="Cyan.Design.Demo.Pages.DrawerPage">
+    <Grid>
+        <ScrollViewer Padding="0" Margin="25">
+            <StackPanel Spacing="20" MaxWidth="800">
+                <TextBlock Text="Drawer 抽屉" FontSize="22" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}"/>
+                <TextBlock Text="参考 ant.design 5.x：从屏幕边缘滑出的浮层。" Foreground="{DynamicResource ColorTextSecondaryBrush}" TextWrapping="Wrap"/>
+
+                <TextBlock Text="基本" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}" Margin="0,8,0,0"/>
+                <btn:CyanButton Content="打开抽屉" ButtonType="Primary" Click="OnOpenBasic"/>
+
+                <TextBlock Text="自定义位置" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}" Margin="0,8,0,0"/>
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <btn:CyanButton Content="Top" Click="OnOpenTop"/>
+                    <btn:CyanButton Content="Right" Click="OnOpenRight"/>
+                    <btn:CyanButton Content="Bottom" Click="OnOpenBottom"/>
+                    <btn:CyanButton Content="Left" Click="OnOpenLeft"/>
+                </StackPanel>
+
+                <TextBlock Text="预设尺寸" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}" Margin="0,8,0,0"/>
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <btn:CyanButton Content="默认 (378px)" Click="OnOpenDefaultSize"/>
+                    <btn:CyanButton Content="大 (736px)" Click="OnOpenLargeSize"/>
+                    <btn:CyanButton Content="自定义 (500px)" Click="OnOpenCustomSize"/>
+                </StackPanel>
+
+                <TextBlock Text="无遮罩" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}" Margin="0,8,0,0"/>
+                <btn:CyanButton Content="无遮罩抽屉" Click="OnOpenNoMask"/>
+
+                <TextBlock Text="带底部" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}" Margin="0,8,0,0"/>
+                <btn:CyanButton Content="带底部抽屉" ButtonType="Primary" Click="OnOpenWithFooter"/>
+
+                <TextBlock Text="额外操作" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}" Margin="0,8,0,0"/>
+                <btn:CyanButton Content="带额外操作" Click="OnOpenWithExtra"/>
+
+            </StackPanel>
+        </ScrollViewer>
+
+        <core:CyanDrawer x:Name="BasicDrawer" Title="基本抽屉">
+            <StackPanel Spacing="12">
+                <TextBlock Text="这是一些内容。" Foreground="{DynamicResource ColorTextSecondaryBrush}"/>
+                <TextBlock Text="抽屉可以从屏幕边缘滑出，包含一组信息或操作。" Foreground="{DynamicResource ColorTextSecondaryBrush}" TextWrapping="Wrap"/>
+            </StackPanel>
+        </core:CyanDrawer>
+
+        <core:CyanDrawer x:Name="PlacementDrawer" Title="自定义位置">
+            <TextBlock Text="抽屉可以从上、右、下、左四个方向滑出。" Foreground="{DynamicResource ColorTextSecondaryBrush}" TextWrapping="Wrap"/>
+        </core:CyanDrawer>
+
+        <core:CyanDrawer x:Name="SizeDrawer" Title="预设尺寸">
+            <TextBlock Text="默认宽度 378px，大尺寸 736px，也支持自定义尺寸。" Foreground="{DynamicResource ColorTextSecondaryBrush}" TextWrapping="Wrap"/>
+        </core:CyanDrawer>
+
+        <core:CyanDrawer x:Name="NoMaskDrawer" Title="无遮罩" Mask="False">
+            <TextBlock Text="无遮罩的抽屉，不会覆盖背景内容。" Foreground="{DynamicResource ColorTextSecondaryBrush}" TextWrapping="Wrap"/>
+        </core:CyanDrawer>
+
+        <core:CyanDrawer x:Name="FooterDrawer" Title="带底部">
+            <TextBlock Text="底部区域可以放置操作按钮。" Foreground="{DynamicResource ColorTextSecondaryBrush}" TextWrapping="Wrap"/>
+            <core:CyanDrawer.Footer>
+                <StackPanel Orientation="Horizontal" Spacing="8" HorizontalAlignment="Right">
+                    <btn:CyanButton Content="取消" Click="OnCloseFooter"/>
+                    <btn:CyanButton Content="确定" ButtonType="Primary" Click="OnCloseFooter"/>
+                </StackPanel>
+            </core:CyanDrawer.Footer>
+        </core:CyanDrawer>
+
+        <core:CyanDrawer x:Name="ExtraDrawer" Title="额外操作">
+            <TextBlock Text="额外操作区域在标题栏右侧。" Foreground="{DynamicResource ColorTextSecondaryBrush}" TextWrapping="Wrap"/>
+            <core:CyanDrawer.Extra>
+                <btn:CyanButton Content="刷新" ButtonSize="Small" Click="OnCloseExtra"/>
+            </core:CyanDrawer.Extra>
+        </core:CyanDrawer>
+
+    </Grid>
+</UserControl>

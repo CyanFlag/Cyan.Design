@@ -1,0 +1,189 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:core="using:Cyan.Design.Core.Controls.Buttons"
+             xmlns:icon="using:Cyan.Design.Core.Controls.Icons"
+             xmlns:controls="using:Cyan.Design.Demo.Controls"
+             x:Class="Cyan.Design.Demo.Pages.ButtonPage">
+    <ScrollViewer Margin="20">
+        <StackPanel Spacing="20" MaxWidth="900">
+            <TextBlock Text="Button 按钮" FontSize="22" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}"/>
+            <TextBlock Text="最基础的交互控件，支持多种类型、尺寸、形状与状态。" Foreground="{DynamicResource ColorTextSecondaryBrush}"/>
+
+            <controls:DemoSection Title="类型 Type">
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <core:CyanButton Content="Default" />
+                    <core:CyanButton Content="Primary" ButtonType="Primary" />
+                    <core:CyanButton Content="Dashed" ButtonType="Dashed" />
+                    <core:CyanButton Content="Text" ButtonType="Text" />
+                    <core:CyanButton Content="Link" ButtonType="Link" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="图标 Icon">
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <core:CyanButton Content="Home" ButtonType="Primary">
+                        <core:CyanButton.Icon>
+                            <icon:CyanIcon IconKey="home" FontSize="16" />
+                        </core:CyanButton.Icon>
+                    </core:CyanButton>
+                    <core:CyanButton Content="Edit">
+                        <core:CyanButton.Icon>
+                            <icon:CyanIcon IconKey="edit" FontSize="16" />
+                        </core:CyanButton.Icon>
+                    </core:CyanButton>
+                    <core:CyanButton Content="Upload" ButtonType="Dashed">
+                        <core:CyanButton.Icon>
+                            <icon:CyanIcon IconKey="upload" FontSize="16" />
+                        </core:CyanButton.Icon>
+                    </core:CyanButton>
+                    <core:CyanButton Content="Delete" Danger="True">
+                        <core:CyanButton.Icon>
+                            <icon:CyanIcon IconKey="delete" FontSize="16" />
+                        </core:CyanButton.Icon>
+                    </core:CyanButton>
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="纯图标按钮 Icon Only">
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <core:CyanButton Shape="Circle" ButtonType="Primary">
+                        <core:CyanButton.Icon>
+                            <icon:CyanIcon IconKey="home" FontSize="16" />
+                        </core:CyanButton.Icon>
+                    </core:CyanButton>
+                    <core:CyanButton Shape="Circle">
+                        <core:CyanButton.Icon>
+                            <icon:CyanIcon IconKey="edit" FontSize="16" />
+                        </core:CyanButton.Icon>
+                    </core:CyanButton>
+                    <core:CyanButton Shape="Circle" ButtonType="Dashed">
+                        <core:CyanButton.Icon>
+                            <icon:CyanIcon IconKey="upload" FontSize="16" />
+                        </core:CyanButton.Icon>
+                    </core:CyanButton>
+                    <core:CyanButton Shape="Circle" Danger="True">
+                        <core:CyanButton.Icon>
+                            <icon:CyanIcon IconKey="delete" FontSize="16" />
+                        </core:CyanButton.Icon>
+                    </core:CyanButton>
+                    <core:CyanButton Shape="Circle" ButtonType="Text">
+                        <core:CyanButton.Icon>
+                            <icon:CyanIcon IconKey="refresh" FontSize="16" />
+                        </core:CyanButton.Icon>
+                    </core:CyanButton>
+                    <core:CyanButton Shape="Circle" ButtonSize="Large" ButtonType="Primary">
+                        <core:CyanButton.Icon>
+                            <icon:CyanIcon IconKey="home" FontSize="18" />
+                        </core:CyanButton.Icon>
+                    </core:CyanButton>
+                    <core:CyanButton Shape="Circle" ButtonSize="Small" ButtonType="Primary">
+                        <core:CyanButton.Icon>
+                            <icon:CyanIcon IconKey="home" FontSize="14" />
+                        </core:CyanButton.Icon>
+                    </core:CyanButton>
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="危险 Danger">
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <core:CyanButton Content="Default Danger" Danger="True" />
+                    <core:CyanButton Content="Primary Danger" ButtonType="Primary" Danger="True" />
+                    <core:CyanButton Content="Dashed Danger" ButtonType="Dashed" Danger="True" />
+                    <core:CyanButton Content="Text Danger" ButtonType="Text" Danger="True" />
+                    <core:CyanButton Content="Link Danger" ButtonType="Link" Danger="True" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="幽灵 Ghost（用于深色背景）">
+                <Border Background="#FF1F1F1F" CornerRadius="8" Padding="16,12">
+                    <StackPanel Orientation="Horizontal" Spacing="8">
+                        <core:CyanButton Content="Ghost Default" Ghost="True" />
+                        <core:CyanButton Content="Ghost Primary" ButtonType="Primary" Ghost="True" />
+                        <core:CyanButton Content="Ghost Dashed" ButtonType="Dashed" Ghost="True" />
+                        <core:CyanButton Content="Ghost Danger" Danger="True" Ghost="True" />
+                    </StackPanel>
+                </Border>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="尺寸 Size">
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <core:CyanButton Content="Large" ButtonSize="Large" />
+                    <core:CyanButton Content="Middle" />
+                    <core:CyanButton Content="Small" ButtonSize="Small" />
+                    <core:CyanButton Content="Primary L" ButtonType="Primary" ButtonSize="Large" />
+                    <core:CyanButton Content="Primary S" ButtonType="Primary" ButtonSize="Small" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="形状 Shape">
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <core:CyanButton Content="Default" />
+                    <core:CyanButton Content="R" Shape="Circle" ButtonType="Primary" />
+                    <core:CyanButton Content="Round" Shape="Round" ButtonType="Primary" />
+                    <core:CyanButton Content="C" Shape="Circle" />
+                    <core:CyanButton Content="Round" Shape="Round" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="Block 撑满">
+                <StackPanel Spacing="8">
+                    <core:CyanButton Content="Block Primary Button" Block="True" ButtonType="Primary" />
+                    <core:CyanButton Content="Block Default Button" Block="True" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="加载 Loading">
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <core:CyanButton Content="Loading" Loading="True" />
+                    <core:CyanButton Content="Primary Loading" ButtonType="Primary" Loading="True" />
+                    <core:CyanButton Content="Dashed Loading" ButtonType="Dashed" Loading="True" />
+                    <core:CyanButton Content="Click Me" x:Name="LoadingDemo" Click="OnLoadingClick" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="禁用 Disabled">
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <core:CyanButton Content="Disabled" IsEnabled="False" />
+                    <core:CyanButton Content="Primary Disabled" ButtonType="Primary" IsEnabled="False" />
+                    <core:CyanButton Content="Text Disabled" ButtonType="Text" IsEnabled="False" />
+                    <core:CyanButton Content="Link Disabled" ButtonType="Link" IsEnabled="False" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="深色背景图标可见性回归">
+                <Border Background="#FF000000" CornerRadius="8" Padding="16,12">
+                    <StackPanel Spacing="12">
+                        <StackPanel Orientation="Horizontal" Spacing="8">
+                            <core:CyanButton Content="Primary" ButtonType="Primary">
+                                <core:CyanButton.Icon>
+                                    <icon:CyanIcon IconKey="home" FontSize="16" />
+                                </core:CyanButton.Icon>
+                            </core:CyanButton>
+                            <core:CyanButton Content="Primary Danger" ButtonType="Primary" Danger="True">
+                                <core:CyanButton.Icon>
+                                    <icon:CyanIcon IconKey="delete" FontSize="16" />
+                                </core:CyanButton.Icon>
+                            </core:CyanButton>
+                            <core:CyanButton Content="Ghost" Ghost="True">
+                                <core:CyanButton.Icon>
+                                    <icon:CyanIcon IconKey="edit" FontSize="16" />
+                                </core:CyanButton.Icon>
+                            </core:CyanButton>
+                            <core:CyanButton Content="Ghost Primary" ButtonType="Primary" Ghost="True">
+                                <core:CyanButton.Icon>
+                                    <icon:CyanIcon IconKey="upload" FontSize="16" />
+                                </core:CyanButton.Icon>
+                            </core:CyanButton>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Spacing="8">
+                            <TextBlock Text="独立图标：" Foreground="#FFFFFFFF" VerticalAlignment="Center" />
+                            <icon:CyanIcon IconKey="home" FontSize="20" Foreground="#FFFFFFFF" />
+                            <icon:CyanIcon IconKey="edit" FontSize="20" Foreground="#FFFFFFFF" />
+                            <icon:CyanIcon IconKey="refresh" FontSize="20" Foreground="#FFFFFFFF" />
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </controls:DemoSection>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

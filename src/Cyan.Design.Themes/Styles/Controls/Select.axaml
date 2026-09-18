@@ -1,0 +1,60 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:core="using:Cyan.Design.Core.Controls.Dropdowns">
+
+    <Style Selector="core|CyanSelect">
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorBorderBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="{DynamicResource BorderRadius}" />
+        <Setter Property="Background" Value="{DynamicResource ColorBgContainerBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextBrush}" />
+        <Setter Property="Padding" Value="11,4" />
+        <Setter Property="MinHeight" Value="32" />
+        <Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+        <Setter Property="Cursor" Value="Hand" />
+    </Style>
+    <Style Selector="core|CyanSelect:focus">
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorPrimaryBrush}" />
+    </Style>
+    <Style Selector="core|CyanSelect[InputStatus=Error]">
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorErrorBrush}" />
+    </Style>
+    <Style Selector="core|CyanSelect[InputStatus=Warning]">
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorWarningBrush}" />
+    </Style>
+    <Style Selector="core|CyanSelect[InputSize=Large]">
+        <Setter Property="MinHeight" Value="40" />
+        <Setter Property="Padding" Value="11,7" />
+        <Setter Property="FontSize" Value="{DynamicResource FontSizeLG}" />
+    </Style>
+    <Style Selector="core|CyanSelect[InputSize=Small]">
+        <Setter Property="MinHeight" Value="24" />
+        <Setter Property="Padding" Value="7,0" />
+    </Style>
+
+    <Style Selector="core|CyanDatePicker">
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorBorderBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="{DynamicResource BorderRadius}" />
+        <Setter Property="Background" Value="{DynamicResource ColorBgContainerBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextBrush}" />
+        <Setter Property="Padding" Value="11,4" />
+        <Setter Property="MinHeight" Value="32" />
+        <Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+        <Setter Property="Watermark" Value="请选择日期" />
+    </Style>
+    <Style Selector="core|CyanDatePicker:focus">
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorPrimaryBrush}" />
+    </Style>
+    <Style Selector="core|CyanDatePicker[InputStatus=Error]">
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorErrorBrush}" />
+    </Style>
+    <Style Selector="core|CyanDatePicker[InputSize=Large]">
+        <Setter Property="MinHeight" Value="40" />
+        <Setter Property="Padding" Value="11,7" />
+    </Style>
+    <Style Selector="core|CyanDatePicker[InputSize=Small]">
+        <Setter Property="MinHeight" Value="24" />
+    </Style>
+
+</Styles>

@@ -1,0 +1,91 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:core="using:Cyan.Design.Core.Controls.Typography">
+
+    <Style Selector="core|CyanTitle">
+        <Setter Property="FontWeight" Value="600" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextBrush}" />
+        <Setter Property="Margin" Value="0,0,0,8" />
+    </Style>
+    <Style Selector="core|CyanTitle[Level=H1]"><Setter Property="FontSize" Value="{DynamicResource FontSizeH1}" /></Style>
+    <Style Selector="core|CyanTitle[Level=H2]"><Setter Property="FontSize" Value="{DynamicResource FontSizeH2}" /></Style>
+    <Style Selector="core|CyanTitle[Level=H3]"><Setter Property="FontSize" Value="{DynamicResource FontSizeH3}" /></Style>
+    <Style Selector="core|CyanTitle[Level=H4]"><Setter Property="FontSize" Value="{DynamicResource FontSizeH4}" /></Style>
+    <Style Selector="core|CyanTitle[Level=H5]"><Setter Property="FontSize" Value="{DynamicResource FontSizeH5}" /></Style>
+
+    <Style Selector="core|CyanTitle[Mark=True]">
+        <Setter Property="Background" Value="{DynamicResource ColorWarningBgBrush}" />
+        <Setter Property="Padding" Value="2,0" />
+    </Style>
+    <Style Selector="core|CyanTitle[Code=True]">
+        <Setter Property="FontFamily" Value="Consolas,Courier New,monospace" />
+        <Setter Property="Background" Value="{DynamicResource ColorFillBrush}" />
+        <Setter Property="Padding" Value="4,2" />
+        <Setter Property="FontSize" Value="14" />
+    </Style>
+
+    <Style Selector="core|CyanText">
+        <Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextBrush}" />
+    </Style>
+    <Style Selector="core|CyanText[Type=Secondary]">
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextSecondaryBrush}" />
+    </Style>
+    <Style Selector="core|CyanText[Type=Success]">
+        <Setter Property="Foreground" Value="{DynamicResource ColorSuccessBrush}" />
+    </Style>
+    <Style Selector="core|CyanText[Type=Warning]">
+        <Setter Property="Foreground" Value="{DynamicResource ColorWarningBrush}" />
+    </Style>
+    <Style Selector="core|CyanText[Type=Danger]">
+        <Setter Property="Foreground" Value="{DynamicResource ColorErrorBrush}" />
+    </Style>
+    <Style Selector="core|CyanText[Strong=True]">
+        <Setter Property="FontWeight" Value="600" />
+    </Style>
+    <Style Selector="core|CyanText[Mark=True]">
+        <Setter Property="Background" Value="{DynamicResource ColorWarningBgBrush}" />
+        <Setter Property="Padding" Value="2,0" />
+    </Style>
+    <Style Selector="core|CyanText[Code=True]">
+        <Setter Property="FontFamily" Value="Consolas,Courier New,monospace" />
+        <Setter Property="Background" Value="{DynamicResource ColorFillBrush}" />
+        <Setter Property="Padding" Value="4,2" />
+    </Style>
+    <Style Selector="core|CyanText[Italic=True]">
+        <Setter Property="FontStyle" Value="Italic" />
+    </Style>
+    <Style Selector="core|CyanText[Delete=True]">
+        <Setter Property="TextDecorations" Value="Strikethrough" />
+    </Style>
+    <Style Selector="core|CyanText[Underline=True]">
+        <Setter Property="TextDecorations" Value="Underline" />
+    </Style>
+
+    <Style Selector="core|CyanParagraph">
+        <Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextBrush}" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="Margin" Value="0,0,0,8" />
+    </Style>
+    <Style Selector="core|CyanParagraph[Type=Secondary]">
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextSecondaryBrush}" />
+    </Style>
+    <Style Selector="core|CyanParagraph[Type=Success]">
+        <Setter Property="Foreground" Value="{DynamicResource ColorSuccessBrush}" />
+    </Style>
+    <Style Selector="core|CyanParagraph[Type=Warning]">
+        <Setter Property="Foreground" Value="{DynamicResource ColorWarningBrush}" />
+    </Style>
+    <Style Selector="core|CyanParagraph[Type=Danger]">
+        <Setter Property="Foreground" Value="{DynamicResource ColorErrorBrush}" />
+    </Style>
+    <Style Selector="core|CyanParagraph[Strong=True]">
+        <Setter Property="FontWeight" Value="600" />
+    </Style>
+    <Style Selector="core|CyanParagraph[Mark=True]">
+        <Setter Property="Background" Value="{DynamicResource ColorWarningBgBrush}" />
+        <Setter Property="Padding" Value="2,0" />
+    </Style>
+
+</Styles>

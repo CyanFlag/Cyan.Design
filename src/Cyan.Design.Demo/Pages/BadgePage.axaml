@@ -1,0 +1,116 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:core="using:Cyan.Design.Core.Controls.Display"
+             xmlns:btn="using:Cyan.Design.Core.Controls.Buttons"
+             xmlns:controls="using:Cyan.Design.Demo.Controls"
+             x:Class="Cyan.Design.Demo.Pages.BadgePage">
+    <ScrollViewer Padding="0" Margin="20">
+        <StackPanel Spacing="0" MaxWidth="800">
+            <TextBlock Text="Badge 徽标数" FontSize="22" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}"/>
+            <TextBlock Text="参考 ant.design 5.x：徽标数、圆点、状态点、溢出计数、自定义颜色、尺寸、偏移。" Foreground="{DynamicResource ColorTextSecondaryBrush}" TextWrapping="Wrap"/>
+
+            <controls:DemoSection Title="基本" Description="Badge 在 count 为 0 时隐藏，可用 ShowZero 显示">
+                <StackPanel Orientation="Horizontal" Spacing="24" Margin="0,8,0,0">
+                    <core:CyanBadge Count="5">
+                        <btn:CyanButton ButtonType="Primary" Content="Primary" />
+                    </core:CyanBadge>
+                    <core:CyanBadge Count="0">
+                        <btn:CyanButton Content="Default" />
+                    </core:CyanBadge>
+                    <core:CyanBadge Count="0" ShowZero="True">
+                        <btn:CyanButton Content="ShowZero" />
+                    </core:CyanBadge>
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="溢出计数" Description="超过 OverflowCount 显示 N+，默认 99">
+                <StackPanel Orientation="Horizontal" Spacing="24" Margin="0,8,0,0">
+                    <core:CyanBadge Count="99">
+                        <btn:CyanButton ButtonType="Primary" Content="99" />
+                    </core:CyanBadge>
+                    <core:CyanBadge Count="100">
+                        <btn:CyanButton ButtonType="Primary" Content="100" />
+                    </core:CyanBadge>
+                    <core:CyanBadge Count="10" OverflowCount="9">
+                        <btn:CyanButton ButtonType="Primary" Content="10/9" />
+                    </core:CyanBadge>
+                    <core:CyanBadge Count="1000" OverflowCount="999">
+                        <btn:CyanButton ButtonType="Primary" Content="1000/999" />
+                    </core:CyanBadge>
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="红点徽标" Description="Dot=True 只显示红点，不显示数字">
+                <StackPanel Orientation="Horizontal" Spacing="24" Margin="0,8,0,0">
+                    <core:CyanBadge Dot="True">
+                        <btn:CyanButton ButtonType="Primary" Content="Dot" />
+                    </core:CyanBadge>
+                    <core:CyanBadge Dot="True" Count="5">
+                        <btn:CyanButton ButtonType="Primary" Content="Dot+Count" />
+                    </core:CyanBadge>
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="尺寸">
+                <StackPanel Orientation="Horizontal" Spacing="24" Margin="0,8,0,0">
+                    <core:CyanBadge Count="5" Size="Default">
+                        <btn:CyanButton ButtonType="Primary" Content="Default" />
+                    </core:CyanBadge>
+                    <core:CyanBadge Count="5" Size="Small">
+                        <btn:CyanButton ButtonType="Primary" Content="Small" />
+                    </core:CyanBadge>
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="偏移" Description="Offset=&quot;X,Y&quot; 自定义徽标位置偏移">
+                <StackPanel Orientation="Horizontal" Spacing="24" Margin="0,8,0,0">
+                    <core:CyanBadge Count="5" Offset="10,0">
+                        <btn:CyanButton ButtonType="Primary" Content="Right 10" />
+                    </core:CyanBadge>
+                    <core:CyanBadge Count="5" Offset="-10,0">
+                        <btn:CyanButton ButtonType="Primary" Content="Left 10" />
+                    </core:CyanBadge>
+                    <core:CyanBadge Count="5" Offset="0,10">
+                        <btn:CyanButton ButtonType="Primary" Content="Down 10" />
+                    </core:CyanBadge>
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="状态点" Description="独立显示状态点 + 文字，不包裹子元素">
+                <StackPanel Orientation="Horizontal" Spacing="24" Margin="0,8,0,0">
+                    <core:CyanBadge Status="Success" Text="Success" />
+                    <core:CyanBadge Status="Error" Text="Error" />
+                    <core:CyanBadge Status="Default" Text="Default" />
+                    <core:CyanBadge Status="Processing" Text="Processing" />
+                    <core:CyanBadge Status="Warning" Text="Warning" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="彩色徽标" Description="Color 属性自定义徽标颜色">
+                <StackPanel Orientation="Horizontal" Spacing="24" Margin="0,8,0,0">
+                    <core:CyanBadge Count="5" Color="#FFF5222D">
+                        <btn:CyanButton ButtonType="Primary" Content="Red" />
+                    </core:CyanBadge>
+                    <core:CyanBadge Count="5" Color="#FF2DB7F5">
+                        <btn:CyanButton ButtonType="Primary" Content="Blue" />
+                    </core:CyanBadge>
+                    <core:CyanBadge Count="5" Color="#FF52C41A">
+                        <btn:CyanButton ButtonType="Primary" Content="Green" />
+                    </core:CyanBadge>
+                    <core:CyanBadge Dot="True" Color="#FFEB2F96">
+                        <btn:CyanButton ButtonType="Primary" Content="Pink Dot" />
+                    </core:CyanBadge>
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="独立使用" Description="无子元素时单独显示徽标">
+                <StackPanel Orientation="Horizontal" Spacing="24" Margin="0,8,0,0">
+                    <core:CyanBadge Count="5" />
+                    <core:CyanBadge Count="100" OverflowCount="99" />
+                    <core:CyanBadge Dot="True" />
+                </StackPanel>
+            </controls:DemoSection>
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

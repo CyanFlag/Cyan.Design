@@ -1,0 +1,164 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="using:Cyan.Design.Demo.Controls"
+             xmlns:core="using:Cyan.Design.Core.Controls.Navigation"
+             x:Class="Cyan.Design.Demo.Pages.ParkTabsPage"
+             x:CompileBindings="False">
+    <ScrollViewer Padding="0" Margin="30">
+        <StackPanel Spacing="0" MaxWidth="800">
+            <TextBlock Text="ParkTabs 标签页" FontSize="22" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}"/>
+            <TextBlock Text="移植自 ParkUI 的 Tabs 控件，支持 Line/Subtle/Enclosed 三种变体和水平/垂直方向。" Foreground="{DynamicResource ColorTextSecondaryBrush}" TextWrapping="Wrap"/>
+
+            <controls:DemoSection Title="Line 变体" Description="默认下划线样式">
+                <core:CyanParkTabs DefaultValue="tab1" Margin="0,8,0,0">
+                    <core:CyanParkTabs.ListContent>
+                        <core:CyanParkTabList>
+                            <core:CyanParkTabTrigger Header="Tab 1" Value="tab1" />
+                            <core:CyanParkTabTrigger Header="Tab 2" Value="tab2" />
+                            <core:CyanParkTabTrigger Header="Tab 3" Value="tab3" />
+                        </core:CyanParkTabList>
+                    </core:CyanParkTabs.ListContent>
+                    <core:CyanParkTabs.PanelContent>
+                        <StackPanel>
+                            <core:CyanParkTabContent Value="tab1">
+                                <TextBlock Text="Content for Tab 1" Margin="0,8,0,0" />
+                            </core:CyanParkTabContent>
+                            <core:CyanParkTabContent Value="tab2">
+                                <TextBlock Text="Content for Tab 2" Margin="0,8,0,0" />
+                            </core:CyanParkTabContent>
+                            <core:CyanParkTabContent Value="tab3">
+                                <TextBlock Text="Content for Tab 3" Margin="0,8,0,0" />
+                            </core:CyanParkTabContent>
+                        </StackPanel>
+                    </core:CyanParkTabs.PanelContent>
+                </core:CyanParkTabs>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="Subtle 变体" Description="选中项带背景色">
+                <core:CyanParkTabs Variant="Subtle" DefaultValue="tab1" Margin="0,8,0,0">
+                    <core:CyanParkTabs.ListContent>
+                        <core:CyanParkTabList>
+                            <core:CyanParkTabTrigger Header="Account" Value="tab1" />
+                            <core:CyanParkTabTrigger Header="Password" Value="tab2" />
+                            <core:CyanParkTabTrigger Header="Settings" Value="tab3" />
+                        </core:CyanParkTabList>
+                    </core:CyanParkTabs.ListContent>
+                    <core:CyanParkTabs.PanelContent>
+                        <StackPanel>
+                            <core:CyanParkTabContent Value="tab1">
+                                <TextBlock Text="Account settings content" Margin="0,8,0,0" />
+                            </core:CyanParkTabContent>
+                            <core:CyanParkTabContent Value="tab2">
+                                <TextBlock Text="Password settings content" Margin="0,8,0,0" />
+                            </core:CyanParkTabContent>
+                            <core:CyanParkTabContent Value="tab3">
+                                <TextBlock Text="General settings content" Margin="0,8,0,0" />
+                            </core:CyanParkTabContent>
+                        </StackPanel>
+                    </core:CyanParkTabs.PanelContent>
+                </core:CyanParkTabs>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="Enclosed 变体" Description="带容器背景和阴影">
+                <core:CyanParkTabs Variant="Enclosed" DefaultValue="tab1" Margin="0,8,0,0">
+                    <core:CyanParkTabs.ListContent>
+                        <core:CyanParkTabList>
+                            <core:CyanParkTabTrigger Header="Overview" Value="tab1" />
+                            <core:CyanParkTabTrigger Header="Analytics" Value="tab2" />
+                            <core:CyanParkTabTrigger Header="Reports" Value="tab3" />
+                        </core:CyanParkTabList>
+                    </core:CyanParkTabs.ListContent>
+                    <core:CyanParkTabs.PanelContent>
+                        <StackPanel>
+                            <core:CyanParkTabContent Value="tab1">
+                                <TextBlock Text="Overview content" Margin="0,8,0,0" />
+                            </core:CyanParkTabContent>
+                            <core:CyanParkTabContent Value="tab2">
+                                <TextBlock Text="Analytics content" Margin="0,8,0,0" />
+                            </core:CyanParkTabContent>
+                            <core:CyanParkTabContent Value="tab3">
+                                <TextBlock Text="Reports content" Margin="0,8,0,0" />
+                            </core:CyanParkTabContent>
+                        </StackPanel>
+                    </core:CyanParkTabs.PanelContent>
+                </core:CyanParkTabs>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="垂直方向" Description="Orientation=Vertical">
+                <core:CyanParkTabs Orientation="Vertical" DefaultValue="tab1" Margin="0,8,0,0">
+                    <core:CyanParkTabs.ListContent>
+                        <core:CyanParkTabList>
+                            <core:CyanParkTabTrigger Header="General" Value="tab1" />
+                            <core:CyanParkTabTrigger Header="Privacy" Value="tab2" />
+                            <core:CyanParkTabTrigger Header="Advanced" Value="tab3" />
+                        </core:CyanParkTabList>
+                    </core:CyanParkTabs.ListContent>
+                    <core:CyanParkTabs.PanelContent>
+                        <StackPanel>
+                            <core:CyanParkTabContent Value="tab1">
+                                <TextBlock Text="General settings" Margin="0,0,0,0" />
+                            </core:CyanParkTabContent>
+                            <core:CyanParkTabContent Value="tab2">
+                                <TextBlock Text="Privacy settings" />
+                            </core:CyanParkTabContent>
+                            <core:CyanParkTabContent Value="tab3">
+                                <TextBlock Text="Advanced settings" />
+                            </core:CyanParkTabContent>
+                        </StackPanel>
+                    </core:CyanParkTabs.PanelContent>
+                </core:CyanParkTabs>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="Fitted 平铺" Description="Fitted=True，触发器等宽填充">
+                <core:CyanParkTabs Fitted="True" DefaultValue="tab1" Margin="0,8,0,0">
+                    <core:CyanParkTabs.ListContent>
+                        <core:CyanParkTabList>
+                            <core:CyanParkTabTrigger Header="First" Value="tab1" />
+                            <core:CyanParkTabTrigger Header="Second" Value="tab2" />
+                            <core:CyanParkTabTrigger Header="Third" Value="tab3" />
+                        </core:CyanParkTabList>
+                    </core:CyanParkTabs.ListContent>
+                    <core:CyanParkTabs.PanelContent>
+                        <StackPanel>
+                            <core:CyanParkTabContent Value="tab1">
+                                <TextBlock Text="First tab content" Margin="0,8,0,0" />
+                            </core:CyanParkTabContent>
+                            <core:CyanParkTabContent Value="tab2">
+                                <TextBlock Text="Second tab content" Margin="0,8,0,0" />
+                            </core:CyanParkTabContent>
+                            <core:CyanParkTabContent Value="tab3">
+                                <TextBlock Text="Third tab content" Margin="0,8,0,0" />
+                            </core:CyanParkTabContent>
+                        </StackPanel>
+                    </core:CyanParkTabs.PanelContent>
+                </core:CyanParkTabs>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="禁用项" Description="IsDisabled=True">
+                <core:CyanParkTabs DefaultValue="tab1" Margin="0,8,0,0">
+                    <core:CyanParkTabs.ListContent>
+                        <core:CyanParkTabList>
+                            <core:CyanParkTabTrigger Header="Active" Value="tab1" />
+                            <core:CyanParkTabTrigger Header="Disabled" Value="tab2" IsDisabled="True" />
+                            <core:CyanParkTabTrigger Header="Another" Value="tab3" />
+                        </core:CyanParkTabList>
+                    </core:CyanParkTabs.ListContent>
+                    <core:CyanParkTabs.PanelContent>
+                        <StackPanel>
+                            <core:CyanParkTabContent Value="tab1">
+                                <TextBlock Text="Active content" Margin="0,8,0,0" />
+                            </core:CyanParkTabContent>
+                            <core:CyanParkTabContent Value="tab2">
+                                <TextBlock Text="Disabled content" Margin="0,8,0,0" />
+                            </core:CyanParkTabContent>
+                            <core:CyanParkTabContent Value="tab3">
+                                <TextBlock Text="Another content" Margin="0,8,0,0" />
+                            </core:CyanParkTabContent>
+                        </StackPanel>
+                    </core:CyanParkTabs.PanelContent>
+                </core:CyanParkTabs>
+            </controls:DemoSection>
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

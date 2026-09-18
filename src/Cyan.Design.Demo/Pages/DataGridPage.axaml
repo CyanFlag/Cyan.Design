@@ -1,0 +1,77 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="using:Cyan.Design.Demo.Controls"
+             xmlns:pages="using:Cyan.Design.Demo.Pages"
+             x:Class="Cyan.Design.Demo.Pages.DataGridPage"
+             x:CompileBindings="False">
+    <ScrollViewer Padding="0" Margin="15">
+        <StackPanel Spacing="0" MaxWidth="1000">
+            <TextBlock Text="DataGrid 数据表格" FontSize="22" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}"/>
+            <TextBlock Text="移植自 ShadUI 的 DataGrid 主题，基于 Avalonia 内置 DataGrid + ant.design token 映射。" Foreground="{DynamicResource ColorTextSecondaryBrush}" TextWrapping="Wrap"/>
+
+            <controls:DemoSection Title="基本用法" Description="自动生成列，支持排序">
+                <DataGrid
+                    x:Name="BasicGrid"
+                    Margin="0,8,0,0"
+                    ItemsSource="{Binding Users}"
+                    IsReadOnly="True"
+                    CanUserSortColumns="True" />
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="自定义列" Description="手动定义列，格式化显示">
+                <DataGrid
+                    Margin="0,8,0,0"
+                    ItemsSource="{Binding Users}"
+                    IsReadOnly="True"
+                    CanUserSortColumns="True"
+                    GridLinesVisibility="Horizontal">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="姓名" Binding="{Binding Name}" />
+                        <DataGridTextColumn Header="年龄" Binding="{Binding Age}" />
+                        <DataGridTextColumn Header="邮箱" Binding="{Binding Email}" />
+                        <DataGridTextColumn Header="部门" Binding="{Binding Department}" />
+                        <DataGridCheckBoxColumn Header="在职" Binding="{Binding IsActive}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="可选择行" Description="SelectionMode=Single，行选中高亮">
+                <DataGrid
+                    Margin="0,8,0,0"
+                    ItemsSource="{Binding Users}"
+                    IsReadOnly="True"
+                    SelectionMode="Single"
+                    HeadersVisibility="Column" />
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="可编辑" Description="双击单元格进入编辑模式，IsReadOnly=False">
+                <DataGrid
+                    Margin="0,8,0,0"
+                    ItemsSource="{Binding EditableUsers}"
+                    IsReadOnly="False"
+                    CanUserSortColumns="True"
+                    GridLinesVisibility="Horizontal"
+                    HeadersVisibility="Column">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="姓名" Binding="{Binding Name}" />
+                        <DataGridTextColumn Header="年龄" Binding="{Binding Age}" />
+                        <DataGridTextColumn Header="邮箱" Binding="{Binding Email}" />
+                        <DataGridTextColumn Header="部门" Binding="{Binding Department}" />
+                        <DataGridCheckBoxColumn Header="在职" Binding="{Binding IsActive}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="无边框" Description="BorderThickness=0，仅显示水平网格线">
+                <DataGrid
+                    Margin="0,8,0,0"
+                    ItemsSource="{Binding Users}"
+                    IsReadOnly="True"
+                    BorderThickness="0"
+                    GridLinesVisibility="Horizontal"
+                    HeadersVisibility="Column" />
+            </controls:DemoSection>
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

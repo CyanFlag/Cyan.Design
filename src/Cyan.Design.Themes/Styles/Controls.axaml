@@ -1,0 +1,46 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <StyleInclude Source="avares://Cyan.Design.Themes/Styles/Shared/Transitions.axaml" />
+    <StyleInclude Source="avares://Cyan.Design.Themes/Styles/Controls/Button.axaml" />
+    <StyleInclude Source="avares://Cyan.Design.Themes/Styles/Controls/Typography.axaml" />
+    <StyleInclude Source="avares://Cyan.Design.Themes/Styles/Controls/Input.axaml" />
+    <StyleInclude Source="avares://Cyan.Design.Themes/Styles/Controls/InputNumber.axaml" />
+    <StyleInclude Source="avares://Cyan.Design.Themes/Styles/Controls/Selection.axaml" />
+    <StyleInclude Source="avares://Cyan.Design.Themes/Styles/Controls/Radio.axaml" />
+    <StyleInclude Source="avares://Cyan.Design.Themes/Styles/Controls/Layout.axaml" />
+    <StyleInclude Source="avares://Cyan.Design.Themes/Styles/Controls/Select.axaml" />
+    <StyleInclude Source="avares://Cyan.Design.Themes/Styles/Controls/Dropdown.axaml" />
+    <StyleInclude Source="avares://Cyan.Design.Themes/Styles/Controls/Navigation.axaml" />
+    <StyleInclude Source="avares://Cyan.Design.Themes/Styles/Controls/Icon.axaml" />
+    <StyleInclude Source="avares://Cyan.Design.Themes/Styles/Controls/Avatar.axaml" />
+    <StyleInclude Source="avares://Cyan.Design.Themes/Styles/Controls/Badge.axaml" />
+    <StyleInclude Source="avares://Cyan.Design.Themes/Styles/Controls/Collapse.axaml" />
+    <StyleInclude Source="avares://Cyan.Design.Themes/Styles/Controls/Segmented.axaml" />
+    <StyleInclude Source="avares://Cyan.Design.Themes/Styles/Controls/Switch.axaml" />
+    <StyleInclude Source="avares://Cyan.Design.Themes/Styles/Controls/Drawer.axaml" />
+    <StyleInclude Source="avares://Cyan.Design.Themes/Styles/Controls/Modal.axaml" />
+    <StyleInclude Source="avares://Cyan.Design.Themes/Styles/Controls/Popconfirm.axaml" />
+    <StyleInclude Source="avares://Cyan.Design.Themes/Styles/Controls/Progress.axaml" />
+    <StyleInclude Source="avares://Cyan.Design.Themes/Styles/Controls/Rate.axaml" />
+    <StyleInclude Source="avares://Cyan.Design.Themes/Styles/Controls/Spin.axaml" />
+    <StyleInclude Source="avares://Cyan.Design.Themes/Styles/Controls/Slider.axaml" />
+    <StyleInclude Source="avares://Cyan.Design.Themes/Styles/Controls/Tab.axaml" />
+    <StyleInclude Source="avares://Cyan.Design.Themes/Styles/Controls/ComboBox.axaml" />
+    <StyleInclude Source="avares://Cyan.Design.Themes/Styles/Controls/TimePicker.axaml" />
+    <StyleInclude Source="avares://Cyan.Design.Themes/Styles/Controls/TimeInput.axaml" />
+    <StyleInclude Source="avares://Cyan.Design.Themes/Styles/Controls/Editable.axaml" />
+    <StyleInclude Source="avares://Cyan.Design.Themes/Styles/Controls/HoverCard.axaml" />
+    <StyleInclude Source="avares://Cyan.Design.Themes/Styles/Controls/Menubar.axaml" />
+    <StyleInclude Source="avares://Cyan.Design.Themes/Styles/Controls/ParkTabs.axaml" />
+    <StyleInclude Source="avares://Cyan.Design.Themes/Styles/Controls/ParkPagination.axaml" />
+    <StyleInclude Source="avares://Cyan.Design.Themes/Styles/Controls/ShadMessage.axaml" />
+    <StyleInclude Source="avares://Cyan.Design.Themes/Styles/Controls/ShadToast.axaml" />
+    <StyleInclude Source="avares://Cyan.Design.Themes/Styles/Controls/Message.axaml" />
+    <StyleInclude Source="avares://Cyan.Design.Themes/Styles/Controls/Notification.axaml" />
+    <StyleInclude Source="avares://Cyan.Design.Themes/Styles/Controls/ParkSpinner.axaml" />
+    <StyleInclude Source="avares://Cyan.Design.Themes/Styles/Controls/ShadContextMenu.axaml" />
+    <StyleInclude Source="avares://Cyan.Design.Themes/Styles/Controls/ShadCommand.axaml" />
+    <StyleInclude Source="avares://Cyan.Design.Themes/Styles/Controls/AppWindow.axaml" />
+
+</Styles>

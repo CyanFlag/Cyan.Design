@@ -1,0 +1,42 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="using:Cyan.Design.Demo.Controls"
+             xmlns:core="using:Cyan.Design.Core.Controls.Inputs"
+             x:Class="Cyan.Design.Demo.Pages.EditablePage"
+             x:CompileBindings="False">
+    <ScrollViewer Padding="0" Margin="15">
+        <StackPanel Spacing="0" MaxWidth="800">
+            <TextBlock Text="Editable 可编辑文本" FontSize="22" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}"/>
+            <TextBlock Text="移植自 ParkUI 的 Editable 控件，点击进入编辑模式，Enter 或失焦提交，Esc 取消。" Foreground="{DynamicResource ColorTextSecondaryBrush}" TextWrapping="Wrap"/>
+
+            <controls:DemoSection Title="基本用法" Description="点击文本进入编辑模式">
+                <core:CyanEditable Value="Hello World" Margin="0,8,0,0" />
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="双击编辑" Description="ActivationMode=DoubleClick">
+                <core:CyanEditable Value="Double click to edit" ActivationMode="DoubleClick" Margin="0,8,0,0" />
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="带控制按钮" Description="ShowControls=True，显示 Edit/Save/Cancel 按钮">
+                <core:CyanEditable Value="With controls" ShowControls="True" Margin="0,8,0,0" />
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="尺寸" Description="Small / Middle / Large">
+                <StackPanel Spacing="8" Margin="0,8,0,0">
+                    <core:CyanEditable Value="Small" EditableSize="Small" />
+                    <core:CyanEditable Value="Middle" EditableSize="Middle" />
+                    <core:CyanEditable Value="Large" EditableSize="Large" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="带占位符" Description="Placeholder 显示在编辑模式">
+                <core:CyanEditable Value="" Placeholder="请输入内容..." ShowControls="True" Margin="0,8,0,0" />
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="禁用" Description="IsDisabled=True">
+                <core:CyanEditable Value="Disabled text" IsDisabled="True" Margin="0,8,0,0" />
+            </controls:DemoSection>
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

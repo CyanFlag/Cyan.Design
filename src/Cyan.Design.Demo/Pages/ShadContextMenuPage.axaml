@@ -1,0 +1,144 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="using:Cyan.Design.Demo.Controls"
+             xmlns:ctx="using:Cyan.Design.Core.Controls.Overlays"
+             x:Class="Cyan.Design.Demo.Pages.ShadContextMenuPage"
+             x:CompileBindings="False">
+    <ScrollViewer Padding="0" Margin="15">
+        <StackPanel Spacing="0" MaxWidth="800">
+            <TextBlock Text="ShadContextMenu 右键菜单" FontSize="22" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}"/>
+            <TextBlock Text="移植自 shadcn/ui 的 Context Menu 控件，右键点击触发区域显示菜单。" Foreground="{DynamicResource ColorTextSecondaryBrush}" TextWrapping="Wrap"/>
+
+            <controls:DemoSection Title="基本用法" Description="右键点击下方区域">
+                <ctx:CyanShadContextMenu Margin="0,8,0,0">
+                    <ctx:CyanShadContextMenu.Trigger>
+                        <Border Background="#F4F4F5" CornerRadius="8" Padding="40,20" BorderBrush="#E4E4E7" BorderThickness="1">
+                            <TextBlock Text="Right click here" Foreground="#71717A" />
+                        </Border>
+                    </ctx:CyanShadContextMenu.Trigger>
+                    <ctx:CyanShadContextMenu.Menu>
+                        <StackPanel>
+                            <ctx:CyanShadContextMenuItem Content="Profile" />
+                            <ctx:CyanShadContextMenuItem Content="Billing" />
+                            <ctx:CyanShadContextMenuItem Content="Team" />
+                            <ctx:CyanShadContextMenuItem Content="Subscription" />
+                        </StackPanel>
+                    </ctx:CyanShadContextMenu.Menu>
+                </ctx:CyanShadContextMenu>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="分组和分隔线" Description="带 Label 和 Separator">
+                <ctx:CyanShadContextMenu Margin="0,8,0,0">
+                    <ctx:CyanShadContextMenu.Trigger>
+                        <Border Background="#F4F4F5" CornerRadius="8" Padding="40,20" BorderBrush="#E4E4E7" BorderThickness="1">
+                            <TextBlock Text="Right click here" Foreground="#71717A" />
+                        </Border>
+                    </ctx:CyanShadContextMenu.Trigger>
+                    <ctx:CyanShadContextMenu.Menu>
+                        <StackPanel>
+                            <ctx:CyanShadContextMenuLabel Text="Actions" />
+                            <ctx:CyanShadContextMenuItem Content="Copy" />
+                            <ctx:CyanShadContextMenuItem Content="Paste" />
+                            <ctx:CyanShadContextMenuItem Content="Cut" />
+                            <ctx:CyanShadContextMenuSeparator />
+                            <ctx:CyanShadContextMenuLabel Text="File" />
+                            <ctx:CyanShadContextMenuItem Content="Save" />
+                            <ctx:CyanShadContextMenuItem Content="Save As..." />
+                            <ctx:CyanShadContextMenuSeparator />
+                            <ctx:CyanShadContextMenuItem Content="Delete" Foreground="#EF4444" />
+                        </StackPanel>
+                    </ctx:CyanShadContextMenu.Menu>
+                </ctx:CyanShadContextMenu>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="复选框项" Description="ContextMenuCheckboxItem">
+                <ctx:CyanShadContextMenu Margin="0,8,0,0">
+                    <ctx:CyanShadContextMenu.Trigger>
+                        <Border Background="#F4F4F5" CornerRadius="8" Padding="40,20" BorderBrush="#E4E4E7" BorderThickness="1">
+                            <TextBlock Text="Right click here" Foreground="#71717A" />
+                        </Border>
+                    </ctx:CyanShadContextMenu.Trigger>
+                    <ctx:CyanShadContextMenu.Menu>
+                        <StackPanel>
+                            <ctx:CyanShadContextMenuLabel Text="View" />
+                            <ctx:CyanShadContextMenuCheckboxItem Content="Show Toolbar" IsChecked="True" />
+                            <ctx:CyanShadContextMenuCheckboxItem Content="Show Sidebar" IsChecked="True" />
+                            <ctx:CyanShadContextMenuCheckboxItem Content="Show Status Bar" />
+                            <ctx:CyanShadContextMenuSeparator />
+                            <ctx:CyanShadContextMenuLabel Text="Editor" />
+                            <ctx:CyanShadContextMenuCheckboxItem Content="Word Wrap" IsChecked="True" />
+                            <ctx:CyanShadContextMenuCheckboxItem Content="Minimap" />
+                        </StackPanel>
+                    </ctx:CyanShadContextMenu.Menu>
+                </ctx:CyanShadContextMenu>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="单选项" Description="ContextMenuRadioGroup">
+                <ctx:CyanShadContextMenu Margin="0,8,0,0">
+                    <ctx:CyanShadContextMenu.Trigger>
+                        <Border Background="#F4F4F5" CornerRadius="8" Padding="40,20" BorderBrush="#E4E4E7" BorderThickness="1">
+                            <TextBlock Text="Right click here" Foreground="#71717A" />
+                        </Border>
+                    </ctx:CyanShadContextMenu.Trigger>
+                    <ctx:CyanShadContextMenu.Menu>
+                        <StackPanel>
+                            <ctx:CyanShadContextMenuLabel Text="Sort By" />
+                            <ctx:CyanShadContextMenuRadioGroup>
+                                <ctx:CyanShadContextMenuRadioItem Content="Name" GroupName="sort" IsChecked="True" />
+                                <ctx:CyanShadContextMenuRadioItem Content="Size" GroupName="sort" />
+                                <ctx:CyanShadContextMenuRadioItem Content="Date Modified" GroupName="sort" />
+                            </ctx:CyanShadContextMenuRadioGroup>
+                            <ctx:CyanShadContextMenuSeparator />
+                            <ctx:CyanShadContextMenuLabel Text="Order" />
+                            <ctx:CyanShadContextMenuRadioGroup>
+                                <ctx:CyanShadContextMenuRadioItem Content="Ascending" GroupName="order" IsChecked="True" />
+                                <ctx:CyanShadContextMenuRadioItem Content="Descending" GroupName="order" />
+                            </ctx:CyanShadContextMenuRadioGroup>
+                        </StackPanel>
+                    </ctx:CyanShadContextMenu.Menu>
+                </ctx:CyanShadContextMenu>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="图标和快捷键" Description="左侧图标，右侧快捷键对齐">
+                <ctx:CyanShadContextMenu Margin="0,8,0,0">
+                    <ctx:CyanShadContextMenu.Trigger>
+                        <Border Background="#F4F4F5" CornerRadius="8" Padding="40,20" BorderBrush="#E4E4E7" BorderThickness="1">
+                            <TextBlock Text="Right click here" Foreground="#71717A" />
+                        </Border>
+                    </ctx:CyanShadContextMenu.Trigger>
+                    <ctx:CyanShadContextMenu.Menu>
+                        <StackPanel>
+                            <ctx:CyanShadContextMenuItem Content="Undo" Shortcut="Ctrl+Z">
+                                <ctx:CyanShadContextMenuItem.Icon>
+                                    <TextBlock Text="&#x21A9;" FontSize="14" />
+                                </ctx:CyanShadContextMenuItem.Icon>
+                            </ctx:CyanShadContextMenuItem>
+                            <ctx:CyanShadContextMenuItem Content="Redo" Shortcut="Ctrl+Y">
+                                <ctx:CyanShadContextMenuItem.Icon>
+                                    <TextBlock Text="&#x21AA;" FontSize="14" />
+                                </ctx:CyanShadContextMenuItem.Icon>
+                            </ctx:CyanShadContextMenuItem>
+                            <ctx:CyanShadContextMenuSeparator />
+                            <ctx:CyanShadContextMenuItem Content="Cut" Shortcut="Ctrl+X">
+                                <ctx:CyanShadContextMenuItem.Icon>
+                                    <TextBlock Text="&#x2702;" FontSize="14" />
+                                </ctx:CyanShadContextMenuItem.Icon>
+                            </ctx:CyanShadContextMenuItem>
+                            <ctx:CyanShadContextMenuItem Content="Copy" Shortcut="Ctrl+C">
+                                <ctx:CyanShadContextMenuItem.Icon>
+                                    <TextBlock Text="&#x2398;" FontSize="14" />
+                                </ctx:CyanShadContextMenuItem.Icon>
+                            </ctx:CyanShadContextMenuItem>
+                            <ctx:CyanShadContextMenuItem Content="Paste" Shortcut="Ctrl+V">
+                                <ctx:CyanShadContextMenuItem.Icon>
+                                    <TextBlock Text="&#x2399;" FontSize="14" />
+                                </ctx:CyanShadContextMenuItem.Icon>
+                            </ctx:CyanShadContextMenuItem>
+                        </StackPanel>
+                    </ctx:CyanShadContextMenu.Menu>
+                </ctx:CyanShadContextMenu>
+            </controls:DemoSection>
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

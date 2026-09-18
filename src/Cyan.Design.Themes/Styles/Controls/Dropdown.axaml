@@ -1,0 +1,176 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:core="using:Cyan.Design.Core.Controls.Dropdowns"
+        xmlns:btn="using:Cyan.Design.Core.Controls.Buttons">
+
+    <Style Selector="core|CyanDropdown">
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid Background="Transparent">
+                    <ContentPresenter x:Name="PART_ContentPresenter" Content="{TemplateBinding Content}" />
+                    <Popup x:Name="PART_Popup"
+                           IsOpen="{Binding Open, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+
+                           Topmost="True">
+                        <Border Background="{DynamicResource ColorBgElevatedBrush}"
+                                CornerRadius="{DynamicResource BorderRadiusLG}"
+                                BorderBrush="{DynamicResource ColorBorderSecondaryBrush}"
+                                BorderThickness="1"
+                                Padding="0,4"
+                                Margin="4"
+                                BoxShadow="{DynamicResource BoxShadow}">
+                            <ContentPresenter Content="{TemplateBinding Overlay}" />
+                        </Border>
+                    </Popup>
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <Style Selector="core|CyanDropdown:disabled">
+        <Setter Property="Opacity" Value="0.5" />
+        <Setter Property="Cursor" Value="Arrow" />
+    </Style>
+
+    <Style Selector="core|CyanDropdownMenu">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="MinWidth" Value="120" />
+    </Style>
+
+    <Style Selector="core|CyanDropdownItem">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextBrush}" />
+        <Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+        <Setter Property="Padding" Value="12,8" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="CornerRadius" Value="{DynamicResource BorderRadiusSM}" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid ColumnDefinitions="Auto,*" Margin="{TemplateBinding Padding}">
+                    <ContentPresenter x:Name="PART_IconPresenter"
+                                      Grid.Column="0"
+                                      Content="{TemplateBinding Icon}"
+                                      Margin="0,0,8,0"
+                                      VerticalAlignment="Center"
+                                      IsVisible="{TemplateBinding Icon, Converter={x:Static ObjectConverters.IsNotNull}}" />
+                    <ContentPresenter x:Name="PART_ContentPresenter"
+                                      Grid.Column="1"
+                                      Content="{TemplateBinding Content}"
+                                      HorizontalAlignment="Left"
+                                      VerticalAlignment="Center" />
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <Style Selector="core|CyanDropdownItem:pointerover">
+        <Setter Property="Background" Value="{DynamicResource ColorFillQuaternaryBrush}" />
+    </Style>
+
+    <Style Selector="core|CyanDropdownItem:selected">
+        <Setter Property="Foreground" Value="{DynamicResource ColorPrimaryBrush}" />
+        <Setter Property="FontWeight" Value="600" />
+    </Style>
+    <Style Selector="core|CyanDropdownItem:selected">
+        <Setter Property="Background" Value="{DynamicResource ColorPrimaryBgBrush}" />
+    </Style>
+    <Style Selector="core|CyanDropdownItem:selected:pointerover">
+        <Setter Property="Background" Value="{DynamicResource ColorPrimaryBgHoverBrush}" />
+    </Style>
+
+    <Style Selector="core|CyanDropdownItem:danger">
+        <Setter Property="Foreground" Value="{DynamicResource ColorErrorBrush}" />
+    </Style>
+    <Style Selector="core|CyanDropdownItem:danger:pointerover">
+        <Setter Property="Background" Value="{DynamicResource ColorErrorBgBrush}" />
+    </Style>
+
+    <Style Selector="core|CyanDropdownItem:disabled">
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextDisabledBrush}" />
+        <Setter Property="Cursor" Value="Arrow" />
+    </Style>
+    <Style Selector="core|CyanDropdownItem:disabled:pointerover">
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+
+    <Style Selector="core|CyanDropdownItem:divider">
+        <Setter Property="MinHeight" Value="1" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Margin" Value="0,4" />
+        <Setter Property="Background" Value="{DynamicResource ColorSplitBrush}" />
+        <Setter Property="IsHitTestVisible" Value="False" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border Height="1" Background="{DynamicResource ColorSplitBrush}" />
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <Style Selector="core|CyanDropdownButton">
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid ColumnDefinitions="*,Auto" Background="Transparent">
+                    <btn:CyanButton x:Name="PART_LeftButton"
+                                    Grid.Column="0"
+                                    Content="{TemplateBinding Content}"
+                                    ButtonType="{TemplateBinding ButtonType}"
+                                    ButtonSize="{TemplateBinding ButtonSize}"
+                                    Danger="{TemplateBinding Danger}"
+                                    Loading="{TemplateBinding Loading}"
+                                    CornerRadius="6,0,0,6" />
+                    <Border x:Name="PART_Divider"
+                            Grid.Column="0"
+                            HorizontalAlignment="Right"
+                            Width="1"
+                            Background="{DynamicResource ColorBorderSecondaryBrush}"
+                            IsHitTestVisible="False" />
+                    <core:CyanDropdown Grid.Column="1"
+                                       Trigger="{TemplateBinding Trigger}"
+                                       Placement="{TemplateBinding Placement}"
+                                       Overlay="{TemplateBinding Overlay}"
+                                       Open="{TemplateBinding Open, Mode=TwoWay}"
+                                       Disabled="{TemplateBinding Disabled}">
+                        <btn:CyanButton ButtonType="{TemplateBinding ButtonType}"
+                                        ButtonSize="{TemplateBinding ButtonSize}"
+                                        Danger="{TemplateBinding Danger}"
+                                        CornerRadius="0,6,6,0"
+                                        Padding="11,0"
+                                        MinWidth="32">
+                            <btn:CyanButton.Content>
+                                <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <Path Width="12" Height="8"
+                                          HorizontalAlignment="Center" VerticalAlignment="Center"
+                                          Data="M0 0 L12 0 L6 8 Z"
+                                          Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=btn:CyanButton}}"
+                                          IsVisible="{Binding Icon, RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static ObjectConverters.IsNull}}" />
+                                    <ContentPresenter Content="{Binding Icon, RelativeSource={RelativeSource TemplatedParent}}"
+                                                      HorizontalContentAlignment="Center"
+                                                      VerticalContentAlignment="Center" />
+                                </Grid>
+                            </btn:CyanButton.Content>
+                        </btn:CyanButton>
+                    </core:CyanDropdown>
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <Style Selector="core|CyanDropdownButton:primary /template/ Border#PART_Divider">
+        <Setter Property="Background" Value="#80FFFFFF" />
+    </Style>
+
+    <Style Selector="core|CyanDropdownButton:disabled">
+        <Setter Property="Opacity" Value="0.5" />
+        <Setter Property="Cursor" Value="Arrow" />
+    </Style>
+
+</Styles>

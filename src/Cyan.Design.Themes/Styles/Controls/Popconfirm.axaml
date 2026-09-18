@@ -1,0 +1,87 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:core="using:Cyan.Design.Core.Controls.Feedback"
+        xmlns:btn="using:Cyan.Design.Core.Controls.Buttons">
+
+    <Style Selector="core|CyanPopconfirm">
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid Background="Transparent">
+                    <ContentPresenter Content="{TemplateBinding Content}" />
+                    <Popup x:Name="PART_Popup"
+                           IsOpen="{Binding Open, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                           Topmost="True">
+                        <Border Margin="6"
+                                Background="{DynamicResource ColorBgElevatedBrush}"
+                                CornerRadius="8"
+                                Padding="12,16"
+                                BoxShadow="{DynamicResource BoxShadow}">
+                            <Grid ColumnDefinitions="Auto,*">
+                                <Grid Grid.Column="0" VerticalAlignment="Top" Margin="0,2,0,0">
+                                    <Path Width="14" Height="14"
+                                          Fill="{DynamicResource ColorWarningBrush}"
+                                          Stretch="Uniform"
+                                          Data="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm-32 232c0-4.4 3.6-8 8-8h48c4.4 0 8 3.6 8 8v272c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V296zm32 440a48.01 48.01 0 0 1 0-96 48.01 48.01 0 0 1 0 96z"
+                                          IsVisible="False"
+                                          x:Name="PART_DefaultIcon" />
+                                    <ContentPresenter Content="{TemplateBinding Icon}"
+                                                      IsVisible="False"
+                                                      x:Name="PART_CustomIcon" />
+                                </Grid>
+
+                                <StackPanel Grid.Column="1" Spacing="8" Margin="8,0,0,0">
+                                    <ContentPresenter Content="{TemplateBinding Title}"
+                                                      FontSize="14"
+                                                      Foreground="{DynamicResource ColorTextBrush}"
+                                                      TextWrapping="Wrap" />
+                                    <ContentPresenter Content="{TemplateBinding Description}"
+                                                      FontSize="14"
+                                                      Foreground="{DynamicResource ColorTextSecondaryBrush}"
+                                                      TextWrapping="Wrap"
+                                                      IsVisible="False"
+                                                      x:Name="PART_Description" />
+                                    <StackPanel Orientation="Horizontal" Spacing="8"
+                                                HorizontalAlignment="Right"
+                                                Margin="0,4,0,0">
+                                        <btn:CyanButton x:Name="PART_CancelButton"
+                                                        Content="{TemplateBinding CancelText}"
+                                                        ButtonSize="Small" />
+                                        <btn:CyanButton x:Name="PART_OkButton"
+                                                        Content="{TemplateBinding OkText}"
+                                                        ButtonType="{TemplateBinding OkType}"
+                                                        ButtonSize="Small"
+                                                        Loading="{TemplateBinding ConfirmLoading}" />
+                                    </StackPanel>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </Popup>
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <Style Selector="core|CyanPopconfirm:disabled">
+        <Setter Property="Opacity" Value="0.5" />
+        <Setter Property="Cursor" Value="Arrow" />
+    </Style>
+
+    <Style Selector="core|CyanPopconfirm:not(:has-icon) /template/ Path#PART_DefaultIcon">
+        <Setter Property="IsVisible" Value="True" />
+    </Style>
+
+    <Style Selector="core|CyanPopconfirm:has-icon /template/ ContentPresenter#PART_CustomIcon">
+        <Setter Property="IsVisible" Value="True" />
+    </Style>
+
+    <Style Selector="core|CyanPopconfirm:has-description /template/ ContentPresenter#PART_Description">
+        <Setter Property="IsVisible" Value="True" />
+    </Style>
+
+    <Style Selector="core|CyanPopconfirm:no-cancel /template/ btn|CyanButton#PART_CancelButton">
+        <Setter Property="IsVisible" Value="False" />
+    </Style>
+
+</Styles>

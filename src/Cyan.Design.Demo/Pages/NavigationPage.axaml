@@ -1,0 +1,72 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:nav="using:Cyan.Design.Core.Controls.Navigation"
+             xmlns:icon="using:Cyan.Design.Core.Controls.Icons"
+             xmlns:pages="using:Cyan.Design.Demo.Pages"
+             x:Class="Cyan.Design.Demo.Pages.NavigationPage">
+    <Grid RowDefinitions="Auto,*" Margin="20">
+        <Border Grid.Row="0"  Padding="24,12" Background="{DynamicResource ColorBgContainerBrush}"
+                BorderBrush="{DynamicResource ColorBorderSecondaryBrush}" BorderThickness="0,0,0,1">
+            <TextBlock Text="NavigationView 导航视图（参考 FluentAvalonia：缩进按钮 + 图标 + Footer）"
+                       FontSize="16" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}" />
+        </Border>
+        <nav:CyanNavigationView Grid.Row="1" x:Name="NavView"
+                                PaneTitle="Cyan.Design"
+                                OpenPaneLength="220">
+            <nav:CyanNavigationView.Items>
+                <nav:CyanNavigationViewItem Header="Button 按钮">
+                    <nav:CyanNavigationViewItem.Icon>
+                        <icon:CyanIcon IconKey="home" FontSize="18" />
+                    </nav:CyanNavigationViewItem.Icon>
+                    <nav:CyanNavigationViewItem.Content>
+                        <pages:ButtonPage />
+                    </nav:CyanNavigationViewItem.Content>
+                </nav:CyanNavigationViewItem>
+                <nav:CyanNavigationViewItem Header="Typography 文字">
+                    <nav:CyanNavigationViewItem.Icon>
+                        <icon:CyanIcon IconKey="edit" FontSize="18" />
+                    </nav:CyanNavigationViewItem.Icon>
+                    <nav:CyanNavigationViewItem.Content>
+                        <pages:TypographyPage />
+                    </nav:CyanNavigationViewItem.Content>
+                </nav:CyanNavigationViewItem>
+                <nav:CyanNavigationViewItem Header="Input 输入">
+                    <nav:CyanNavigationViewItem.Icon>
+                        <icon:CyanIcon IconKey="list" FontSize="18" />
+                    </nav:CyanNavigationViewItem.Icon>
+                    <nav:CyanNavigationViewItem.Content>
+                        <pages:InputPage />
+                    </nav:CyanNavigationViewItem.Content>
+                </nav:CyanNavigationViewItem>
+                <nav:CyanNavigationViewItem Header="选择控件">
+                    <nav:CyanNavigationViewItem.Icon>
+                        <icon:CyanIcon IconKey="select" FontSize="18" />
+                    </nav:CyanNavigationViewItem.Icon>
+                    <nav:CyanNavigationViewItem.Content>
+                        <pages:SelectionPage />
+                    </nav:CyanNavigationViewItem.Content>
+                </nav:CyanNavigationViewItem>
+                <nav:CyanNavigationViewItem Header="全局反馈">
+                    <nav:CyanNavigationViewItem.Icon>
+                        <icon:CyanIcon IconKey="message" FontSize="18" />
+                    </nav:CyanNavigationViewItem.Icon>
+                    <nav:CyanNavigationViewItem.Content>
+                        <pages:FeedbackPage />
+                    </nav:CyanNavigationViewItem.Content>
+                </nav:CyanNavigationViewItem>
+            </nav:CyanNavigationView.Items>
+            <nav:CyanNavigationView.FooterItems>
+                <nav:CyanNavigationViewItem Header="设置">
+                    <nav:CyanNavigationViewItem.Icon>
+                        <icon:CyanIcon IconKey="refresh" FontSize="18" />
+                    </nav:CyanNavigationViewItem.Icon>
+                </nav:CyanNavigationViewItem>
+                <nav:CyanNavigationViewItem Header="安全">
+                    <nav:CyanNavigationViewItem.Icon>
+                        <icon:CyanIcon IconKey="shield" FontSize="18" />
+                    </nav:CyanNavigationViewItem.Icon>
+                </nav:CyanNavigationViewItem>
+            </nav:CyanNavigationView.FooterItems>
+        </nav:CyanNavigationView>
+    </Grid>
+</UserControl>

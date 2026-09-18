@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Cyan.Design.Core/Cyan.Design.Core.csproj" />
+    <Project Path="src/Cyan.Design.Demo/Cyan.Design.Demo.csproj" />
+    <Project Path="src/Cyan.Design.Themes/Cyan.Design.Themes.csproj" />
+    <Project Path="src/Cyan.Design.Core.Tests/Cyan.Design.Core.Tests.csproj" />
+  </Folder>
+</Solution>

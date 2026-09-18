@@ -1,0 +1,209 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="using:Cyan.Design.Demo.Controls"
+             xmlns:core="using:Cyan.Design.Core.Controls.Overlays"
+             xmlns:icon="using:Cyan.Design.Core.Controls.Icons"
+             x:Class="Cyan.Design.Demo.Pages.MenubarPage"
+             x:CompileBindings="False">
+    <ScrollViewer Padding="0" Margin="15">
+        <StackPanel Spacing="0" MaxWidth="800">
+            <TextBlock Text="Menubar 菜单栏" FontSize="22" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}"/>
+            <TextBlock Text="移植自 shadcn/ui 的 Menubar 控件，支持 Checkbox、Radio、Submenu 和 Icons。" Foreground="{DynamicResource ColorTextSecondaryBrush}" TextWrapping="Wrap"/>
+
+            <controls:DemoSection Title="基本用法" Description="File / Edit / View 菜单">
+                <core:CyanMenubar Margin="0,8,0,0">
+                    <StackPanel Orientation="Horizontal" Spacing="2">
+                        <core:CyanMenubarMenu Header="File">
+                            <StackPanel>
+                                <core:CyanMenubarItem Header="New Tab" Shortcut="Ctrl+T" />
+                                <core:CyanMenubarItem Header="New Window" Shortcut="Ctrl+N" />
+                                <core:CyanMenubarSeparator />
+                                <core:CyanMenubarItem Header="Open..." />
+                                <core:CyanMenubarItem Header="Save" Shortcut="Ctrl+S" />
+                            </StackPanel>
+                        </core:CyanMenubarMenu>
+                        <core:CyanMenubarMenu Header="Edit">
+                            <StackPanel>
+                                <core:CyanMenubarItem Header="Undo" Shortcut="Ctrl+Z" />
+                                <core:CyanMenubarItem Header="Redo" Shortcut="Ctrl+Y" />
+                                <core:CyanMenubarSeparator />
+                                <core:CyanMenubarItem Header="Cut" Shortcut="Ctrl+X" />
+                                <core:CyanMenubarItem Header="Copy" Shortcut="Ctrl+C" />
+                                <core:CyanMenubarItem Header="Paste" Shortcut="Ctrl+V" />
+                            </StackPanel>
+                        </core:CyanMenubarMenu>
+                        <core:CyanMenubarMenu Header="View">
+                            <StackPanel>
+                                <core:CyanMenubarItem Header="Zoom In" Shortcut="Ctrl++" />
+                                <core:CyanMenubarItem Header="Zoom Out" Shortcut="Ctrl+-" />
+                            </StackPanel>
+                        </core:CyanMenubarMenu>
+                    </StackPanel>
+                </core:CyanMenubar>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="Checkbox 复选项" Description="CyanMenubarCheckboxItem，点击切换选中状态">
+                <core:CyanMenubar Margin="0,8,0,0">
+                    <StackPanel Orientation="Horizontal" Spacing="2">
+                        <core:CyanMenubarMenu Header="View">
+                            <StackPanel>
+                                <core:CyanMenubarCheckboxItem Header="Show Toolbar" IsChecked="True" />
+                                <core:CyanMenubarCheckboxItem Header="Show Statusbar" IsChecked="True" />
+                                <core:CyanMenubarCheckboxItem Header="Show Sidebar" />
+                                <core:CyanMenubarSeparator />
+                                <core:CyanMenubarCheckboxItem Header="Word Wrap" />
+                                <core:CyanMenubarCheckboxItem Header="Minimap" IsChecked="True" />
+                            </StackPanel>
+                        </core:CyanMenubarMenu>
+                        <core:CyanMenubarMenu Header="Format">
+                            <StackPanel>
+                                <core:CyanMenubarCheckboxItem Header="Bold" Shortcut="Ctrl+B" />
+                                <core:CyanMenubarCheckboxItem Header="Italic" Shortcut="Ctrl+I" />
+                                <core:CyanMenubarCheckboxItem Header="Underline" Shortcut="Ctrl+U" />
+                            </StackPanel>
+                        </core:CyanMenubarMenu>
+                    </StackPanel>
+                </core:CyanMenubar>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="Radio 单选项" Description="CyanMenubarRadioGroup + CyanMenubarRadioItem">
+                <core:CyanMenubar Margin="0,8,0,0">
+                    <StackPanel Orientation="Horizontal" Spacing="2">
+                        <core:CyanMenubarMenu Header="Profiles">
+                            <StackPanel>
+                                <core:CyanMenubarRadioGroup>
+                                    <core:CyanMenubarRadioItem Header="Default" Value="default" IsSelected="True" />
+                                    <core:CyanMenubarRadioItem Header="Compact" Value="compact" />
+                                    <core:CyanMenubarRadioItem Header="Comfortable" Value="comfortable" />
+                                </core:CyanMenubarRadioGroup>
+                            </StackPanel>
+                        </core:CyanMenubarMenu>
+                        <core:CyanMenubarMenu Header="Theme">
+                            <StackPanel>
+                                <core:CyanMenubarRadioGroup>
+                                    <core:CyanMenubarRadioItem Header="Light" Value="light" IsSelected="True" />
+                                    <core:CyanMenubarRadioItem Header="Dark" Value="dark" />
+                                    <core:CyanMenubarRadioItem Header="System" Value="system" />
+                                </core:CyanMenubarRadioGroup>
+                            </StackPanel>
+                        </core:CyanMenubarMenu>
+                    </StackPanel>
+                </core:CyanMenubar>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="Submenu 子菜单" Description="CyanMenubarSub，悬停展开嵌套菜单">
+                <core:CyanMenubar Margin="0,8,0,0">
+                    <StackPanel Orientation="Horizontal" Spacing="2">
+                        <core:CyanMenubarMenu Header="File">
+                            <StackPanel>
+                                <core:CyanMenubarItem Header="New File" Shortcut="Ctrl+N" />
+                                <core:CyanMenubarItem Header="Open..." />
+                                <core:CyanMenubarSeparator />
+                                <core:CyanMenubarSub Header="Recent Files">
+                                    <StackPanel>
+                                        <core:CyanMenubarItem Header="document1.txt" />
+                                        <core:CyanMenubarItem Header="document2.txt" />
+                                        <core:CyanMenubarItem Header="config.json" />
+                                        <core:CyanMenubarSeparator />
+                                        <core:CyanMenubarItem Header="More..." />
+                                    </StackPanel>
+                                </core:CyanMenubarSub>
+                                <core:CyanMenubarSub Header="Recent Projects">
+                                    <StackPanel>
+                                        <core:CyanMenubarItem Header="Project A" />
+                                        <core:CyanMenubarItem Header="Project B" />
+                                        <core:CyanMenubarItem Header="Project C" />
+                                    </StackPanel>
+                                </core:CyanMenubarSub>
+                                <core:CyanMenubarSeparator />
+                                <core:CyanMenubarItem Header="Save" Shortcut="Ctrl+S" />
+                            </StackPanel>
+                        </core:CyanMenubarMenu>
+                        <core:CyanMenubarMenu Header="Edit">
+                            <StackPanel>
+                                <core:CyanMenubarItem Header="Undo" Shortcut="Ctrl+Z" />
+                                <core:CyanMenubarItem Header="Redo" Shortcut="Ctrl+Y" />
+                                <core:CyanMenubarSeparator />
+                                <core:CyanMenubarSub Header="Find">
+                                    <StackPanel>
+                                        <core:CyanMenubarItem Header="Find..." Shortcut="Ctrl+F" />
+                                        <core:CyanMenubarItem Header="Replace..." Shortcut="Ctrl+H" />
+                                        <core:CyanMenubarItem Header="Find in Files" Shortcut="Ctrl+Shift+F" />
+                                    </StackPanel>
+                                </core:CyanMenubarSub>
+                            </StackPanel>
+                        </core:CyanMenubarMenu>
+                    </StackPanel>
+                </core:CyanMenubar>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="With Icons 带图标" Description="Icon 属性，支持所有菜单项类型">
+                <core:CyanMenubar Margin="0,8,0,0">
+                    <StackPanel Orientation="Horizontal" Spacing="2">
+                        <core:CyanMenubarMenu Header="File">
+                            <StackPanel>
+                                <core:CyanMenubarItem Header="New File" Shortcut="Ctrl+N">
+                                    <core:CyanMenubarItem.Icon>
+                                        <icon:CyanIcon IconKey="add" FontSize="14" />
+                                    </core:CyanMenubarItem.Icon>
+                                </core:CyanMenubarItem>
+                                <core:CyanMenubarItem Header="Open...">
+                                    <core:CyanMenubarItem.Icon>
+                                        <icon:CyanIcon IconKey="folder" FontSize="14" />
+                                    </core:CyanMenubarItem.Icon>
+                                </core:CyanMenubarItem>
+                                <core:CyanMenubarItem Header="Save" Shortcut="Ctrl+S">
+                                    <core:CyanMenubarItem.Icon>
+                                        <icon:CyanIcon IconKey="save" FontSize="14" />
+                                    </core:CyanMenubarItem.Icon>
+                                </core:CyanMenubarItem>
+                                <core:CyanMenubarSeparator />
+                                <core:CyanMenubarCheckboxItem Header="Auto Save" IsChecked="True">
+                                    <core:CyanMenubarCheckboxItem.Icon>
+                                        <icon:CyanIcon IconKey="check" FontSize="14" />
+                                    </core:CyanMenubarCheckboxItem.Icon>
+                                </core:CyanMenubarCheckboxItem>
+                            </StackPanel>
+                        </core:CyanMenubarMenu>
+                        <core:CyanMenubarMenu Header="More">
+                            <StackPanel>
+                                <core:CyanMenubarItem Header="Settings">
+                                    <core:CyanMenubarItem.Icon>
+                                        <icon:CyanIcon IconKey="refresh" FontSize="14" />
+                                    </core:CyanMenubarItem.Icon>
+                                </core:CyanMenubarItem>
+                                <core:CyanMenubarItem Header="About">
+                                    <core:CyanMenubarItem.Icon>
+                                        <icon:CyanIcon IconKey="people" FontSize="14" />
+                                    </core:CyanMenubarItem.Icon>
+                                </core:CyanMenubarItem>
+                                <core:CyanMenubarSeparator />
+                                <core:CyanMenubarItem Header="Exit" />
+                            </StackPanel>
+                        </core:CyanMenubarMenu>
+                    </StackPanel>
+                </core:CyanMenubar>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="禁用项" Description="IsDisabled=True">
+                <core:CyanMenubar Margin="0,8,0,0">
+                    <StackPanel Orientation="Horizontal" Spacing="2">
+                        <core:CyanMenubarMenu Header="File">
+                            <StackPanel>
+                                <core:CyanMenubarItem Header="New File" Shortcut="Ctrl+N" />
+                                <core:CyanMenubarItem Header="Open..." />
+                                <core:CyanMenubarSeparator />
+                                <core:CyanMenubarItem Header="Save" Shortcut="Ctrl+S" IsDisabled="True" />
+                                <core:CyanMenubarItem Header="Save As..." IsDisabled="True" />
+                                <core:CyanMenubarSeparator />
+                                <core:CyanMenubarCheckboxItem Header="Auto Save" IsDisabled="True" />
+                                <core:CyanMenubarRadioItem Header="Option A" IsDisabled="True" />
+                            </StackPanel>
+                        </core:CyanMenubarMenu>
+                    </StackPanel>
+                </core:CyanMenubar>
+            </controls:DemoSection>
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

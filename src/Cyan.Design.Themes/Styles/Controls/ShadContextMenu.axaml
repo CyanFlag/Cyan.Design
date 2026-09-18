@@ -1,0 +1,75 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:core="using:Cyan.Design.Core.Controls.Overlays">
+
+    <Style Selector="core|CyanShadContextMenu">
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid>
+                    <ContentPresenter Content="{TemplateBinding Trigger}" />
+                    <Popup x:Name="PART_Popup" Placement="Pointer" IsLightDismissEnabled="True">
+                        <Border Background="{DynamicResource ColorBgElevatedBrush}" CornerRadius="8" BorderBrush="{DynamicResource ColorBorderBrush}" BorderThickness="1" Padding="4" MinWidth="180">
+                            <ContentPresenter Content="{TemplateBinding Menu}" />
+                        </Border>
+                    </Popup>
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <Style Selector="core|CyanShadContextMenuItem">
+        <Setter Property="Padding" Value="12,6" />
+        <Setter Property="CornerRadius" Value="4" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextBrush}" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border Background="{TemplateBinding Background}"
+                        CornerRadius="{TemplateBinding CornerRadius}"
+                        Padding="{TemplateBinding Padding}">
+                    <Grid ColumnDefinitions="Auto,*,Auto">
+                        <ContentPresenter Grid.Column="0" Content="{TemplateBinding Icon}" Margin="0,0,8,0" VerticalAlignment="Center" />
+                        <ContentPresenter Grid.Column="1" Content="{TemplateBinding Content}" VerticalAlignment="Center" />
+                        <TextBlock Grid.Column="2" Text="{TemplateBinding Shortcut}" Foreground="{DynamicResource ColorTextTertiaryBrush}" FontSize="12" Margin="16,0,0,0" VerticalAlignment="Center" />
+                    </Grid>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <Style Selector="core|CyanShadContextMenuItem:pointerover">
+        <Setter Property="Background" Value="{DynamicResource ColorFillTertiaryBrush}" />
+    </Style>
+
+    <Style Selector="core|CyanShadContextMenuCheckboxItem">
+        <Setter Property="Padding" Value="12,6" />
+        <Setter Property="CornerRadius" Value="4" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextBrush}" />
+    </Style>
+
+    <Style Selector="core|CyanShadContextMenuCheckboxItem:pointerover">
+        <Setter Property="Background" Value="{DynamicResource ColorFillTertiaryBrush}" />
+    </Style>
+
+    <Style Selector="core|CyanShadContextMenuRadioItem">
+        <Setter Property="Padding" Value="12,6" />
+        <Setter Property="CornerRadius" Value="4" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextBrush}" />
+    </Style>
+
+    <Style Selector="core|CyanShadContextMenuRadioItem:pointerover">
+        <Setter Property="Background" Value="{DynamicResource ColorFillTertiaryBrush}" />
+    </Style>
+
+</Styles>

@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <RootNamespace>Cyan.Design.Demo</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" />
+    <PackageReference Include="Avalonia.Desktop" />
+    <PackageReference Include="Avalonia.Themes.Fluent" />
+    <PackageReference Include="Avalonia.Controls.DataGrid" />
+
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Cyan.Design.Themes\Cyan.Design.Themes.csproj" />
+    <ProjectReference Include="..\Cyan.Design.Core\Cyan.Design.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AvaloniaResource Include="..\Assets\user.png" Link="Assets\user.png" />
+    <AvaloniaResource Include="..\Assets\Sales\01.png" Link="Assets\Sales\01.png" />
+    <AvaloniaResource Include="..\Assets\Sales\02.png" Link="Assets\Sales\02.png" />
+    <AvaloniaResource Include="..\Assets\Sales\03.png" Link="Assets\Sales\03.png" />
+    <AvaloniaResource Include="..\Assets\Sales\04.png" Link="Assets\Sales\04.png" />
+    <AvaloniaResource Include="..\Assets\Sales\05.png" Link="Assets\Sales\05.png" />
+  </ItemGroup>
+
+</Project>

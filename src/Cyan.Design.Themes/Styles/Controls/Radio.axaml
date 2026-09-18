@@ -1,0 +1,189 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:core="using:Cyan.Design.Core.Controls.Selections">
+
+    <Style Selector="core|CyanRadio">
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorBorderBrush}" />
+        <Setter Property="Background" Value="{DynamicResource ColorBgContainerBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextBrush}" />
+        <Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
+                    <Border x:Name="PART_Circle" Width="16" Height="16" CornerRadius="8"
+                            BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1"
+                            Background="{TemplateBinding Background}" VerticalAlignment="Center">
+                        <Border x:Name="PART_Dot" Width="8" Height="8" CornerRadius="4"
+                                Background="{DynamicResource ColorPrimaryBrush}" IsVisible="False"
+                                HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                    <ContentPresenter Content="{TemplateBinding Content}" VerticalAlignment="Center" />
+                </StackPanel>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <Style Selector="core|CyanRadio:pointerover /template/ Border#PART_Circle">
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorPrimaryBrush}" />
+    </Style>
+    <Style Selector="core|CyanRadio:checked /template/ Border#PART_Circle">
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorPrimaryBrush}" />
+    </Style>
+    <Style Selector="core|CyanRadio:checked /template/ Border#PART_Dot">
+        <Setter Property="IsVisible" Value="True" />
+    </Style>
+    <Style Selector="core|CyanRadio:focus /template/ Border#PART_Circle">
+        <Setter Property="BoxShadow" Value="0 0 0 2 #1A1677FF" />
+    </Style>
+    <Style Selector="core|CyanRadio:disabled">
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextDisabledBrush}" />
+        <Setter Property="Cursor" Value="Arrow" />
+    </Style>
+    <Style Selector="core|CyanRadio:disabled /template/ Border#PART_Circle">
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorBorderBrush}" />
+        <Setter Property="Background" Value="{DynamicResource ColorBgDisabledBrush}" />
+    </Style>
+    <Style Selector="core|CyanRadio:disabled:checked /template/ Border#PART_Dot">
+        <Setter Property="Background" Value="{DynamicResource ColorTextDisabledBrush}" />
+    </Style>
+
+    <Style Selector="core|CyanRadio[OptionType=Button]">
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorBorderBrush}" />
+        <Setter Property="Background" Value="{DynamicResource ColorBgContainerBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextBrush}" />
+        <Setter Property="MinHeight" Value="32" />
+        <Setter Property="Padding" Value="15,4" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border x:Name="PART_Border"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="1"
+                        Padding="{TemplateBinding Padding}"
+                        VerticalAlignment="Stretch">
+                    <ContentPresenter Content="{TemplateBinding Content}"
+                                      HorizontalAlignment="Center"
+                                      VerticalAlignment="Center" />
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <Style Selector="core|CyanRadio[OptionType=Button] /template/ Border#PART_Border">
+        <Setter Property="CornerRadius" Value="{DynamicResource BorderRadius}" />
+    </Style>
+
+    <Style Selector="core|CyanRadio[OptionType=Button]:pointerover /template/ Border#PART_Border">
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorPrimaryBorderHoverBrush}" />
+        <Setter Property="Background" Value="{DynamicResource ColorPrimaryBgBrush}" />
+    </Style>
+    <Style Selector="core|CyanRadio[OptionType=Button]:pointerover">
+        <Setter Property="Foreground" Value="{DynamicResource ColorPrimaryBrush}" />
+    </Style>
+
+    <Style Selector="core|CyanRadio[OptionType=Button]:checked">
+        <Setter Property="Foreground" Value="{DynamicResource ColorPrimaryBrush}" />
+        <Setter Property="FontWeight" Value="600" />
+    </Style>
+    <Style Selector="core|CyanRadio[OptionType=Button]:checked /template/ Border#PART_Border">
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorPrimaryBrush}" />
+        <Setter Property="Background" Value="{DynamicResource ColorPrimaryBgBrush}" />
+    </Style>
+
+    <Style Selector="core|CyanRadio[OptionType=Button]:focus /template/ Border#PART_Border">
+        <Setter Property="BoxShadow" Value="0 0 0 2 #1A1677FF" />
+    </Style>
+
+    <Style Selector="core|CyanRadio[OptionType=Button]:disabled">
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextDisabledBrush}" />
+        <Setter Property="Cursor" Value="Arrow" />
+    </Style>
+    <Style Selector="core|CyanRadio[OptionType=Button]:disabled /template/ Border#PART_Border">
+        <Setter Property="Background" Value="{DynamicResource ColorBgDisabledBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorBorderBrush}" />
+    </Style>
+    <Style Selector="core|CyanRadio[OptionType=Button]:disabled:checked /template/ Border#PART_Border">
+        <Setter Property="Background" Value="{DynamicResource ColorBgDisabledBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorBorderBrush}" />
+    </Style>
+
+    <Style Selector="core|CyanRadio[OptionType=Button][ButtonStyle=Solid]:checked">
+        <Setter Property="Foreground" Value="{DynamicResource ColorBgContainerBrush}" />
+    </Style>
+    <Style Selector="core|CyanRadio[OptionType=Button][ButtonStyle=Solid]:checked /template/ Border#PART_Border">
+        <Setter Property="Background" Value="{DynamicResource ColorPrimaryBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorPrimaryBrush}" />
+    </Style>
+    <Style Selector="core|CyanRadio[OptionType=Button][ButtonStyle=Solid]:checked:pointerover /template/ Border#PART_Border">
+        <Setter Property="Background" Value="{DynamicResource ColorPrimaryHoverBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorPrimaryHoverBrush}" />
+    </Style>
+    <Style Selector="core|CyanRadio[OptionType=Button][ButtonStyle=Solid]:not(:checked):pointerover /template/ Border#PART_Border">
+        <Setter Property="Background" Value="{DynamicResource ColorBgContainerBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorPrimaryBorderHoverBrush}" />
+    </Style>
+    <Style Selector="core|CyanRadio[OptionType=Button][ButtonStyle=Solid]:not(:checked):pointerover">
+        <Setter Property="Foreground" Value="{DynamicResource ColorPrimaryBrush}" />
+    </Style>
+
+    <Style Selector="core|CyanRadio[OptionType=Button][RadioSize=Large]">
+        <Setter Property="MinHeight" Value="40" />
+        <Setter Property="Padding" Value="15,7" />
+        <Setter Property="FontSize" Value="{DynamicResource FontSizeLG}" />
+    </Style>
+    <Style Selector="core|CyanRadio[OptionType=Button][RadioSize=Small]">
+        <Setter Property="MinHeight" Value="24" />
+        <Setter Property="Padding" Value="7,0" />
+        <Setter Property="FontSize" Value="{DynamicResource FontSizeSM}" />
+    </Style>
+
+    <Style Selector="core|CyanRadioGroup">
+        <Setter Property="Spacing" Value="8" />
+    </Style>
+
+    <Style Selector="core|CyanRadioGroup[OptionType=Button]">
+        <Setter Property="Spacing" Value="0" />
+    </Style>
+
+    <Style Selector="core|CyanRadioGroup[OptionType=Button] core|CyanRadio /template/ Border#PART_Border">
+        <Setter Property="CornerRadius" Value="0" />
+    </Style>
+    <Style Selector="core|CyanRadioGroup[OptionType=Button] core|CyanRadio:not(:first)">
+        <Setter Property="Margin" Value="-1,0,0,0" />
+    </Style>
+    <Style Selector="core|CyanRadioGroup[OptionType=Button] core|CyanRadio:first /template/ Border#PART_Border">
+        <Setter Property="CornerRadius" Value="6,0,0,6" />
+    </Style>
+    <Style Selector="core|CyanRadioGroup[OptionType=Button] core|CyanRadio:last /template/ Border#PART_Border">
+        <Setter Property="CornerRadius" Value="0,6,6,0" />
+    </Style>
+
+    <Style Selector="core|CyanRadioGroup[OptionType=Button][Orientation=Vertical] core|CyanRadio:not(:first)">
+        <Setter Property="Margin" Value="0,-1,0,0" />
+    </Style>
+    <Style Selector="core|CyanRadioGroup[OptionType=Button][Orientation=Vertical] core|CyanRadio:first /template/ Border#PART_Border">
+        <Setter Property="CornerRadius" Value="6,6,0,0" />
+    </Style>
+    <Style Selector="core|CyanRadioGroup[OptionType=Button][Orientation=Vertical] core|CyanRadio:last /template/ Border#PART_Border">
+        <Setter Property="CornerRadius" Value="0,0,6,6" />
+    </Style>
+
+    <Style Selector="core|CyanRadioGroup[Block=true]">
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+    </Style>
+    <Style Selector="core|CyanRadioGroup[Block=true][OptionType=Button] core|CyanRadio">
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+    </Style>
+    <Style Selector="core|CyanRadioGroup[Block=true][OptionType=Button] core|CyanRadio /template/ Border#PART_Border">
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+    </Style>
+
+    <Style Selector="core|CyanRadioGroup[Disabled=true] core|CyanRadio">
+        <Setter Property="IsEnabled" Value="False" />
+    </Style>
+
+</Styles>

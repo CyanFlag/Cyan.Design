@@ -1,0 +1,89 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:core="using:Cyan.Design.Core.Controls.Feedback">
+
+    <Style Selector="core|CyanSlider">
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Focusable" Value="True" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid x:Name="PART_Container" VerticalAlignment="Center" ClipToBounds="False">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="14" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Border x:Name="PART_Rail" Grid.Row="0" Height="4" CornerRadius="2" Margin="7,0"
+                            Background="{DynamicResource ColorFillSecondaryBrush}" VerticalAlignment="Center" />
+                    <Border x:Name="PART_Track" Grid.Row="0" Height="4" CornerRadius="2" Margin="7,0"
+                            Background="{DynamicResource ColorPrimaryBrush}"
+                            VerticalAlignment="Center" HorizontalAlignment="Left" />
+                    <Border x:Name="PART_Thumb" Grid.Row="0" Width="14" Height="14" CornerRadius="100"
+                            Background="{DynamicResource ColorBgElevatedBrush}"
+                            BorderBrush="{DynamicResource ColorPrimaryBrush}" BorderThickness="2"
+                            VerticalAlignment="Center" HorizontalAlignment="Left"
+                            BoxShadow="0 3 8 0 #1C000000" />
+                    <Border x:Name="PART_Thumb2" Grid.Row="0" Width="14" Height="14" CornerRadius="100"
+                            Background="{DynamicResource ColorBgElevatedBrush}"
+                            BorderBrush="{DynamicResource ColorPrimaryBrush}" BorderThickness="2"
+                            VerticalAlignment="Center" HorizontalAlignment="Left"
+                            BoxShadow="0 3 8 0 #1C000000"
+                            IsVisible="False" />
+                    <Panel x:Name="PART_MarkDots" Grid.Row="0" />
+                    <Panel x:Name="PART_MarksPanel" Grid.Row="1" Margin="7,2,7,0" IsVisible="False" />
+                    <Border x:Name="PART_Tooltip" Grid.Row="0"
+                            HorizontalAlignment="Left" VerticalAlignment="Top"
+                            Margin="0,-26,0,0" IsVisible="False"
+                            Background="#CC000000" CornerRadius="4" Padding="6,2"
+                            ZIndex="100">
+                        <TextBlock x:Name="PART_TooltipText" Foreground="{DynamicResource ColorTextOnPrimaryBrush}" FontSize="12" />
+                    </Border>
+                    <Border x:Name="PART_Tooltip2" Grid.Row="0"
+                            HorizontalAlignment="Left" VerticalAlignment="Top"
+                            Margin="0,-26,0,0" IsVisible="False"
+                            Background="#CC000000" CornerRadius="4" Padding="6,2"
+                            ZIndex="100">
+                        <TextBlock x:Name="PART_Tooltip2Text" Foreground="{DynamicResource ColorTextOnPrimaryBrush}" FontSize="12" />
+                    </Border>
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <Style Selector="core|CyanSlider:pointerover /template/ Border#PART_Thumb">
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorPrimaryHoverBrush}" />
+        <Setter Property="BoxShadow" Value="0 0 0 5 #1E1677FF" />
+    </Style>
+
+    <Style Selector="core|CyanSlider:dragging /template/ Border#PART_Thumb">
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorPrimaryHoverBrush}" />
+        <Setter Property="BoxShadow" Value="0 0 0 5 #1E1677FF" />
+    </Style>
+
+    <Style Selector="core|CyanSlider:disabled /template/ Border#PART_Track">
+        <Setter Property="Background" Value="#40000000" />
+    </Style>
+
+    <Style Selector="core|CyanSlider:disabled /template/ Border#PART_Thumb">
+        <Setter Property="BorderBrush" Value="#40000000" />
+    </Style>
+
+    <Style Selector="core|CyanSlider:pointerover /template/ Border#PART_Thumb2">
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorPrimaryHoverBrush}" />
+        <Setter Property="BoxShadow" Value="0 0 0 5 #1E1677FF" />
+    </Style>
+
+    <Style Selector="core|CyanSlider:dragging /template/ Border#PART_Thumb2">
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorPrimaryHoverBrush}" />
+        <Setter Property="BoxShadow" Value="0 0 0 5 #1E1677FF" />
+    </Style>
+
+    <Style Selector="core|CyanSlider:disabled /template/ Border#PART_Thumb2">
+        <Setter Property="BorderBrush" Value="#40000000" />
+    </Style>
+
+    <Style Selector="core|CyanSlider:disabled">
+        <Setter Property="Opacity" Value="0.6" />
+    </Style>
+
+</Styles>

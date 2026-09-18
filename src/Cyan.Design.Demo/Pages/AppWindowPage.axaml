@@ -1,0 +1,56 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:btn="using:Cyan.Design.Core.Controls.Buttons"
+             x:Class="Cyan.Design.Demo.Pages.AppWindowPage">
+    <ScrollViewer Padding="0" Margin="25">
+        <StackPanel Spacing="20" MaxWidth="800">
+            <TextBlock Text="AppWindow 应用窗口" FontSize="22" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}"/>
+            <TextBlock Text="参考 FluentAvalonia：自定义标题栏窗口，支持 ExtendClientAreaToDecorationsHint 实现沉浸式标题栏。" Foreground="{DynamicResource ColorTextSecondaryBrush}" TextWrapping="Wrap"/>
+
+            <TextBlock Text="基本" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}" Margin="0,8,0,0"/>
+            <btn:CyanButton Content="打开 AppWindow" ButtonType="Primary" Click="OnOpenBasic"/>
+
+            <TextBlock Text="内容延伸到标题栏" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}" Margin="0,8,0,0"/>
+            <TextBlock Text="标题栏区域可放置自定义内容，标题栏高度可调。" Foreground="{DynamicResource ColorTextSecondaryBrush}" TextWrapping="Wrap"/>
+            <btn:CyanButton Content="打开（内容延伸）" ButtonType="Primary" Click="OnOpenExtended"/>
+
+            <TextBlock Text="自定义标题栏颜色" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}" Margin="0,8,0,0"/>
+            <btn:CyanButton Content="打开（深色标题栏）" ButtonType="Primary" Click="OnOpenCustomColors"/>
+
+            <TextBlock Text="隐藏全屏按钮" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}" Margin="0,8,0,0"/>
+            <btn:CyanButton Content="打开（无全屏）" ButtonType="Primary" Click="OnOpenNoFullScreen"/>
+
+            <TextBlock Text="作为对话框" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}" Margin="0,8,0,0"/>
+            <btn:CyanButton Content="打开（ShowAsDialog）" ButtonType="Primary" Click="OnOpenAsDialog"/>
+
+            <TextBlock Text="自定义标题栏高度" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}" Margin="0,8,0,0"/>
+            <StackPanel Orientation="Horizontal" Spacing="8">
+                <btn:CyanButton Content="小 (24px)" Click="OnOpenSmallTitleBar"/>
+                <btn:CyanButton Content="大 (48px)" Click="OnOpenLargeTitleBar"/>
+            </StackPanel>
+
+            <TextBlock Text="Mica/Acrylic 背景效果 (Windows 11)" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}" Margin="0,8,0,0"/>
+            <TextBlock Text="需要 Windows 11 22H2+ 支持。Mica 为微透明云母材质，Acrylic 为亚克力模糊材质。" Foreground="{DynamicResource ColorTextSecondaryBrush}" TextWrapping="Wrap"/>
+            <StackPanel Orientation="Horizontal" Spacing="8">
+                <btn:CyanButton Content="Mica" ButtonType="Primary" Click="OnOpenMica"/>
+                <btn:CyanButton Content="Acrylic" ButtonType="Primary" Click="OnOpenAcrylic"/>
+                <btn:CyanButton Content="Tabbed" ButtonType="Primary" Click="OnOpenTabbed"/>
+            </StackPanel>
+
+            <TextBlock Text="无标题栏窗口" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}" Margin="0,8,0,0"/>
+            <TextBlock Text="移除所有窗口装饰（标题栏、边框、系统按钮），需自行提供关闭方式。" Foreground="{DynamicResource ColorTextSecondaryBrush}" TextWrapping="Wrap"/>
+            <btn:CyanButton Content="打开（无标题栏）" ButtonType="Primary" Click="OnOpenNoTitleBar"/>
+
+            <TextBlock Text="自定义标题栏内容" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}" Margin="0,8,0,0"/>
+            <TextBlock Text="ExtendsContentIntoTitleBar + TitleBarContent，在标题栏区域放置自定义内容。" Foreground="{DynamicResource ColorTextSecondaryBrush}" TextWrapping="Wrap"/>
+            <btn:CyanButton Content="打开（自定义标题栏内容）" ButtonType="Primary" Click="OnOpenCustomTitleBarContent"/>
+
+            <TextBlock Text="圆角窗口" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}" Margin="0,8,0,0"/>
+            <TextBlock Text="CornerRadius 属性设置窗口圆角，最大化时自动归零。" Foreground="{DynamicResource ColorTextSecondaryBrush}" TextWrapping="Wrap"/>
+            <StackPanel Orientation="Horizontal" Spacing="8">
+                <btn:CyanButton Content="圆角 8px" Click="OnOpenRounded"/>
+                <btn:CyanButton Content="圆角 16px" Click="OnOpenLargeRounded"/>
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

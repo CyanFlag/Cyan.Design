@@ -1,0 +1,68 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:core="using:Cyan.Design.Core.Controls.Feedback"
+             xmlns:controls="using:Cyan.Design.Demo.Controls"
+             x:Class="Cyan.Design.Demo.Pages.SpinPage">
+    <ScrollViewer Padding="0" Margin="25,25,0,25">
+        <StackPanel Spacing="20" MaxWidth="800">
+            <TextBlock Text="Spin 加载中" FontSize="22" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}"/>
+            <TextBlock Text="参考 ant.design 5.x：页面或局部加载状态，支持三种大小、提示文案、嵌套遮罩。" Foreground="{DynamicResource ColorTextSecondaryBrush}" TextWrapping="Wrap"/>
+
+            <controls:DemoSection Title="基础用法">
+                <core:CyanSpin />
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="大小">
+                <StackPanel Orientation="Horizontal" Spacing="32" VerticalAlignment="Center">
+                    <core:CyanSpin Size="Small" />
+                    <core:CyanSpin Size="Middle" />
+                    <core:CyanSpin Size="Large" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="提示文案">
+                <core:CyanSpin Tip="Loading..." />
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="嵌套加载">
+                <core:CyanSpin Spinning="True">
+                    <core:CyanSpin.Content>
+                        <Border Background="{DynamicResource ColorBgContainerBrush}" CornerRadius="8" Padding="24" Width="400">
+                            <StackPanel Spacing="12">
+                                <TextBlock Text="Card Title" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}" />
+                                <TextBlock Text="Card content goes here. This is a demo of Spin nesting." Foreground="{DynamicResource ColorTextSecondaryBrush}" TextWrapping="Wrap" />
+                                <TextBlock Text="You can toggle the loading state by changing the Spinning property." Foreground="{DynamicResource ColorTextSecondaryBrush}" TextWrapping="Wrap" />
+                            </StackPanel>
+                        </Border>
+                    </core:CyanSpin.Content>
+                </core:CyanSpin>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="切换加载状态">
+                <StackPanel Spacing="8">
+                    <StackPanel Orientation="Horizontal" Spacing="16" Margin="0,0,0,8">
+                        <ToggleButton x:Name="ToggleSpin" Content="切换加载" IsChecked="True" />
+                    </StackPanel>
+                    <core:CyanSpin x:Name="NestedSpin" Spinning="True">
+                        <core:CyanSpin.Content>
+                            <Border Background="{DynamicResource ColorBgContainerBrush}" CornerRadius="8" Padding="24" Width="400">
+                                <StackPanel Spacing="8">
+                                    <TextBlock Text="可切换的加载状态" FontSize="14" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}" />
+                                    <TextBlock Text="点击上方按钮切换加载状态。" Foreground="{DynamicResource ColorTextSecondaryBrush}" TextWrapping="Wrap" />
+                                </StackPanel>
+                            </Border>
+                        </core:CyanSpin.Content>
+                    </core:CyanSpin>
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="自定义大小+文案">
+                <StackPanel Orientation="Horizontal" Spacing="32" VerticalAlignment="Center">
+                    <core:CyanSpin Size="Small" Tip="Loading" />
+                    <core:CyanSpin Size="Large" Tip="Loading..." />
+                </StackPanel>
+            </controls:DemoSection>
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

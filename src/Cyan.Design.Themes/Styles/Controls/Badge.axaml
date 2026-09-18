@@ -1,0 +1,81 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:core="using:Cyan.Design.Core.Controls.Display">
+
+    <Style Selector="core|CyanBadge">
+        <Setter Property="BadgeColor" Value="{DynamicResource ColorErrorBrush}" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="ClipToBounds" Value="False" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid ClipToBounds="False">
+                    <ContentPresenter x:Name="PART_ContentPresenter"
+                                      Content="{TemplateBinding Content}"
+                                      HorizontalContentAlignment="Stretch"
+                                      VerticalContentAlignment="Stretch" />
+                    <Border x:Name="PART_Count"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                            Margin="0,-10,-2,0"
+                            MinWidth="20"
+                            Height="20"
+                            CornerRadius="10"
+                            Background="{TemplateBinding BadgeColor}"
+                            BorderBrush="{DynamicResource ColorBorderBgBrush}"
+                            BorderThickness="1"
+                            Padding="6,0"
+                            IsVisible="False">
+                        <TextBlock x:Name="PART_CountText"
+                                   Foreground="{DynamicResource ColorTextOnPrimaryBrush}"
+                                   FontSize="12"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center" />
+                    </Border>
+                    <Border x:Name="PART_Dot"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                            Margin="0,-3,-2,0"
+                            Width="6" Height="6"
+                            CornerRadius="3"
+                            Background="{TemplateBinding BadgeColor}"
+                            BorderBrush="{DynamicResource ColorBorderBgBrush}"
+                            BorderThickness="1"
+                            IsVisible="False" />
+                    <StackPanel x:Name="PART_Status"
+                                Orientation="Horizontal"
+                                Spacing="8"
+                                IsVisible="False"
+                                VerticalAlignment="Center">
+                        <Border Width="6" Height="6"
+                                CornerRadius="3"
+                                Background="{TemplateBinding BadgeColor}" />
+                        <TextBlock Text="{TemplateBinding Text}"
+                                   Foreground="{DynamicResource ColorTextBrush}"
+                                   FontSize="14"
+                                   VerticalAlignment="Center" />
+                    </StackPanel>
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <Style Selector="core|CyanBadge:small /template/ Border#PART_Count">
+        <Setter Property="Height" Value="14" />
+        <Setter Property="CornerRadius" Value="7" />
+        <Setter Property="Padding" Value="4,0" />
+    </Style>
+
+    <Style Selector="core|CyanBadge:standalone /template/ Border#PART_Count">
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Margin" Value="0" />
+    </Style>
+
+    <Style Selector="core|CyanBadge:standalone /template/ Border#PART_Dot">
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Margin" Value="0" />
+    </Style>
+
+</Styles>

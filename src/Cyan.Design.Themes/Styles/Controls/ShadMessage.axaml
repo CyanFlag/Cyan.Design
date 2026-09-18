@@ -1,0 +1,23 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:core="using:Cyan.Design.Core.Controls.Chat">
+
+
+    <Style Selector="core|CyanShadMessageAvatar">
+        <Setter Property="Margin" Value="0,0,0,0" />
+    </Style>
+
+    <Style Selector="core|CyanShadMessageHeader">
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="FontWeight" Value="600" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextSecondaryBrush}" />
+        <Setter Property="Margin" Value="0,0,0,2" />
+    </Style>
+
+    <Style Selector="core|CyanShadMessageFooter">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextTertiaryBrush}" />
+        <Setter Property="Margin" Value="0,2,0,0" />
+    </Style>
+
+</Styles>

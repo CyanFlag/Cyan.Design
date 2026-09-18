@@ -1,0 +1,222 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:nav="using:Cyan.Design.Core.Controls.Navigation">
+
+    <Style Selector="TabControl">
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextBrush}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="(nav:CyanTabControlBehaviors.UseSlidingPill)" Value="True" />
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" Spacing="4" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="{TemplateBinding CornerRadius}"
+                        HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                        VerticalAlignment="{TemplateBinding VerticalAlignment}">
+                        <Grid RowDefinitions="Auto,8,*">
+                            <LayoutTransformControl
+                                DockPanel.Dock="{TemplateBinding TabStripPlacement}"
+                                HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                                Name="LayoutTransform">
+                                <Border
+                                    Background="{DynamicResource TabItemsBackgroundBrush}"
+                                    CornerRadius="10"
+                                    HorizontalAlignment="Left"
+                                    Padding="2,4,2,0"
+                                    x:Name="PART_TabContainer">
+                                    <Panel>
+                                        <Canvas IsHitTestVisible="False">
+                                            <Border
+                                                Background="{DynamicResource TabItemSelectedBrush}"
+                                                BoxShadow="0 2 4 0 #20000000"
+                                                Canvas.Left="0"
+                                                Canvas.Top="0"
+                                                CornerRadius="8"
+                                                Height="0"
+                                                Opacity="0"
+                                                Width="0"
+                                                x:Name="PART_SelectionPill">
+                                                <Border.Transitions>
+                                                    <Transitions>
+                                                        <DoubleTransition Duration="0:0:0.30" Easing="QuadraticEaseOut" Property="(Canvas.Left)" />
+                                                        <DoubleTransition Duration="0:0:0.30" Easing="QuadraticEaseOut" Property="(Canvas.Top)" />
+                                                        <DoubleTransition Duration="0:0:0.30" Easing="QuadraticEaseOut" Property="Width" />
+                                                        <DoubleTransition Duration="0:0:0.30" Easing="QuadraticEaseOut" Property="Height" />
+                                                        <DoubleTransition Duration="0:0:0.20" Easing="QuadraticEaseOut" Property="Opacity" />
+                                                    </Transitions>
+                                                </Border.Transitions>
+                                            </Border>
+                                        </Canvas>
+                                        <ItemsPresenter ItemsPanel="{TemplateBinding ItemsPanel}" Name="PART_ItemsPresenter" />
+                                    </Panel>
+                                </Border>
+                            </LayoutTransformControl>
+                            <ContentPresenter Grid.Row="2"
+                                Content="{TemplateBinding SelectedContent}"
+                                ContentTemplate="{TemplateBinding SelectedContentTemplate}"
+                                HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                Margin="{TemplateBinding Padding}"
+                                Name="PART_SelectedContentHost"
+                                VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style Selector="^[TabStripPlacement=Left] /template/ LayoutTransformControl#LayoutTransform">
+            <Setter Property="LayoutTransform" Value="rotate(-90deg)" />
+        </Style>
+        <Style Selector="^[TabStripPlacement=Right] /template/ LayoutTransformControl#LayoutTransform">
+            <Setter Property="LayoutTransform" Value="rotate(90deg)" />
+        </Style>
+        <Style Selector="^[TabStripPlacement=Top] /template/ ItemsPresenter#PART_ItemsPresenter">
+            <Setter Property="Margin" Value="0" />
+        </Style>
+    </Style>
+
+    <Style Selector="TabControl.center /template/ Border#PART_TabContainer">
+        <Setter Property="HorizontalAlignment" Value="Center" />
+    </Style>
+
+    <Style Selector="TabItem">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontWeight" Value="Medium" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextBrush}" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="CornerRadius" Value="8" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Padding" Value="16,4" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        ClipToBounds="True"
+                        CornerRadius="{TemplateBinding CornerRadius}"
+                        Margin="2,0,2,4">
+                        <ContentPresenter
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Content="{TemplateBinding Header}"
+                            ContentTemplate="{TemplateBinding HeaderTemplate}"
+                            Foreground="{TemplateBinding Foreground}"
+                            HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            Name="ContentPresenter"
+                            Opacity="{TemplateBinding Opacity}"
+                            Padding="{TemplateBinding Padding}"
+                            RecognizesAccessKey="True"
+                            VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}">
+                            <ContentPresenter.Transitions>
+                                <Transitions>
+                                    <DoubleTransition Duration="0:0:0.20" Easing="QuadraticEaseOut" Property="Opacity" />
+                                </Transitions>
+                            </ContentPresenter.Transitions>
+                        </ContentPresenter>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style Selector="^:disabled /template/ ContentPresenter#ContentPresenter">
+            <Setter Property="Opacity" Value="0.50" />
+        </Style>
+        <Style Selector="^[IsSelected=False] /template/ ContentPresenter#ContentPresenter">
+            <Setter Property="Opacity" Value="0.75" />
+        </Style>
+        <Style Selector="^:selected /template/ ContentPresenter#ContentPresenter">
+            <Setter Property="Opacity" Value="1" />
+        </Style>
+        <Style Selector="^[TabStripPlacement=Right]">
+            <Setter Property="HorizontalContentAlignment" Value="Right" />
+        </Style>
+    </Style>
+
+    <Style Selector="nav|CyanTabItem">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontWeight" Value="Medium" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextBrush}" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="CornerRadius" Value="8" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Padding" Value="16,4" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        ClipToBounds="True"
+                        CornerRadius="{TemplateBinding CornerRadius}"
+                        Margin="2,0,2,4">
+                        <Panel>
+                            <ContentPresenter
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Content="{TemplateBinding Header}"
+                                ContentTemplate="{TemplateBinding HeaderTemplate}"
+                                Foreground="{TemplateBinding Foreground}"
+                                HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                Name="ContentPresenter"
+                                Opacity="{TemplateBinding Opacity}"
+                                Padding="{TemplateBinding Padding}"
+                                RecognizesAccessKey="True"
+                                VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}">
+                                <ContentPresenter.Transitions>
+                                    <Transitions>
+                                        <DoubleTransition Duration="0:0:0.20" Easing="QuadraticEaseOut" Property="Opacity" />
+                                    </Transitions>
+                                </ContentPresenter.Transitions>
+                            </ContentPresenter>
+                            <Border
+                                x:Name="PART_CloseButton"
+                                Width="14"
+                                CornerRadius="4"
+                                Background="Transparent"
+                                Cursor="Hand"
+                                Margin="0,0,6,0"
+                                IsVisible="{TemplateBinding Closable}"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Center">
+                                <TextBlock
+                                    Text="✕"
+                                    FontSize="10"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Foreground="{TemplateBinding Foreground}"
+                                    Opacity="0.6" />
+                            </Border>
+                        </Panel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style Selector="^:disabled /template/ ContentPresenter#ContentPresenter">
+            <Setter Property="Opacity" Value="0.50" />
+        </Style>
+        <Style Selector="^[IsSelected=False] /template/ ContentPresenter#ContentPresenter">
+            <Setter Property="Opacity" Value="0.75" />
+        </Style>
+        <Style Selector="^:selected /template/ ContentPresenter#ContentPresenter">
+            <Setter Property="Opacity" Value="1" />
+        </Style>
+        <Style Selector="^ /template/ Border#PART_CloseButton:pointerover">
+            <Setter Property="Background" Value="#18000000" />
+        </Style>
+        <Style Selector="^[TabStripPlacement=Right]">
+            <Setter Property="HorizontalContentAlignment" Value="Right" />
+        </Style>
+    </Style>
+
+</Styles>

@@ -1,0 +1,84 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:core="using:Cyan.Design.Core.Controls.Feedback"
+             xmlns:controls="using:Cyan.Design.Demo.Controls"
+             x:Class="Cyan.Design.Demo.Pages.SliderPage">
+    <ScrollViewer Padding="0" Margin="25,25,0,25">
+        <StackPanel Spacing="20" MaxWidth="800">
+            <TextBlock Text="Slider 滑动输入条" FontSize="22" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}"/>
+            <TextBlock Text="参考 ant.design 5.x：滑动型输入器，支持步长、禁用、反向等。" Foreground="{DynamicResource ColorTextSecondaryBrush}" TextWrapping="Wrap"/>
+
+            <controls:DemoSection Title="基础用法">
+                <StackPanel Orientation="Horizontal" Spacing="16" VerticalAlignment="Center">
+                    <core:CyanSlider x:Name="BasicSlider" Value="30" Width="300" />
+                    <TextBlock x:Name="BasicValue" Text="30" VerticalAlignment="Center" Foreground="{DynamicResource ColorTextSecondaryBrush}" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="带步长">
+                <StackPanel Orientation="Horizontal" Spacing="16" VerticalAlignment="Center">
+                    <core:CyanSlider x:Name="StepSlider" Value="20" Step="10" Width="300" />
+                    <TextBlock x:Name="StepValue" Text="20" VerticalAlignment="Center" Foreground="{DynamicResource ColorTextSecondaryBrush}" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="禁用">
+                <core:CyanSlider Value="50" Disabled="True" Width="300" />
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="反向">
+                <StackPanel Orientation="Horizontal" Spacing="16" VerticalAlignment="Center">
+                    <core:CyanSlider x:Name="ReverseSlider" Value="30" Reverse="True" Width="300" />
+                    <TextBlock x:Name="ReverseValue" Text="30" VerticalAlignment="Center" Foreground="{DynamicResource ColorTextSecondaryBrush}" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="自定义范围">
+                <StackPanel Orientation="Horizontal" Spacing="16" VerticalAlignment="Center">
+                    <core:CyanSlider x:Name="RangeSlider" Value="-50" Minimum="-100" Maximum="100" Width="300" />
+                    <TextBlock x:Name="RangeValue" Text="-50" VerticalAlignment="Center" Foreground="{DynamicResource ColorTextSecondaryBrush}" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="步长刻度">
+                <StackPanel Orientation="Horizontal" Spacing="16" VerticalAlignment="Center">
+                    <core:CyanSlider x:Name="DotSlider" Value="25" Step="25" Width="300" />
+                    <TextBlock x:Name="DotValue" Text="25" VerticalAlignment="Center" Foreground="{DynamicResource ColorTextSecondaryBrush}" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="双滑块范围">
+                <StackPanel Orientation="Horizontal" Spacing="16" VerticalAlignment="Center">
+                    <core:CyanSlider x:Name="DualSlider" Range="True" RangeStart="20" RangeEnd="60" Width="300" />
+                    <TextBlock x:Name="DualValue" Text="20 - 60" VerticalAlignment="Center" Foreground="{DynamicResource ColorTextSecondaryBrush}" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="双滑块带步长">
+                <StackPanel Orientation="Horizontal" Spacing="16" VerticalAlignment="Center">
+                    <core:CyanSlider x:Name="DualStepSlider" Range="True" RangeStart="10" RangeEnd="70" Step="10" Width="300" />
+                    <TextBlock x:Name="DualStepValue" Text="10 - 70" VerticalAlignment="Center" Foreground="{DynamicResource ColorTextSecondaryBrush}" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="带标签刻度">
+                <core:CyanSlider x:Name="MarksSlider" Value="37" Width="300" Minimum="0" Maximum="100" TooltipVisible="True">
+                    <core:SliderMark Value="0" Label="0°C" />
+                    <core:SliderMark Value="26" Label="26°C" />
+                    <core:SliderMark Value="37" Label="37°C" />
+                    <core:SliderMark Value="100" Label="100°C" />
+                </core:CyanSlider>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="双滑块带标签">
+                <core:CyanSlider x:Name="DualMarksSlider" Range="True" RangeStart="26" RangeEnd="37" Width="300" Minimum="0" Maximum="100" TooltipVisible="True">
+                    <core:SliderMark Value="0" Label="0°C" />
+                    <core:SliderMark Value="26" Label="26°C" />
+                    <core:SliderMark Value="37" Label="37°C" />
+                    <core:SliderMark Value="100" Label="100°C" />
+                </core:CyanSlider>
+            </controls:DemoSection>
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

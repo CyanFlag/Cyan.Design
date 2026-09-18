@@ -1,0 +1,147 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:core="using:Cyan.Design.Core.Controls.Inputs"
+             xmlns:controls="using:Cyan.Design.Demo.Controls"
+             x:Class="Cyan.Design.Demo.Pages.InputPage">
+    <ScrollViewer Padding="0" >
+        <StackPanel Spacing="30" Margin="24">
+            <TextBlock Text="Input 输入框" FontSize="22" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}"/>
+            <TextBlock Text="参考 ant.design 5.x：单行/多行/密码/搜索、四种形态变体、三种尺寸、校验状态、清除按钮、前后置标签、字数统计。" Foreground="{DynamicResource ColorTextSecondaryBrush}" TextWrapping="Wrap"/>
+
+            <controls:DemoSection Title="基础">
+                <core:CyanInput Watermark="基础输入框" />
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="形态变体 Variant">
+                <StackPanel Spacing="8">
+                    <core:CyanInput Watermark="Outlined 描边（默认）" InputVariant="Outlined" />
+                    <core:CyanInput Watermark="Filled 填充" InputVariant="Filled" />
+                    <core:CyanInput Watermark="Borderless 无边框" InputVariant="Borderless" />
+                    <core:CyanInput Watermark="Underlined 下划线" InputVariant="Underlined" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="尺寸 Size">
+                <StackPanel Spacing="8">
+                    <core:CyanInput Watermark="Large 40px" InputSize="Large" />
+                    <core:CyanInput Watermark="Middle 32px（默认）" />
+                    <core:CyanInput Watermark="Small 24px" InputSize="Small" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="校验状态 Status">
+                <StackPanel Spacing="8">
+                    <core:CyanInput Text="Error 错误" InputStatus="Error" />
+                    <core:CyanInput Text="Warning 警告" InputStatus="Warning" />
+                    <core:CyanInput Watermark="Filled + Error" InputVariant="Filled" InputStatus="Error" />
+                    <core:CyanInput Watermark="Underlined + Warning" InputVariant="Underlined" InputStatus="Warning" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="禁用 / 只读">
+                <StackPanel Spacing="8">
+                    <core:CyanInput Text="Disabled" IsEnabled="False" />
+                    <core:CyanInput Text="ReadOnly" IsReadOnly="True" />
+                    <core:CyanInput Text="Disabled Filled" IsEnabled="False" InputVariant="Filled" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="清除按钮 AllowClear">
+                <core:CyanInput Text="点击右侧 × 清除" AllowClear="True" />
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="字数统计 ShowCount">
+                <core:CyanInput Text="Hello" ShowCount="True" MaxLength="10" />
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="前后置标签 AddonBefore / AddonAfter">
+                <StackPanel Spacing="8">
+                    <core:CyanInput AddonBefore="http://" Watermark="example.com" />
+                    <core:CyanInput Watermark="价格" AddonAfter="元" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="密码框 CyanPassword">
+                <StackPanel Spacing="8">
+                    <core:CyanPassword Watermark="请输入密码" />
+                    <core:CyanPassword Watermark="Large 密码" InputSize="Large" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="搜索框 CyanSearch" Description="EnterButton：null=后缀图标（默认）| True=图标按钮 | 字符串=文字按钮 | 对象=自定义内容">
+                <StackPanel Spacing="8">
+                    <core:CyanSearch Watermark="默认：后缀图标，回车或点击图标搜索" />
+                    <core:CyanSearch Watermark="EnterButton=True 图标按钮" EnterButton="True" />
+                    <core:CyanSearch Watermark="EnterButton=搜索 文字按钮" EnterButton="搜索" />
+                    <core:CyanSearch Watermark="EnterButton=Go" EnterButton="Go" />
+                    <core:CyanSearch Watermark="Loading 状态" EnterButton="搜索" Loading="True" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="多行 TextArea">
+                <StackPanel Spacing="8">
+                    <core:CyanTextArea Watermark="默认 Outlined" />
+                    <core:CyanTextArea Watermark="Filled 多行" InputVariant="Filled" />
+                    <core:CyanTextArea Watermark="Borderless 多行" InputVariant="Borderless" />
+                    <core:CyanTextArea Text="错误状态多行" InputStatus="Error" />
+                    <core:CyanTextArea Text="字数统计" ShowCount="True" MaxLength="50" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="数字输入框 CyanInputNumber" Description="参考 ant.design 5.x：步进按钮、min/max/step/precision、键盘导航、滚轮、formatter/parser、handleVisible。">
+                <StackPanel Spacing="8">
+                    <core:CyanInputNumber Watermark="请输入数字" />
+                    <core:CyanInputNumber Value="5" Min="0" Max="10" Step="1" />
+                    <core:CyanInputNumber Value="3.14" Step="0.1" Precision="2" />
+                    <core:CyanInputNumber Value="100" Min="0" Max="999" ShowControls="False" />
+                    <core:CyanInputNumber Value="50" Min="0" Max="100" InputSize="Large" />
+                    <core:CyanInputNumber Value="10" Min="0" Max="99" InputSize="Small" />
+                    <core:CyanInputNumber Value="42" InputVariant="Filled" />
+                    <core:CyanInputNumber Value="42" InputVariant="Borderless" />
+                    <core:CyanInputNumber Value="42" InputVariant="Underlined" />
+                    <core:CyanInputNumber Value="42" IsEnabled="False" />
+                    <core:CyanInputNumber Value="42" IsReadOnly="True" />
+                    <core:CyanInputNumber Value="7" InputStatus="Error" />
+                    <core:CyanInputNumber Value="7" InputStatus="Warning" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="HandleVisible=Auto（仅 hover/focus 显示步进按钮）">
+                <StackPanel Spacing="8">
+                    <core:CyanInputNumber Value="42" HandleVisible="Auto" />
+                    <core:CyanInputNumber Value="42" HandleVisible="Auto" InputVariant="Filled" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="ChangeOnWheel（滚轮改变值）">
+                <core:CyanInputNumber Value="10" Min="0" Max="100" ChangeOnWheel="True" Watermark="滚轮上下调整" />
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="DecimalSeparator（自定义小数分隔符）">
+                <core:CyanInputNumber Value="3.14" Precision="2" DecimalSeparator="," Watermark="逗号作为小数点" />
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="Prefix / Suffix">
+                <StackPanel Spacing="8">
+                    <core:CyanInputNumber Value="100" Prefix="$" />
+                    <core:CyanInputNumber Value="50" Suffix="%" />
+                    <core:CyanInputNumber Value="99" Prefix="$" Suffix="RMB" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="ControlMode=Horizontal（左右按钮拨轮模式）" Description="左侧减号按钮、右侧加号按钮，输入框居中">
+                <StackPanel Spacing="8">
+                    <core:CyanInputNumber Value="5" Min="0" Max="10" ControlMode="Horizontal" />
+                    <core:CyanInputNumber Value="42" ControlMode="Horizontal" InputSize="Large" />
+                    <core:CyanInputNumber Value="42" ControlMode="Horizontal" InputSize="Small" />
+                    <core:CyanInputNumber Value="42" ControlMode="Horizontal" InputVariant="Filled" />
+                    <core:CyanInputNumber Value="42" ControlMode="Horizontal" InputVariant="Borderless" />
+                    <core:CyanInputNumber Value="42" ControlMode="Horizontal" InputVariant="Underlined" />
+                    <core:CyanInputNumber Value="7" Min="0" Max="10" ControlMode="Horizontal" InputStatus="Error" />
+                    <core:CyanInputNumber Value="42" ControlMode="Horizontal" HandleVisible="Auto" />
+                    <core:CyanInputNumber Value="42" ControlMode="Horizontal" IsEnabled="False" />
+                </StackPanel>
+            </controls:DemoSection>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

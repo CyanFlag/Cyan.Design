@@ -1,0 +1,90 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:core="using:Cyan.Design.Core.Controls.Feedback"
+             xmlns:btn="using:Cyan.Design.Core.Controls.Buttons"
+             xmlns:controls="using:Cyan.Design.Demo.Controls"
+             x:Class="Cyan.Design.Demo.Pages.PopconfirmPage">
+    <ScrollViewer Padding="0" Margin="20">
+        <StackPanel Spacing="20" MaxWidth="800">
+            <TextBlock Text="Popconfirm 气泡确认框" FontSize="22" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}"/>
+            <TextBlock Text="参考 ant.design 5.x：用于在用户操作前弹出确认气泡，比 Modal 更轻量。" Foreground="{DynamicResource ColorTextSecondaryBrush}" TextWrapping="Wrap"/>
+
+            <controls:DemoSection Title="基本">
+                <core:CyanPopconfirm Title="确定要删除这个任务吗？">
+                    <btn:CyanButton Content="删除" Danger="True" />
+                </core:CyanPopconfirm>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="自定义按钮文字">
+                <core:CyanPopconfirm Title="确定要执行此操作吗？" OkText="是的" CancelText="算了">
+                    <btn:CyanButton Content="自定义文字" />
+                </core:CyanPopconfirm>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="带描述">
+                <core:CyanPopconfirm Title="确定要删除这个任务吗？"
+                                     Description="删除后将无法恢复，请谨慎操作。">
+                    <btn:CyanButton Content="带描述" Danger="True" />
+                </core:CyanPopconfirm>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="位置">
+                <StackPanel Spacing="16">
+                    <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,0,0,16">
+                        <core:CyanPopconfirm Title="顶部弹出" Placement="Top">
+                            <btn:CyanButton Content="Top" />
+                        </core:CyanPopconfirm>
+                        <core:CyanPopconfirm Title="底部弹出" Placement="Bottom">
+                            <btn:CyanButton Content="Bottom" />
+                        </core:CyanPopconfirm>
+                        <core:CyanPopconfirm Title="左侧弹出" Placement="Left">
+                            <btn:CyanButton Content="Left" />
+                        </core:CyanPopconfirm>
+                        <core:CyanPopconfirm Title="右侧弹出" Placement="Right">
+                            <btn:CyanButton Content="Right" />
+                        </core:CyanPopconfirm>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Spacing="8">
+                        <core:CyanPopconfirm Title="左上弹出" Placement="TopLeft">
+                            <btn:CyanButton Content="TopLeft" ButtonSize="Small" />
+                        </core:CyanPopconfirm>
+                        <core:CyanPopconfirm Title="右上弹出" Placement="TopRight">
+                            <btn:CyanButton Content="TopRight" ButtonSize="Small" />
+                        </core:CyanPopconfirm>
+                        <core:CyanPopconfirm Title="左下弹出" Placement="BottomLeft">
+                            <btn:CyanButton Content="BottomLeft" ButtonSize="Small" />
+                        </core:CyanPopconfirm>
+                        <core:CyanPopconfirm Title="右下弹出" Placement="BottomRight">
+                            <btn:CyanButton Content="BottomRight" ButtonSize="Small" />
+                        </core:CyanPopconfirm>
+                    </StackPanel>
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="隐藏取消按钮">
+                <core:CyanPopconfirm Title="确定要执行此操作吗？" ShowCancel="False">
+                    <btn:CyanButton Content="仅确认" ButtonType="Primary" />
+                </core:CyanPopconfirm>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="禁用">
+                <core:CyanPopconfirm Title="确定要执行此操作吗？" Disabled="True">
+                    <btn:CyanButton Content="禁用的确认" />
+                </core:CyanPopconfirm>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="异步确认">
+                <core:CyanPopconfirm x:Name="AsyncPopconfirm" Title="确定要提交吗？" OkText="提交">
+                    <btn:CyanButton Content="异步提交" ButtonType="Primary" />
+                </core:CyanPopconfirm>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="Hover 触发">
+                <core:CyanPopconfirm Title="鼠标悬停触发确认" Trigger="Hover">
+                    <btn:CyanButton Content="悬停我" />
+                </core:CyanPopconfirm>
+            </controls:DemoSection>
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

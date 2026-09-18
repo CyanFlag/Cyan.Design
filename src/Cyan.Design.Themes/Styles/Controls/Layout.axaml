@@ -1,0 +1,83 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:core="using:Cyan.Design.Core.Controls.Layout">
+
+    <Style Selector="core|CyanCard">
+        <Setter Property="Background" Value="{DynamicResource ColorBgContainerBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorBorderSecondaryBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="{DynamicResource BorderRadiusLG}" />
+        <Setter Property="Padding" Value="24" />
+        <Setter Property="BoxShadow" Value="{DynamicResource BoxShadowTertiary}" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border x:Name="PART_Root"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="{TemplateBinding CornerRadius}"
+                        Padding="{TemplateBinding Padding}"
+                        BoxShadow="{TemplateBinding BoxShadow}">
+                    <Grid RowDefinitions="Auto,*">
+                        <Grid Grid.Row="0" ColumnDefinitions="*,Auto" Margin="0,0,0,16">
+                            <ContentPresenter Grid.Column="0" Content="{TemplateBinding Header}" VerticalAlignment="Center" />
+                            <ContentPresenter Grid.Column="1" Content="{TemplateBinding Extra}" VerticalAlignment="Center" />
+                        </Grid>
+                        <ContentPresenter Grid.Row="1" Content="{TemplateBinding Content}" />
+                    </Grid>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+    <Style Selector="core|CyanCard[Bordered=False]">
+        <Setter Property="BorderThickness" Value="0" />
+    </Style>
+    <Style Selector="core|CyanCard[Hoverable=True]:pointerover">
+        <Setter Property="BoxShadow" Value="{DynamicResource BoxShadow}" />
+    </Style>
+
+    <Style Selector="core|CyanDivider">
+        <Setter Property="Background" Value="{DynamicResource ColorSplitBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextBrush}" />
+        <Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+        <Setter Property="Margin" Value="0,8" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid ColumnDefinitions="*,Auto,*" VerticalAlignment="Center">
+                    <Border Grid.Column="0" Height="1" Background="{TemplateBinding Background}" VerticalAlignment="Center" />
+                    <ContentPresenter Grid.Column="1" Content="{TemplateBinding Content}" Margin="12,0" VerticalAlignment="Center" />
+                    <Border Grid.Column="2" Height="1" Background="{TemplateBinding Background}" VerticalAlignment="Center" />
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+    <Style Selector="core|CyanDivider[Orientation=Vertical]">
+        <Setter Property="Margin" Value="8,0" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid RowDefinitions="*,Auto,*" HorizontalAlignment="Center">
+                    <Border Grid.Row="0" Width="1" Background="{TemplateBinding Background}" HorizontalAlignment="Center" />
+                    <ContentPresenter Grid.Row="1" Content="{TemplateBinding Content}" Margin="0,12" HorizontalAlignment="Center" />
+                    <Border Grid.Row="2" Width="1" Background="{TemplateBinding Background}" HorizontalAlignment="Center" />
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <Style Selector="core|CyanSpace[Direction=Horizontal]">
+        <Setter Property="Orientation" Value="Horizontal" />
+    </Style>
+    <Style Selector="core|CyanSpace[Direction=Vertical]">
+        <Setter Property="Orientation" Value="Vertical" />
+    </Style>
+    <Style Selector="core|CyanSpace[SpaceSize=Small]">
+        <Setter Property="Spacing" Value="8" />
+    </Style>
+    <Style Selector="core|CyanSpace[SpaceSize=Middle]">
+        <Setter Property="Spacing" Value="16" />
+    </Style>
+    <Style Selector="core|CyanSpace[SpaceSize=Large]">
+        <Setter Property="Spacing" Value="24" />
+    </Style>
+
+</Styles>

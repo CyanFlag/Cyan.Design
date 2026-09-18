@@ -1,0 +1,71 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="using:Cyan.Design.Demo.Controls"
+             xmlns:fb="using:Cyan.Design.Core.Controls.Feedback"
+             x:Class="Cyan.Design.Demo.Pages.ParkSpinnerPage"
+             x:CompileBindings="False">
+    <ScrollViewer Padding="0" Margin="15">
+        <StackPanel Spacing="0" MaxWidth="800">
+            <TextBlock Text="ParkSpinner 加载" FontSize="22" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}"/>
+            <TextBlock Text="移植自 ParkUI 的 Spinner 控件，用圆弧旋转动画指示加载状态。" Foreground="{DynamicResource ColorTextSecondaryBrush}" TextWrapping="Wrap"/>
+
+            <controls:DemoSection Title="基本用法" Description="默认尺寸和颜色">
+                <fb:CyanParkSpinner Margin="0,8,0,0" />
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="尺寸" Description="XS / SM / MD / LG / XL / 2XL">
+                <StackPanel Orientation="Horizontal" Spacing="16" Margin="0,8,0,0" VerticalAlignment="Center">
+                    <fb:CyanParkSpinner SpinnerSize="XS" />
+                    <fb:CyanParkSpinner SpinnerSize="SM" />
+                    <fb:CyanParkSpinner SpinnerSize="MD" />
+                    <fb:CyanParkSpinner SpinnerSize="LG" />
+                    <fb:CyanParkSpinner SpinnerSize="XL" />
+                    <fb:CyanParkSpinner SpinnerSize="XXL" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="颜色" Description="不同 Foreground 颜色">
+                <StackPanel Orientation="Horizontal" Spacing="16" Margin="0,8,0,0">
+                    <fb:CyanParkSpinner Foreground="#22C55E" />
+                    <fb:CyanParkSpinner Foreground="#3B82F6" />
+                    <fb:CyanParkSpinner Foreground="#F59E0B" />
+                    <fb:CyanParkSpinner Foreground="#EF4444" />
+                    <fb:CyanParkSpinner Foreground="#8B5CF6" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="轨道颜色" Description="TrackColor 显示完整圆环">
+                <StackPanel Orientation="Horizontal" Spacing="16" Margin="0,8,0,0">
+                    <fb:CyanParkSpinner TrackColor="#E4E4E7" />
+                    <fb:CyanParkSpinner SpinnerSize="LG" TrackColor="#E4E4E7" />
+                    <fb:CyanParkSpinner SpinnerSize="XL" Foreground="#22C55E" TrackColor="#E4E4E7" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="速度" Description="Speed=500 / 1000 / 2000 ms">
+                <StackPanel Orientation="Horizontal" Spacing="16" Margin="0,8,0,0">
+                    <fb:CyanParkSpinner Speed="500" />
+                    <fb:CyanParkSpinner Speed="1000" />
+                    <fb:CyanParkSpinner Speed="2000" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="粗细" Description="Thickness=1 / 2 / 4 / 6">
+                <StackPanel Orientation="Horizontal" Spacing="16" Margin="0,8,0,0">
+                    <fb:CyanParkSpinner SpinnerSize="LG" Thickness="1" />
+                    <fb:CyanParkSpinner SpinnerSize="LG" Thickness="2" />
+                    <fb:CyanParkSpinner SpinnerSize="LG" Thickness="4" />
+                    <fb:CyanParkSpinner SpinnerSize="LG" Thickness="6" />
+                </StackPanel>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="带标签" Description="组合使用">
+                <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,8,0,0">
+                    <fb:CyanParkSpinner SpinnerSize="SM" />
+                    <TextBlock Text="Loading Users ..." VerticalAlignment="Center" Foreground="{DynamicResource ColorTextSecondaryBrush}" />
+                </StackPanel>
+            </controls:DemoSection>
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

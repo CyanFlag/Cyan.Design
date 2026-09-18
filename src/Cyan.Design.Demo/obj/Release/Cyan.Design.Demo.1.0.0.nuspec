@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Cyan.Design.Demo</id>
+    <version>1.0.0</version>
+    <authors>Cyan.Design.Demo</authors>
+    <description>Package Description</description>
+    <repository type="git" />
+    <dependencies>
+      <group targetFramework="net8.0">
+        <dependency id="Cyan.Design.Core" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="Cyan.Design.Themes" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="Avalonia" version="12.0.0" exclude="Build,Analyzers" />
+        <dependency id="Avalonia.Controls.DataGrid" version="12.0.0" exclude="Build,Analyzers" />
+        <dependency id="Avalonia.Desktop" version="12.0.0" exclude="Build,Analyzers" />
+        <dependency id="Avalonia.Themes.Fluent" version="12.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="F:\AI code\Cyan.Design\src\Cyan.Design.Demo\bin\Release\net8.0\Cyan.Design.Demo.runtimeconfig.json" target="lib\net8.0\Cyan.Design.Demo.runtimeconfig.json" />
+    <file src="F:\AI code\Cyan.Design\src\Cyan.Design.Demo\bin\Release\net8.0\Cyan.Design.Demo.dll" target="lib\net8.0\Cyan.Design.Demo.dll" />
+  </files>
+</package>

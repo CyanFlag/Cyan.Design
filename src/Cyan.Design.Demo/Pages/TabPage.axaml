@@ -1,0 +1,174 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:icon="using:Cyan.Design.Core.Controls.Icons"
+             xmlns:nav="using:Cyan.Design.Core.Controls.Navigation"
+             xmlns:controls="using:Cyan.Design.Demo.Controls"
+             x:Class="Cyan.Design.Demo.Pages.TabPage">
+    <ScrollViewer Padding="0" Margin="25,25,0,25">
+        <StackPanel Spacing="20" MaxWidth="800">
+            <TextBlock Text="Tab 标签页" FontSize="22" FontWeight="Bold" Foreground="{DynamicResource ColorTextBrush}"/>
+            <TextBlock Text="参考 ShadUI TabControl：滑动药丸指示器，支持顶部/左侧/右侧放置。" Foreground="{DynamicResource ColorTextSecondaryBrush}" TextWrapping="Wrap"/>
+
+            <controls:DemoSection Title="基础用法">
+                <TabControl Width="500">
+                    <TabItem Header="Tab 1">
+                        <TextBlock Text="Content of Tab 1" FontSize="14" Foreground="{DynamicResource ColorTextBrush}" Margin="8" />
+                    </TabItem>
+                    <TabItem Header="Tab 2">
+                        <TextBlock Text="Content of Tab 2" FontSize="14" Foreground="{DynamicResource ColorTextBrush}" Margin="8" />
+                    </TabItem>
+                    <TabItem Header="Tab 3">
+                        <TextBlock Text="Content of Tab 3" FontSize="14" Foreground="{DynamicResource ColorTextBrush}" Margin="8" />
+                    </TabItem>
+                </TabControl>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="禁用选项">
+                <TabControl Width="500">
+                    <TabItem Header="Tab 1">
+                        <TextBlock Text="Content of Tab 1" FontSize="14" Foreground="{DynamicResource ColorTextBrush}" Margin="8" />
+                    </TabItem>
+                    <TabItem Header="Tab 2">
+                        <TextBlock Text="Content of Tab 2" FontSize="14" Foreground="{DynamicResource ColorTextBrush}" Margin="8" />
+                    </TabItem>
+                    <TabItem Header="Disabled" IsEnabled="False">
+                        <TextBlock Text="Content of Disabled Tab" FontSize="14" Foreground="{DynamicResource ColorTextBrush}" Margin="8" />
+                    </TabItem>
+                </TabControl>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="左侧放置">
+                <TabControl TabStripPlacement="Left" Width="500" Height="200">
+                    <TabItem Header="Tab 1">
+                        <TextBlock Text="Content of Tab 1" FontSize="14" Foreground="{DynamicResource ColorTextBrush}" Margin="8" />
+                    </TabItem>
+                    <TabItem Header="Tab 2">
+                        <TextBlock Text="Content of Tab 2" FontSize="14" Foreground="{DynamicResource ColorTextBrush}" Margin="8" />
+                    </TabItem>
+                    <TabItem Header="Tab 3">
+                        <TextBlock Text="Content of Tab 3" FontSize="14" Foreground="{DynamicResource ColorTextBrush}" Margin="8" />
+                    </TabItem>
+                </TabControl>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="右侧放置">
+                <TabControl TabStripPlacement="Right" Width="500" Height="200">
+                    <TabItem Header="Tab 1">
+                        <TextBlock Text="Content of Tab 1" FontSize="14" Foreground="{DynamicResource ColorTextBrush}" Margin="8" />
+                    </TabItem>
+                    <TabItem Header="Tab 2">
+                        <TextBlock Text="Content of Tab 2" FontSize="14" Foreground="{DynamicResource ColorTextBrush}" Margin="8" />
+                    </TabItem>
+                    <TabItem Header="Tab 3">
+                        <TextBlock Text="Content of Tab 3" FontSize="14" Foreground="{DynamicResource ColorTextBrush}" Margin="8" />
+                    </TabItem>
+                </TabControl>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="带边框内容">
+                <TabControl Width="500">
+                    <TabItem Header="Preview">
+                        <Border
+                            BorderBrush="{DynamicResource ColorBorderBrush}"
+                            BorderThickness="1"
+                            CornerRadius="{DynamicResource BorderRadiusLG}"
+                            Height="100"
+                            Padding="12">
+                            <TextBlock
+                                FontSize="20"
+                                Foreground="{DynamicResource ColorTextBrush}"
+                                Text="Preview Content" />
+                        </Border>
+                    </TabItem>
+                    <TabItem Header="Code">
+                        <Border
+                            BorderBrush="{DynamicResource ColorBorderBrush}"
+                            BorderThickness="1"
+                            CornerRadius="{DynamicResource BorderRadiusLG}"
+                            Height="100"
+                            Padding="12">
+                            <TextBlock
+                                FontSize="14"
+                                Foreground="{DynamicResource ColorTextSecondaryBrush}"
+                                Text="Code Content" />
+                        </Border>
+                    </TabItem>
+                    <TabItem Header="Disabled" IsEnabled="False" />
+                </TabControl>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="标签居中">
+                <TabControl Width="500" Classes="center">
+                    <TabItem Header="Tab 1">
+                        <TextBlock Text="Content of Tab 1" FontSize="14" Foreground="{DynamicResource ColorTextBrush}" Margin="8" />
+                    </TabItem>
+                    <TabItem Header="Tab 2">
+                        <TextBlock Text="Content of Tab 2" FontSize="14" Foreground="{DynamicResource ColorTextBrush}" Margin="8" />
+                    </TabItem>
+                    <TabItem Header="Tab 3">
+                        <TextBlock Text="Content of Tab 3" FontSize="14" Foreground="{DynamicResource ColorTextBrush}" Margin="8" />
+                    </TabItem>
+                </TabControl>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="带图标">
+                <TabControl Width="500">
+                    <TabItem>
+                        <TabItem.Header>
+                            <StackPanel Orientation="Horizontal" Spacing="6" VerticalAlignment="Center">
+                                <icon:CyanIcon IconKey="home" FontSize="16" />
+                                <TextBlock Text="首页" VerticalAlignment="Center" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <TextBlock Text="首页内容" FontSize="14" Foreground="{DynamicResource ColorTextBrush}" Margin="8" />
+                    </TabItem>
+                    <TabItem>
+                        <TabItem.Header>
+                            <StackPanel Orientation="Horizontal" Spacing="6" VerticalAlignment="Center">
+                                <icon:CyanIcon IconKey="list" FontSize="16" />
+                                <TextBlock Text="列表" VerticalAlignment="Center" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <TextBlock Text="列表内容" FontSize="14" Foreground="{DynamicResource ColorTextBrush}" Margin="8" />
+                    </TabItem>
+                    <TabItem>
+                        <TabItem.Header>
+                            <StackPanel Orientation="Horizontal" Spacing="6" VerticalAlignment="Center">
+                                <icon:CyanIcon IconKey="people" FontSize="16" />
+                                <TextBlock Text="用户" VerticalAlignment="Center" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <TextBlock Text="用户内容" FontSize="14" Foreground="{DynamicResource ColorTextBrush}" Margin="8" />
+                    </TabItem>
+                    <TabItem>
+                        <TabItem.Header>
+                            <StackPanel Orientation="Horizontal" Spacing="6" VerticalAlignment="Center">
+                                <icon:CyanIcon IconKey="brush" FontSize="16" />
+                                <TextBlock Text="设置" VerticalAlignment="Center" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <TextBlock Text="设置内容" FontSize="14" Foreground="{DynamicResource ColorTextBrush}" Margin="8" />
+                    </TabItem>
+                </TabControl>
+            </controls:DemoSection>
+
+            <controls:DemoSection Title="可关闭标签">
+                <TabControl x:Name="ClosableTabs" Width="500">
+                    <nav:CyanTabItem Header="Tab 1" Closable="True">
+                        <TextBlock Text="Content of Tab 1" FontSize="14" Foreground="{DynamicResource ColorTextBrush}" Margin="8" />
+                    </nav:CyanTabItem>
+                    <nav:CyanTabItem Header="Tab 2" Closable="True">
+                        <TextBlock Text="Content of Tab 2" FontSize="14" Foreground="{DynamicResource ColorTextBrush}" Margin="8" />
+                    </nav:CyanTabItem>
+                    <nav:CyanTabItem Header="Tab 3" Closable="True">
+                        <TextBlock Text="Content of Tab 3" FontSize="14" Foreground="{DynamicResource ColorTextBrush}" Margin="8" />
+                    </nav:CyanTabItem>
+                    <nav:CyanTabItem Header="Tab 4" Closable="True">
+                        <TextBlock Text="Content of Tab 4" FontSize="14" Foreground="{DynamicResource ColorTextBrush}" Margin="8" />
+                    </nav:CyanTabItem>
+                </TabControl>
+            </controls:DemoSection>
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>
